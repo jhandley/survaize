@@ -67,6 +67,7 @@ For instructions on publishing to PyPI, see [publishing.md](publishing.md).
 MIT 
 
 ## TODO
+- Use min/max length of numeric fields to add a value set with the range
 - Correctly handle location question type (produce two fields in CSPro)
 - Fills in CAPI question text
 - Evals
