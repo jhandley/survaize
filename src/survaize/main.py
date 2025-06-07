@@ -109,7 +109,7 @@ def convert(
         logger.exception("Conversion failed")
         raise
 
-
+# TODO: add command line params for LLM configuration
 @cli.command()
 @click.option(
     "--host",
@@ -130,6 +130,7 @@ def convert(
 def ui(host: str, port: int, reload: bool) -> None:
     """Start the Survaize web application server."""
     try:
+        # TODO: launch browser automatically
         run_server(host=host, port=port, reload=reload)
     except Exception as e:
         console.log(f"[red]Error starting web server: {e}")

@@ -79,6 +79,7 @@ async def read_questionnaire(
     """
     temp_path: Path | None = None
     try:
+        # TODO: support reader from byte stream directly to avoid temp files
         with tempfile.NamedTemporaryFile(delete=False, suffix=format) as temp_file:
             temp_file.write(await file.read())
             temp_path = Path(temp_file.name)
