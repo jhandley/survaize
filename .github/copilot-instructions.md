@@ -31,6 +31,8 @@ The src/survaize directory contains the main application code, organized as foll
 - models: Models for questionnaires.
 - cspro: Models and serializers for CSPro files (dictionary, forms, question text).
 - config: Configuration management including API keys and model settings.
+- web/backend: FastAPI backend for serving the application.
+- web/frontend: React frontend for the application.
 
 # Running/testing
 Use uv to run the application and tests to ensure the correct virtual environment.

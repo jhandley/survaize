@@ -4,13 +4,8 @@ import logging
 from pathlib import Path
 
 from survaize.config.llm_config import LLMConfig
-from survaize.interpreter.ai_interpreter import AIQuestionnaireInterpreter
-from survaize.reader.json_reader import JSONReader
-from survaize.reader.pdf_reader import PDFReader
-from survaize.reader.reader import Reader
-from survaize.writer.cspro_writer import CSProWriter
-from survaize.writer.json_writer import JSONWriter
-from survaize.writer.writer import Writer
+from survaize.reader.reader_factory import ReaderFactory
+from survaize.writer.writer_factory import WriterFactory
 
 logger = logging.getLogger(__name__)
 
@@ -24,15 +19,8 @@ class QuestionnaireConverter:
             llm_config: Configuration for the LLM (API key, version, URL, deployment)
         """
 
-        interpreter = AIQuestionnaireInterpreter(llm_config)
-        self.readers: dict[str, Reader] = {
-            "pdf": PDFReader(interpreter),
-            "json": JSONReader(),
-        }
-        self.writers: dict[str, Writer] = {
-            "json": JSONWriter(),
-            "cspro": CSProWriter(),
-        }
+        self.reader_factory: ReaderFactory = ReaderFactory(llm_config)
+        self.writer_factory: WriterFactory = WriterFactory()
 
     def convert(self, input_file: Path, output_file: Path, output_format: str):
         """Convert a questionnaire to the specified format.
@@ -47,22 +35,13 @@ class QuestionnaireConverter:
         """
         output_file.parent.mkdir(parents=True, exist_ok=True)
 
-        input_format = input_file.suffix.lower().replace(".", "")
-        reader = self.readers.get(input_format)
-
-        if not reader:
-            raise ValueError(
-                f"Unsupported input format: {input_format}. Supported formats are: {', '.join(self.readers.keys())}"
-            )
+        input_format_str = input_file.suffix.lower().replace(".", "")
+        reader = self.reader_factory.get(input_format_str)
 
         logger.info(f"Reading questionnaire: {input_file}")
         questionnaire = reader.read(input_file)
 
-        writer = self.writers.get(output_format.lower())
-        if not writer:
-            raise ValueError(
-                f"Unsupported output format: {output_format}. Supported formats are: {', '.join(self.writers.keys())}"
-            )
+        writer = self.writer_factory.get(output_format)
 
         logger.info(f"Writing converted questionnaire: {output_file}")
         writer.write(questionnaire, output_file)

@@ -47,6 +47,7 @@ dependencies = [
     "pydantic-evals>=0.2.6",
     "pytesseract>=0.3.13",
     "python-dotenv>=1.1.0",
+    "python-multipart>=0.0.20",
     "pyyaml>=6.0.2",
     "uvicorn>=0.34.3",
 ]

@@ -1,35 +1,66 @@
 import { useState, useEffect, JSX } from 'react';
+import { QuestionnaireProvider, OpenQuestionnaire, SaveQuestionnaire } from './components/QuestionnaireComponents';
+import { QuestionnaireDisplay } from './components/QuestionnaireDisplay';
+import { QuestionnaireJson } from './components/QuestionnaireJson';
 
 interface ApiResponse {
   message: string;
 }
 
 function App(): JSX.Element {
-  const [message, setMessage] = useState<string>('Loading...');
+  const [apiStatus, setApiStatus] = useState<string>('Checking API status...');
+  const [isApiConnected, setIsApiConnected] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Fetch the hello message from the API
-    fetch('/api/hello')
-      .then(response => response.json())
-      .then((data: ApiResponse) => setMessage(data.message))
+    // Check API health
+    fetch('/api/health')
+      .then(response => {
+        if (!response.ok) throw new Error('API health check failed');
+        return response.json();
+      })
+      .then((data) => {
+        setIsApiConnected(true);
+        
+        // Now fetch the hello message
+        return fetch('/api/hello')
+          .then(response => response.json())
+          .then((data: ApiResponse) => setApiStatus(`${data.message} ✅`));
+      })
       .catch(error => {
         console.error('Error fetching API:', error);
-        setMessage('Failed to connect to API');
+        setIsApiConnected(false);
+        setApiStatus('⚠️ API connection failed - working in offline mode');
       });
   }, []);
 
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <h1>Survaize</h1>
-        <p>Survey Automation Tool</p>
-      </header>
-      
-      <div className="card">
-        <h2>API Response</h2>
-        <p>{message}</p>
+    <QuestionnaireProvider>
+      <div className="app-container">
+        <header className="app-header">
+          <h1>Survaize</h1>
+          <p>Survey Automation Tool</p>
+          <div className={`api-status ${isApiConnected === false ? 'offline' : ''}`}>
+            {isApiConnected === null ? (
+              <span className="loading">Connecting to API...</span>
+            ) : isApiConnected === true ? (
+              <span className="online">{apiStatus}</span>
+            ) : (
+              <span className="offline">{apiStatus}</span>
+            )}
+          </div>
+        </header>
+        
+        <div className="toolbar">
+          <OpenQuestionnaire />
+          <SaveQuestionnaire />
+        </div>
+        
+        <div className="main-content">
+          <QuestionnaireDisplay />
+          <QuestionnaireJson />
+        </div>
       </div>
-    </div>
+    </QuestionnaireProvider>
   );
 }
 

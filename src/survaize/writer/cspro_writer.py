@@ -56,7 +56,7 @@ class CSProWriter:
         """
         # Create a directory for the CSPro application
         app_file_name = self._make_file_name(questionnaire.title)
-        app_dir = output_path.parent / app_file_name
+        app_dir = output_path
         app_dir.mkdir(parents=True, exist_ok=True)
 
         logger.info(f"Generating CSPro application in: {app_dir}")
