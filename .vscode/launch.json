@@ -11,12 +11,20 @@
             "program": "${workspaceFolder}/src/survaize/main.py",
             "console": "integratedTerminal",
             "args": [
-                "convert",
-                "examples/PopstanHouseholdSurvey/PopstanHouseholdQuestionnaire.json",
-                "output/PopstanHouseholdSurvey",
-                "--format",
-                "cspro",
+            "convert",
+            "examples/PopstanHouseholdSurvey/PopstanHouseholdQuestionnaire.json",
+            "output/PopstanHouseholdSurvey",
+            "--format",
+            "cspro",
             ]
+        },
+        {
+            "name": "Python Debugger: survaize ui",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/survaize/main.py",
+            "console": "integratedTerminal",
+            "args": ["ui"]
         }
     ]
 }

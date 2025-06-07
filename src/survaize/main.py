@@ -10,6 +10,7 @@ from rich.console import Console
 
 from survaize.config.llm_config import LLMConfig, OpenAIProviderType
 from survaize.convert.converter import QuestionnaireConverter
+from survaize.web.backend.server import run_server
 
 # Load environment variables from .env file if present
 load_dotenv()
@@ -106,6 +107,33 @@ def convert(
     except Exception as e:
         console.log(f"[red]Error during conversion: {e}")
         logger.exception("Conversion failed")
+        raise
+
+
+@cli.command()
+@click.option(
+    "--host",
+    default="127.0.0.1",
+    help="Host to bind the web server to",
+)
+@click.option(
+    "--port",
+    default=8000,
+    type=int,
+    help="Port to bind the web server to",
+)
+@click.option(
+    "--reload/--no-reload",
+    default=False,
+    help="Reload the server when code changes",
+)
+def ui(host: str, port: int, reload: bool) -> None:
+    """Start the Survaize web application server."""
+    try:
+        run_server(host=host, port=port, reload=reload)
+    except Exception as e:
+        console.log(f"[red]Error starting web server: {e}")
+        logger.exception("Web server failed to start")
         raise
 
 

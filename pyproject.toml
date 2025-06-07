@@ -37,6 +37,8 @@ classifiers = [
 
 dependencies = [
     "click>=8.1.8",
+    "fastapi>=0.115.12",
+    "hatchling>=1.27.0",
     "openai>=1.77.0",
     "opencv-python>=4.11.0.86",
     "pdf2image>=1.17.0",
@@ -46,6 +48,7 @@ dependencies = [
     "pytesseract>=0.3.13",
     "python-dotenv>=1.1.0",
     "pyyaml>=6.0.2",
+    "uvicorn>=0.34.3",
 ]
 
 
@@ -86,10 +89,16 @@ vcs = "git"
 style = "pep440"
 bump = "true"
 
+# run our hook for every target
+[tool.hatch.build.hooks.custom]
+path = "devtools/build_frontend.py"
+
 [tool.hatch.build.targets.wheel]
 # The source location for the package.
 packages = ["src/survaize"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"src/survaize/web/frontend/dist" = "survaize/web/frontend/dist"
 
 # ---- Settings ----
 
@@ -129,9 +138,15 @@ ignore = [
     "COM819", # https://docs.astral.sh/ruff/rules/prohibited-trailing-comma/
     "ISC002", # https://docs.astral.sh/ruff/rules/multi-line-implicit-string-concatenation/
 ]
+exclude = [
+    "src/survaize/web/frontend",
+]
 
 [tool.basedpyright]
 include = ["src", "tests", "evals", "devtools"]
+exclude = [
+    "src/survaize/web/frontend"
+]
 
 # BasedPyright rules
 reportIgnoreCommentWithoutRule = false
@@ -144,7 +159,7 @@ reportAny = false
 [tool.codespell]
 # Add here as needed:
 ignore-words-list = "popstan"
-# skip = "foo.py,bar.py"
+skip = ["src/survaize/web/frontend"]
 
 [tool.pytest.ini_options]
 python_files = ["*.py"]
