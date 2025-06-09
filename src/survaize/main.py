@@ -1,6 +1,7 @@
 """Command-line interface for Survaize."""
 
 import logging
+import os
 from pathlib import Path
 from typing import Literal
 
@@ -109,7 +110,7 @@ def convert(
         logger.exception("Conversion failed")
         raise
 
-# TODO: add command line params for LLM configuration
+
 @cli.command()
 @click.option(
     "--host",
@@ -127,9 +128,63 @@ def convert(
     default=False,
     help="Reload the server when code changes",
 )
-def ui(host: str, port: int, reload: bool) -> None:
+@click.option(
+    "--api-key",
+    envvar="OPENAI_API_KEY",
+    help="OpenAI API key (can also be set via OPENAI_API_KEY env var)",
+    required=True,
+)
+@click.option(
+    "--api-provider",
+    type=click.Choice(["openai", "azure"]),
+    default="openai",
+    envvar="OPENAI_PROVIDER",
+    help="OpenAI API provider type, can also be set via OPENAI_PROVIDER environment variable",
+)
+@click.option(
+    "--api-version",
+    envvar="OPENAI_API_VERSION",
+    help="OpenAI API version for Azure only (can also be set via OPENAI_API_VERSION env var)",
+)
+@click.option(
+    "--api-url",
+    envvar="OPENAI_API_URL",
+    help="OpenAI API URL required for Azure (can also be set via OPENAI_API_URL env var)",
+)
+@click.option(
+    "--api-model",
+    envvar="OPENAI_API_MODEL",
+    default="gpt-4.1",
+    help="OpenAI API model name (can also be set via OPENAI_API_MODEL env var). Defaults to gpt-4.1",
+)
+def ui(
+    host: str,
+    port: int,
+    reload: bool,
+    api_key: str,
+    api_provider: OpenAIProviderType | None,
+    api_version: str | None,
+    api_url: str | None,
+    api_model: str,
+) -> None:
     """Start the Survaize web application server."""
     try:
+        if api_provider == OpenAIProviderType.AZURE:
+            if not api_url:
+                raise click.UsageError(
+                    "Azure requires a url for the API endpoint "
+                    + "Please provide it via the --api-url argument or the OPENAI_API_URL environment variable."
+                )
+            api_version = api_version or "2025-04-01-preview"
+
+        os.environ["OPENAI_API_KEY"] = api_key
+        os.environ["OPENAI_PROVIDER"] = str(api_provider)
+        if api_version:
+            os.environ["OPENAI_API_VERSION"] = api_version
+        if api_url:
+            os.environ["OPENAI_API_URL"] = api_url
+        os.environ["OPENAI_API_MODEL"] = api_model
+
         # TODO: launch browser automatically
         run_server(host=host, port=port, reload=reload)
     except Exception as e:
