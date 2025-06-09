@@ -3,12 +3,8 @@ import { QuestionnaireProvider, OpenQuestionnaire, SaveQuestionnaire } from './c
 import { QuestionnaireDisplay } from './components/QuestionnaireDisplay';
 import { QuestionnaireJson } from './components/QuestionnaireJson';
 
-interface ApiResponse {
-  message: string;
-}
-
 function App(): JSX.Element {
-  const [apiStatus, setApiStatus] = useState<string>('Checking API status...');
+  const [apiStatus, setApiStatus] = useState<string>('');
   const [isApiConnected, setIsApiConnected] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -16,15 +12,8 @@ function App(): JSX.Element {
     fetch('/api/health')
       .then(response => {
         if (!response.ok) throw new Error('API health check failed');
-        return response.json();
-      })
-      .then((data) => {
         setIsApiConnected(true);
-        
-        // Now fetch the hello message
-        return fetch('/api/hello')
-          .then(response => response.json())
-          .then((data: ApiResponse) => setApiStatus(`${data.message} ✅`));
+        setApiStatus('');
       })
       .catch(error => {
         console.error('Error fetching API:', error);
@@ -42,11 +31,9 @@ function App(): JSX.Element {
           <div className={`api-status ${isApiConnected === false ? 'offline' : ''}`}>
             {isApiConnected === null ? (
               <span className="loading">Connecting to API...</span>
-            ) : isApiConnected === true ? (
-              <span className="online">{apiStatus}</span>
-            ) : (
+            ) : isApiConnected === false ? (
               <span className="offline">{apiStatus}</span>
-            )}
+            ) : null}
           </div>
         </header>
         
