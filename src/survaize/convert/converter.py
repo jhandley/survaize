@@ -39,7 +39,8 @@ class QuestionnaireConverter:
         reader = self.reader_factory.get(input_format_str)
 
         logger.info(f"Reading questionnaire: {input_file}")
-        questionnaire = reader.read(input_file)
+        with open(input_file, "rb") as f:
+            questionnaire = reader.read(f)
 
         writer = self.writer_factory.get(output_format)
 

@@ -2,6 +2,7 @@
 
 import logging
 from pathlib import Path
+from typing import IO
 
 import cv2
 import numpy as np
@@ -28,35 +29,40 @@ class PDFReader:
         """
         self.interpreter: AIQuestionnaireInterpreter = interpreter
 
-    def read(self, file_path: Path) -> Questionnaire:
+    def read(self, file: IO[bytes]) -> Questionnaire:
         """Read a PDF document and extract its content.
 
         Args:
-            file_path: Path to the PDF file
+            file: File-like object containing the PDF
 
         Returns:
             A Questionnaire containing the extracted content
         """
 
-        pages = self._extract_pages(file_path)
+        pages = self._extract_pages(file)
 
         texts = [self._process_page(page) for page in pages]
 
-        scanned_questionnaire = ScannedQuestionnaire(pages=pages, extracted_text=texts, source_path=file_path)
+        scanned_questionnaire = ScannedQuestionnaire(
+            pages=pages,
+            extracted_text=texts,
+            source_path=Path("<in-memory>"),
+        )
 
         return self.interpreter.interpret(scanned_questionnaire)
 
-    def _extract_pages(self, pdf_path: Path) -> list[Image.Image]:
+    def _extract_pages(self, pdf_file: IO[bytes]) -> list[Image.Image]:
         """Convert PDF pages to images.
 
         Args:
-            pdf_path: Path to the PDF file
+            pdf_file: File-like object containing the PDF
 
         Returns:
             list of PIL Image objects, one per page
         """
-        logger.info(f"Converting PDF to images: {pdf_path}")
-        return pdf2image.convert_from_path(pdf_path)  # type: ignore
+        logger.info("Converting PDF to images from bytes")
+        pdf_file.seek(0)
+        return pdf2image.convert_from_bytes(pdf_file.read())  # type: ignore
 
     def _process_page(self, image: Image.Image) -> str:
         """Process a single page image with OCR.
