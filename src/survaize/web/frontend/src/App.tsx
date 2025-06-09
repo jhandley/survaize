@@ -18,7 +18,7 @@ function App(): JSX.Element {
       .catch(error => {
         console.error('Error fetching API:', error);
         setIsApiConnected(false);
-        setApiStatus('⚠️ API connection failed - working in offline mode');
+        setApiStatus('⚠️ API connection failed');
       });
   }, []);
 
