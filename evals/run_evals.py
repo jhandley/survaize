@@ -15,7 +15,8 @@ async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
 
     interpreter = AIQuestionnaireInterpreter(llm_config=config)
     pdf_reader = PDFReader(interpreter)
-    questionnaire = pdf_reader.read(pdf_path)
+    with open(pdf_path, "rb") as f:
+        questionnaire = pdf_reader.read(f)
     return questionnaire
 
 

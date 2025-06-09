@@ -22,7 +22,8 @@ def _create_case(
     metadata: CaseMetadata,
 ) -> Case[Path, Questionnaire, CaseMetadata]:
 
-    ground_truth_json = JSONReader().read(ground_truth_json_path)
+    with open(ground_truth_json_path, "rb") as f:
+        ground_truth_json = JSONReader().read(f)
     return Case(
         name=name,
         inputs=input_path,

@@ -1,5 +1,4 @@
-from pathlib import Path
-from typing import Protocol
+from typing import IO, Protocol
 
 from survaize.model.questionnaire import Questionnaire
 
@@ -7,11 +6,11 @@ from survaize.model.questionnaire import Questionnaire
 class Reader(Protocol):
     """Protocol defining the interface for questionnaire readers."""
 
-    def read(self, file_path: Path) -> Questionnaire:
+    def read(self, file: IO[bytes]) -> Questionnaire:
         """Read a document and extract its content.
 
         Args:
-            file_path: Path to the document file
+            file: File-like object positioned at the beginning of the document
 
         Returns:
             A Questionnaire containing the extracted content

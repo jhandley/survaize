@@ -17,7 +17,8 @@ def test_cspro_writer_generates_expected_files(tmp_path: Path) -> None:
     """CSProWriter.write should generate files matching the cspro fixtures."""
     # Read questionnaire from JSON fixture
     reader = JSONReader()
-    questionnaire = reader.read(json_fixture_file)
+    with open(json_fixture_file, "rb") as f:
+        questionnaire = reader.read(f)
 
     # Prepare output path
     output_file = tmp_path / f"{questionnaire.title}.cspro"

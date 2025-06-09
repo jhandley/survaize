@@ -1,5 +1,4 @@
 import logging
-import os
 import shutil
 import tempfile
 from pathlib import Path
@@ -68,26 +67,16 @@ async def read_questionnaire(
     Returns:
         The questionnaire from the file
     """
-    temp_path: Path | None = None
     try:
-        # TODO: support reader from byte stream directly to avoid temp files
-        with tempfile.NamedTemporaryFile(delete=False, suffix=format) as temp_file:
-            temp_file.write(await file.read())
-            temp_path = Path(temp_file.name)
-
         reader = reader_factory.get(format)
 
-        # Read the questionnaire
-        questionnaire = reader.read(temp_path)
+        file.file.seek(0)
+        questionnaire = reader.read(file.file)
         return QuestionnaireResponse(questionnaire=questionnaire)
     except Exception as e:
         # TODO: More fine-grained error handling (consistent exceptions from readers)
         logger.error(f"Error reading questionnaire: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error reading questionnaire: {str(e)}") from e
-    finally:
-        # Clean up the temporary file
-        if temp_path and temp_path.exists():
-            os.unlink(temp_path)
 
 
 @router.post("/questionnaire/save/{format}")
