@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   QuestionnaireProvider,
   OpenQuestionnaire,
@@ -10,6 +10,7 @@ const App: React.FC = () => {
   const [apiStatus, setApiStatus] = useState<string>("");
   const [isApiConnected, setIsApiConnected] = useState<boolean | null>(null);
   const [showRaw, setShowRaw] = useState<boolean>(false);
+  const mainContentRef = useRef<HTMLDivElement>(null);
 
   const toggleShowRaw = (): void => {
     setShowRaw((prev) => !prev);
@@ -63,8 +64,11 @@ const App: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="main-content">
-          <QuestionnaireDisplay showRaw={showRaw} />
+        <div className="main-content" ref={mainContentRef}>
+          <QuestionnaireDisplay
+            showRaw={showRaw}
+            containerRef={mainContentRef}
+          />
         </div>
       </div>
     </QuestionnaireProvider>
