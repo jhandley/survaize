@@ -78,30 +78,6 @@ export const QuestionnaireDisplay: React.FC<QuestionnaireDisplayProps> = ({
     return startCompletion(target);
   };
 
-  if (isLoading) {
-    return (
-      <div className="questionnaire-loading">
-        <RobotReadingAnimation />
-        <p>
-          {loadMessage} ({Math.round(loadProgress)}%)
-        </p>
-        <div className="progress-bar-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${loadProgress}%` }}
-          ></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!questionnaire) {
-    return (
-      <div className="questionnaire-placeholder">
-        <p>No questionnaire loaded. Please open a questionnaire file.</p>
-      </div>
-    );
-  }
   const handleChange = (value: string): void => {
     try {
       const parsed = JSON.parse(value);
@@ -196,6 +172,31 @@ export const QuestionnaireDisplay: React.FC<QuestionnaireDisplayProps> = ({
       scrollFriendlyToQuestion(id);
     }
   }, [showRaw]);
+
+  if (isLoading) {
+    return (
+      <div className="questionnaire-loading">
+        <RobotReadingAnimation />
+        <p>
+          {loadMessage} ({Math.round(loadProgress)}%)
+        </p>
+        <div className="progress-bar-container">
+          <div
+            className="progress-bar"
+            style={{ width: `${loadProgress}%` }}
+          ></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!questionnaire) {
+    return (
+      <div className="questionnaire-placeholder">
+        <p>No questionnaire loaded. Please open a questionnaire file.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="questionnaire-display">
