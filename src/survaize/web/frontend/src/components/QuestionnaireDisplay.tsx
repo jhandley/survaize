@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import CodeMirror, {
   drawSelection,
   gutter,
@@ -45,7 +45,6 @@ export const QuestionnaireDisplay: React.FC<QuestionnaireDisplayProps> = ({
 
   const editorRef = useRef<EditorView | null>(null);
   const questionLineMap = useRef<Array<{ line: number; id: string }>>([]);
-  const prevShowRawRef = useRef(showRaw);
   const scrollQuestionRef = useRef<string | null>(null);
 
   const {
@@ -151,17 +150,16 @@ export const QuestionnaireDisplay: React.FC<QuestionnaireDisplayProps> = ({
   };
 
   useEffect(() => {
-    if (prevShowRawRef.current !== showRaw) {
-      if (prevShowRawRef.current) {
+    return () => {
+      if (showRaw) {
         scrollQuestionRef.current = getTopQuestionFromRaw();
       } else {
         scrollQuestionRef.current = getTopQuestionFromFriendly();
       }
-      prevShowRawRef.current = showRaw;
-    }
+    };
   }, [showRaw]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const id = scrollQuestionRef.current;
     if (!id) {
       return;
