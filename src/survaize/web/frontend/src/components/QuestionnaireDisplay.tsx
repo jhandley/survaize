@@ -149,7 +149,7 @@ export const QuestionnaireDisplay: React.FC<QuestionnaireDisplayProps> = ({
     view.scrollDOM.scrollTop = block.top;
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     return () => {
       if (showRaw) {
         scrollQuestionRef.current = getTopQuestionFromRaw();
