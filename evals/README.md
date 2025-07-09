@@ -32,6 +32,8 @@ The script prints a table with one row per case and an "Averages" row at the bot
   - `question_presence` (detecting question entries)
   - `question_type` (correct question types)
   - `option_extraction` (extracting choice options)
+  - `question_text` (correct question text)
+  - `question_section_grouping` (correct grouping of questions by section)
 - **Duration**: Time taken to process each case.
 
 **Metric definitions:**
@@ -99,11 +101,13 @@ Balanced trade-off—only high when both precision and recall are high.
 ## What is evaluated
 
 1. All sections and questions are present ✅
-2. Question types match expected types ✅
-3. Single/multi-select options are correctly extracted ✅
-4. Numeric sizes are correctly extracted 🔲
-5. Repeating sections are captured correctly 🔲
-6. Question ids, instructions and section descriptions are reasonable (LLM judge) 🔲
-7. Universe is reasonable (LLM judge) 🔲
-8. ID fields are correct 🔲
-9. Question ids are good (LLM judge) 🔲
+2. Question texts are correct ✅
+3. Question types match expected types ✅
+4. Single/multi-select options are correctly extracted ✅
+5. Questions are grouped by section correctly ✅
+6. Numeric sizes are correctly extracted 🔲
+7. Repeating sections are captured correctly 🔲
+8. Question ids, instructions and section descriptions are reasonable (LLM judge) 🔲
+9. Universe is reasonable (LLM judge) 🔲
+10. ID fields are correct 🔲
+11. Question ids are good (LLM judge) 🔲

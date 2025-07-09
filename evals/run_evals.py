@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import logfire
 from dotenv import load_dotenv
 
 from evals.datasets.pdf_to_questionnaire_dataset import load_dataset
@@ -10,6 +11,13 @@ from survaize.reader.pdf_reader import PDFReader
 
 load_dotenv()
 config = create_llm_config_from_env()
+
+logfire.configure(
+    send_to_logfire='if-token-present',  
+    environment='development',  
+    service_name='evals',  
+)
+logfire.instrument_openai()
 
 async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
 
