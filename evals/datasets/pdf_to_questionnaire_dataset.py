@@ -7,6 +7,8 @@ from evals.datasets.case_metadata import CaseMetadata
 from evals.evaluators.questionnaire_evaluators import (
     OptionExtractionEvaluator,
     QuestionPresenceEvaluator,
+    QuestionSectionGroupingEvaluator,
+    QuestionTextEvaluator,
     QuestionTypeEvaluator,
     SectionPresenceEvaluator,
 )
@@ -59,5 +61,7 @@ def load_dataset() -> Dataset[Path, Questionnaire, CaseMetadata]:
         evaluators=[SectionPresenceEvaluator(),
         QuestionPresenceEvaluator(),
         QuestionTypeEvaluator(),
+        QuestionTextEvaluator(),
+        QuestionSectionGroupingEvaluator(),
         OptionExtractionEvaluator(),
         ])
