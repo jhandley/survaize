@@ -89,3 +89,8 @@ MIT
 - Fills in CAPI question text
 - Evals (in progress)
 - Questionnaire edits in the UI
+- Combo box questions (single select with DK options)
+- Other (specify) and other write-ins on single/multi-select
+- Matrix/table questions
+- Don't know on date/location questions
+- Partial date questions (e.g. month/year)

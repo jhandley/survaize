@@ -41,8 +41,8 @@ class DictionaryItem(BaseModel):
     name: str
     labels: list[DictionaryLabel]
     contentType: Literal["numeric", "alpha"]
-    length: int
     start: int | None = None
+    length: int
     zeroFill: bool | None = None
     valueSets: list[DictionaryValueSet] | None = None
 

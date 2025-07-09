@@ -119,10 +119,14 @@ class CSProWriter:
         id_items: list[DictionaryItem] = []
 
         # First pass: Find all ID questions and organize them by section
+        current_start = 2  # Start at position 2 to make room for record type
         for section in questionnaire.sections:
             for question in section.questions:
                 if question.id in id_question_ids:
                     id_item = self._question_to_dictionary_item(question)
+                    # Set the start position for ID items
+                    id_item.start = current_start
+                    current_start += id_item.length  # Next item starts after this one
                     dict_item_to_question[id_item.name] = question
                     id_items.append(id_item)
 

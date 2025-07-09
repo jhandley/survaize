@@ -36,6 +36,7 @@
               }
             ],
             "contentType": "numeric",
+            "start": 2,
             "length": 1,
             "zeroFill": true
           },
@@ -47,6 +48,7 @@
               }
             ],
             "contentType": "numeric",
+            "start": 3,
             "length": 2,
             "zeroFill": true
           },
@@ -58,6 +60,7 @@
               }
             ],
             "contentType": "numeric",
+            "start": 5,
             "length": 3,
             "zeroFill": true
           },
@@ -69,6 +72,7 @@
               }
             ],
             "contentType": "numeric",
+            "start": 8,
             "length": 3,
             "zeroFill": true
           }
