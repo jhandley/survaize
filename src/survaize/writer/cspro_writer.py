@@ -76,6 +76,7 @@ class CSProWriter:
         qsf_file.save(app_dir / f"{app_file_name}.ent.qsf")
         self._generate_application_file(questionnaire, app_dir / f"{app_file_name}.ent")
         self._generate_message_file(questionnaire, app_dir / f"{app_file_name}.ent.mgf")
+        self._generate_pff_file(questionnaire, app_dir / f"{app_file_name}.pff")
 
         logger.info("CSPro application generated successfully")
 
@@ -775,6 +776,28 @@ class CSProWriter:
         with open(output_path, "w") as f:
             f.write("[CSPro Messages]\n")
             # Real implementation would include validation messages
+
+    def _generate_pff_file(self, questionnaire: Questionnaire, output_path: Path) -> None:
+        """Generate the CSPro program information (.pff) file.
+
+        Args:
+            questionnaire: The questionnaire data
+            output_path: Path to save the generated file
+        """
+        logger.info(f"Generating program information file: {output_path}")
+        app_name = self._make_file_name(questionnaire.title)
+
+        contents = (
+            "[Run Information]\n"
+            "Version=CSPro 8.0\n"
+            "AppType=Entry\n\n"
+            "[Files]\n"
+            f"Application=.\\{app_name}.ent\n"
+            f"InputData=.\\{app_name}.csdb\n"
+        )
+
+        with open(output_path, "w") as f:
+            f.write(contents)
 
     def _replace_suffix(self, string: str, old_suffix: str, new_suffix: str) -> str:
         """Replace the end of a string if it matches old_suffix with new_suffix."""
