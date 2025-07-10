@@ -21,7 +21,7 @@ logfire.instrument_openai()
 
 async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
 
-    interpreter = AIQuestionnaireInterpreter(llm_config=config)
+    interpreter = AIQuestionnaireInterpreter(llm_config=config, sleep_between_pages_seconds=10)
     pdf_reader = PDFReader(interpreter)
     with open(pdf_path, "rb") as f:
         questionnaire = pdf_reader.read(f)
@@ -32,7 +32,7 @@ def run_evals():
 
     dataset = load_dataset()
 
-    report = dataset.evaluate_sync(task=convert_questionnaire)
+    report = dataset.evaluate_sync(task=convert_questionnaire, max_concurrency=1)
     print(report)
 
 

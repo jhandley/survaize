@@ -1,0 +1,3427 @@
+{
+  "title": "General Population and Housing Census 16-30 August 2022",
+  "description": "The objective of the general population census is to have the full enumeration of all Rwandan residents as well as their key characteristics; for the planning of the well-being of Rwandan residents. The interview will last about 30 minutes. All provided answers will be kept confidential.",
+  "id_fields": [
+    "province",
+    "district",
+    "sector",
+    "cell",
+    "village",
+    "enumeration_area",
+    "building_number",
+    "household_number",
+    "foot_print_number"
+  ],
+  "sections": [
+    {
+      "id": "localisation_and_identification_of_household",
+      "number": "ML",
+      "title": "Localisation and Identification of Household",
+      "questions": [
+        {
+          "number": "ML01",
+          "id": "province",
+          "text": "PROVINCE/KIGALI CITY",
+          "type": "text",
+          "max_length": 1
+        },
+        {
+          "number": "ML02",
+          "id": "district",
+          "text": "DISTRICT",
+          "type": "text",
+          "max_length": 2
+        },
+        {
+          "number": "ML03",
+          "id": "sector",
+          "text": "SECTOR",
+          "type": "text",
+          "max_length": 2
+        },
+        {
+          "number": "ML04",
+          "id": "cell",
+          "text": "CELL",
+          "type": "text",
+          "max_length": 2
+        },
+        {
+          "number": "ML05",
+          "id": "village",
+          "text": "VILLAGE",
+          "type": "text",
+          "max_length": 2
+        },
+        {
+          "number": "ML06",
+          "id": "enumeration_area",
+          "text": "ENUMERATION AREA (NO EA)",
+          "type": "text",
+          "max_length": 2
+        },
+        {
+          "number": "ML07",
+          "id": "area_of_residence",
+          "text": "AREA OF RESIDENCE",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Urban"
+            },
+            {
+              "code": "2",
+              "label": "Rural"
+            }
+          ]
+        },
+        {
+          "number": "ML08",
+          "id": "building_number",
+          "text": "BUILDING NUMBER",
+          "type": "text",
+          "max_length": 3
+        },
+        {
+          "number": "ML09",
+          "id": "household_number",
+          "text": "HOUSEHOLD NUMBER",
+          "type": "text",
+          "max_length": 3
+        },
+        {
+          "number": "ML10",
+          "id": "foot_print_number",
+          "text": "FOOT PRINT NUMBER (as it is shown on the map)",
+          "type": "text",
+          "max_length": 3
+        },
+        {
+          "number": "ML11",
+          "id": "gps_coordinates",
+          "text": "GPS COORDINATES",
+          "type": "location"
+        },
+        {
+          "number": "ML12",
+          "id": "distance",
+          "text": "DISTANCE",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 999
+        },
+        {
+          "number": "ML13",
+          "id": "household_type",
+          "text": "HOUSEHOLD TYPE",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Private HH"
+            },
+            {
+              "code": "2",
+              "label": "Institutional HH"
+            }
+          ]
+        },
+        {
+          "number": "ML14",
+          "id": "consent",
+          "text": "My names is ………………, I work for the National Institute of Statistics of Rwanda as the enumerator of the General Population and housing census. The objective of the general population census is to have the full enumeration of all Rwandan residents as well as their key characteristics; for the planning of the well-being of Rwandan residents. I wish to talk with the head of the household. In general, the interview will last 30 min. All provided answers will be kept confidential. I hope that you accept the interview, as your responses are very important for the country.",
+          "instructions": "If interview accepted, proceed to PO1A (Start by making a list of HH members).",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Interview accepted"
+            },
+            {
+              "code": "2",
+              "label": "Interview is not done"
+            }
+          ]
+        },
+        {
+          "number": "ML15",
+          "id": "reason_no_interview",
+          "text": "THE REASON OF NO INTERVIEW",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Uninhabited dwelling"
+            },
+            {
+              "code": "2",
+              "label": "Dwelling turned into business building"
+            },
+            {
+              "code": "3",
+              "label": "Dwelling destroyed"
+            },
+            {
+              "code": "4",
+              "label": "Refused"
+            },
+            {
+              "code": "5",
+              "label": "All residents are absent during the whole period of enumeration"
+            },
+            {
+              "code": "6",
+              "label": "The house is still inhabited by some members of HH"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "household_schedule",
+      "number": "HS",
+      "title": "HOUSEHOLD SCHEDULE (List of household members and visitors)",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "HS01",
+          "id": "household_members_and_visitors_list",
+          "text": "Write the names of all resident household members who were present or absent in the reference census night (15-16/08/2022), and then all visitors who spent the census night within the household (if any).",
+          "instructions": "Enter names in the following order: 1. Household head, 2. Spouse, 3. Household head son or daughter, 4. Household adoptive child, 5. Father/Mother, 6. Father-in-law/Mother-in-law, 7. Brother-in-law/Sister-in-law, 8. Brother/Sister, 9. Grand Child, 10. Son/Daughter-in-law, 11. Other relative, 12. House help, 13. Non-relative, 14. Unknown relationship to household head. Please record visitors after recording resident members.",
+          "type": "text"
+        }
+      ],
+      "occurrences": 20
+    },
+    {
+      "id": "characteristics_of_the_population",
+      "number": "P",
+      "title": "Characteristics of the Population",
+      "universe": "All members of the household (Individuals listed on the household roster)",
+      "questions": [
+        {
+          "number": "P01A",
+          "id": "serial_number",
+          "text": "Serial Number of the person",
+          "type": "numeric",
+          "min_value": 1,
+          "max_value": 99
+        },
+        {
+          "number": "P01B",
+          "id": "surname",
+          "text": "Surname of the person",
+          "type": "text"
+        },
+        {
+          "number": "P01C",
+          "id": "other_names",
+          "text": "Other names of the person",
+          "type": "text"
+        },
+        {
+          "number": "P02",
+          "id": "relationship_to_head",
+          "text": "What is [NAME]'s relationship to the Head of Household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Household head"
+            },
+            {
+              "code": "02",
+              "label": "Spouse"
+            },
+            {
+              "code": "03",
+              "label": "Son or daughter"
+            },
+            {
+              "code": "04",
+              "label": "Adoptive child"
+            },
+            {
+              "code": "05",
+              "label": "Father/Mother"
+            },
+            {
+              "code": "06",
+              "label": "Father-in-law/Mother-in-law"
+            },
+            {
+              "code": "07",
+              "label": "Brother-in-law/Sister-in-law"
+            },
+            {
+              "code": "08",
+              "label": "Brother/Sister"
+            },
+            {
+              "code": "09",
+              "label": "Grand Child"
+            },
+            {
+              "code": "10",
+              "label": "Son/Daughter-in-law"
+            },
+            {
+              "code": "11",
+              "label": "Other relative"
+            },
+            {
+              "code": "12",
+              "label": "House help"
+            },
+            {
+              "code": "13",
+              "label": "Non-relative"
+            },
+            {
+              "code": "14",
+              "label": "Unknown relationship"
+            }
+          ]
+        },
+        {
+          "number": "P03",
+          "id": "sex",
+          "text": "What is [NAME]'s Sex?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Male"
+            },
+            {
+              "code": "2",
+              "label": "Female"
+            }
+          ]
+        },
+        {
+          "number": "P04",
+          "id": "age_last_birthday",
+          "text": "How old was [NAME] at his/her Last Birthday?",
+          "instructions": "NOTE: RECORD AGE IN COMPLETED YEARS",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 120
+        },
+        {
+          "number": "P05A",
+          "id": "month_of_birth",
+          "text": "In which month was [NAME] born?",
+          "type": "numeric",
+          "min_value": 1,
+          "max_value": 12
+        },
+        {
+          "number": "P05B",
+          "id": "year_of_birth",
+          "text": "In which year was [NAME] born?",
+          "instructions": "NOTE: RECORD 9999, IF THE YEAR IS UNKNOWN",
+          "type": "numeric",
+          "min_value": 1900,
+          "max_value": 9999
+        },
+        {
+          "number": "P06",
+          "id": "marital_status",
+          "text": "What is [NAME]'s marital status?",
+          "universe": "All persons aged 12 years and above",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Married to one wife/husband officially"
+            },
+            {
+              "code": "2",
+              "label": "Married to one wife/husband not officially"
+            },
+            {
+              "code": "3",
+              "label": "Live in a polygamous union"
+            },
+            {
+              "code": "4",
+              "label": "Divorced"
+            },
+            {
+              "code": "5",
+              "label": "Separated"
+            },
+            {
+              "code": "6",
+              "label": "Never married"
+            },
+            {
+              "code": "7",
+              "label": "Widowed"
+            }
+          ]
+        },
+        {
+          "number": "P07A",
+          "id": "resident_status",
+          "text": "Is [NAME] usual resident or was a visitor on census night?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Usual resident"
+            },
+            {
+              "code": "2",
+              "label": "Visitor"
+            }
+          ]
+        },
+        {
+          "number": "P07B",
+          "id": "slept_in_household",
+          "text": "Did [NAME] sleep in this household on census night?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes, slept in this HH (PR)"
+            },
+            {
+              "code": "2",
+              "label": "No, did not sleep in this HH (AR)"
+            }
+          ]
+        },
+        {
+          "number": "P08A",
+          "id": "number_of_spouses",
+          "text": "How many spouses does [NAME] have?",
+          "instructions": "IF THE NUMBER OF SPOUSES IS 8 OR ABOVE, WRITE 8. IF THE NUMBER OF SPOUSES IS UNKNOWN, WRITE 9.",
+          "universe": "All resident (P07A=1) aged 12 years and above. FOR MEN IN POLYGAMOUS UNION ONLY.",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9
+        },
+        {
+          "number": "P08B",
+          "id": "rank_to_husband",
+          "text": "What is the rank of [NAME] to His Husband?",
+          "instructions": "IF THE RANK IS 8 OR ABOVE, WRITE 8. IF THE RANK IS UNKNOWN, WRITE 9.",
+          "universe": "All resident (P07A=1) aged 12 years and above. FOR FEMALE IN POLYGAMOUS UNION ONLY.",
+          "type": "numeric",
+          "min_value": 0.0,
+          "max_value": 9.0
+        },
+        {
+          "number": "P08C",
+          "id": "age_at_first_marriage",
+          "text": "How old was [NAME] when he/she first got married or lived together with his/her partner (AGE AT FIRST MARRIAGE)?",
+          "instructions": "If the age at first marriage is not known, write 99",
+          "universe": "All persons aged 12+ with marital status codes 1,2,3,4,5,7 (see P06)",
+          "type": "numeric"
+        },
+        {
+          "number": "P09A",
+          "id": "born_in_rwanda_or_abroad",
+          "text": "Was [NAME] born in Rwanda or abroad?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "In Rwanda"
+            },
+            {
+              "code": "2",
+              "label": "Abroad"
+            }
+          ]
+        },
+        {
+          "number": "P09B",
+          "id": "district_of_birth",
+          "text": "In which District was [NAME] born?",
+          "instructions": "SELECT ONE DISTRICT FROM THE LIST OF ALL DISTRICTS",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P09C",
+          "id": "country_of_birth",
+          "text": "In which Country was [NAME] born?",
+          "instructions": "SELECT THE COUNTRY FROM WORLD COUNTRIES LIST",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P10A",
+          "id": "years_living_in_district",
+          "text": "How many years has [NAME] been living continuously in [District]?",
+          "instructions": "Record 000 if less than 1 year. Record 888 if the residence has not changed since birth. If the residence has not changed since birth =>P12A.",
+          "type": "numeric"
+        },
+        {
+          "number": "P10B",
+          "id": "prior_to_this_district_resided_rwanda_or_abroad",
+          "text": "Prior to coming to live in [district], was [NAME] residing in Rwanda or abroad?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "In Rwanda"
+            },
+            {
+              "code": "2",
+              "label": "Abroad"
+            }
+          ]
+        },
+        {
+          "number": "P11A",
+          "id": "district_resided_previously",
+          "text": "In which District was [NAME] residing previously?",
+          "instructions": "SELECT THE DISTRICT FROM THE LIST OF ALL DISTRICTS",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P11B",
+          "id": "country_resided_previously",
+          "text": "In which Country was [NAME] residing previously?",
+          "instructions": "Select the country among the world countries list",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P12A",
+          "id": "non_rwandan_nationality_member",
+          "text": "Is there any member of this household who does not have Rwandan Nationality?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes (Choose all non-Rwandans from the list of Household members)"
+            },
+            {
+              "code": "2",
+              "label": "No (Make all Rwandans)"
+            }
+          ]
+        },
+        {
+          "number": "P12B",
+          "id": "nationality",
+          "text": "What is [NAME]'s nationality?",
+          "instructions": "CHOOSE THE NATIONALITY FROM WORLD COUNTRIES LIST",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P13",
+          "id": "religious_affiliation",
+          "text": "What is [NAME]'s Religious affiliation?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Catholic"
+            },
+            {
+              "code": "02",
+              "label": "ADEPR"
+            },
+            {
+              "code": "03",
+              "label": "Protestant"
+            },
+            {
+              "code": "04",
+              "label": "Adventist"
+            },
+            {
+              "code": "05",
+              "label": "Other Christians"
+            },
+            {
+              "code": "06",
+              "label": "Muslim"
+            },
+            {
+              "code": "07",
+              "label": "Jehovah witness"
+            },
+            {
+              "code": "08",
+              "label": "Traditional/Animist"
+            },
+            {
+              "code": "09",
+              "label": "Other religion"
+            },
+            {
+              "code": "10",
+              "label": "No Religion"
+            },
+            {
+              "code": "11",
+              "label": "Not stated"
+            },
+            {
+              "code": "99",
+              "label": "Do not know"
+            }
+          ]
+        },
+        {
+          "number": "P14",
+          "id": "medical_insurance",
+          "text": "What is [NAME]'s Medical insurance?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Mutuelle"
+            },
+            {
+              "code": "2",
+              "label": "RSSB (former RAMA)"
+            },
+            {
+              "code": "3",
+              "label": "MMI"
+            },
+            {
+              "code": "4",
+              "label": "Schools"
+            },
+            {
+              "code": "5",
+              "label": "Employer"
+            },
+            {
+              "code": "6",
+              "label": "Private insurance companies"
+            },
+            {
+              "code": "7",
+              "label": "NGOs"
+            },
+            {
+              "code": "8",
+              "label": "None"
+            },
+            {
+              "code": "9",
+              "label": "Do not know"
+            }
+          ]
+        },
+        {
+          "number": "P15",
+          "id": "any_member_difficulty_seeing",
+          "text": "In this household, does any member have difficulty seeing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of the Household members has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P15A",
+          "id": "who_has_difficulty_seeing",
+          "text": "Who has difficulty seeing?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P15AA",
+          "id": "wears_glasses",
+          "text": "Does [NAME] wear glasses?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P15AB",
+          "id": "difficulty_seeing_with_glasses",
+          "text": "Does [NAME] continue to have difficulties even when wearing glasses?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P15B",
+          "id": "severity_of_seeing_difficulty",
+          "text": "Would you say [NAME] has Some difficulty seeing, a lot of difficulty or cannot do at all?",
+          "instructions": "0. No difficulty (To be filled by CAPI if P15AA==2 OR P15AB==2)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot see at all"
+            }
+          ]
+        },
+        {
+          "number": "P16",
+          "id": "any_member_difficulty_hearing",
+          "text": "In this household, does any member have difficulty hearing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P16A",
+          "id": "who_has_difficulty_hearing",
+          "text": "Who has difficulty hearing?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P16AA",
+          "id": "uses_hearing_aid",
+          "text": "Does [NAME] use hearing aid?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P16AB",
+          "id": "difficulty_with_hearing_aid",
+          "text": "Does [NAME] continue to have hearing difficulties even if using hearing aid?",
+          "instructions": "After the automatic fill in of modality 'No difficulty' by CAPI on P16B",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P16B",
+          "id": "severity_of_hearing_difficulty",
+          "text": "Would you say [NAME] has Some hearing difficulty, a lot of difficulty or cannot do at all?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot hear at all"
+            }
+          ]
+        },
+        {
+          "number": "P17",
+          "id": "any_member_difficulty_walking_climbing",
+          "text": "In this household, does any member have difficulty walking or climbing steps?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P17A",
+          "id": "who_has_difficulty_walking_climbing",
+          "text": "Who has difficulty walking or climbing steps?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P17B",
+          "id": "severity_of_walking_difficulty",
+          "text": "Would you say Some difficulty, a lot of difficulty or cannot do at all?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot walk or climbing steps at all"
+            }
+          ]
+        },
+        {
+          "number": "P18",
+          "id": "any_member_difficulty_communicating",
+          "text": "In this household, does any member have difficulty communicating, for example being understood by others?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P18A",
+          "id": "who_has_difficulty_communicating",
+          "text": "Who has difficulty communicating, for example being understood?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P18B",
+          "id": "severity_of_communicating_difficulty",
+          "text": "Would you say Some difficulty, a lot of difficulty or Cannot do at all?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot communicate at all"
+            }
+          ]
+        },
+        {
+          "number": "P19",
+          "id": "any_member_difficulty_remembering",
+          "text": "In this household, does any member have difficulty remembering or concentrating?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P19A",
+          "id": "who_has_difficulty_remembering",
+          "text": "Who has difficulty remembering or concentrating?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P19B",
+          "id": "severity_of_remembering_difficulty",
+          "text": "Would you say Some difficulty, a lot of difficulty or Cannot do at all?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot remember or concentrate at all"
+            }
+          ]
+        },
+        {
+          "number": "P20",
+          "id": "any_member_difficulty_self_care",
+          "text": "In this household, does any member have difficulty with self-care such as washing all over or dressing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P20A",
+          "id": "who_has_difficulty_self_care",
+          "text": "Who has difficulty with self-care such as washing all over or dressing?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P20B",
+          "id": "severity_of_self_care_difficulty",
+          "text": "Would you say Some difficulty, a lot of difficulty or cannot do at all?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "0",
+              "label": "No difficulty"
+            },
+            {
+              "code": "1",
+              "label": "Some difficulty"
+            },
+            {
+              "code": "2",
+              "label": "A lot of difficulty"
+            },
+            {
+              "code": "3",
+              "label": "Cannot do at all"
+            }
+          ]
+        },
+        {
+          "number": "P21",
+          "id": "any_member_short_stature",
+          "text": "In this household, does any member have short stature?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P21A",
+          "id": "who_has_short_stature",
+          "text": "Who has a problem of short stature?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P22",
+          "id": "any_member_albinism",
+          "text": "In this household, does any member have albinism?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "None of Household member has the difficulty"
+            }
+          ]
+        },
+        {
+          "number": "P22A",
+          "id": "who_has_albinism",
+          "text": "Who has a difficulty with albinism?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P23A",
+          "id": "biological_mother_alive",
+          "text": "Is [NAME]'s biological mother alive?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P23B",
+          "id": "biological_mother_in_household",
+          "text": "Does [NAME]'s biological mother live in this household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P23BB",
+          "id": "who_is_biological_mother",
+          "text": "Who is [NAME]'s biological mother?",
+          "instructions": "FROM THE LIST OF ALL FEMALES AGED [THE AGE OF CHILD +10] YRS OR ABOVE CHOOSE THE MOTHER",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P23C",
+          "id": "biological_father_alive",
+          "text": "Is [NAME]'s biological father alive?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P23D",
+          "id": "biological_father_in_household",
+          "text": "Does [NAME]'s biological father live in this household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P23DD",
+          "id": "who_is_biological_father",
+          "text": "Who is [NAME]'s biological father?",
+          "instructions": "FROM THE LIST OF ALL MALES AGED [THE AGE OF CHILD +15] YRS OR ABOVE CHOOSE THE FATHER",
+          "type": "single_select",
+          "options": []
+        },
+        {
+          "number": "P24",
+          "id": "birth_registered_civil",
+          "text": "Was [NAME]'s birth registered in the Civil Registration books?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P25",
+          "id": "official_identification_type",
+          "text": "What is the type of official identification document does [NAME] have?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Rwandan Identity Card"
+            },
+            {
+              "code": "02",
+              "label": "Foreign Identity Card"
+            },
+            {
+              "code": "03",
+              "label": "Rwandan Passport"
+            },
+            {
+              "code": "04",
+              "label": "Foreign Passport"
+            },
+            {
+              "code": "05",
+              "label": "Rwandan Nationality Certificate"
+            },
+            {
+              "code": "06",
+              "label": "Foreign Nationality Certificate"
+            },
+            {
+              "code": "07",
+              "label": "Refugee travel document"
+            },
+            {
+              "code": "08",
+              "label": "Proof of registration for refugees"
+            },
+            {
+              "code": "09",
+              "label": "Refugee ID"
+            },
+            {
+              "code": "10",
+              "label": "Rwanda Birth Certificate"
+            },
+            {
+              "code": "11",
+              "label": "Foreign Birth Certificate"
+            },
+            {
+              "code": "12",
+              "label": "Embassy/Consular issued Documents"
+            },
+            {
+              "code": "13",
+              "label": "No document"
+            },
+            {
+              "code": "14",
+              "label": "Other (specify)"
+            },
+            {
+              "code": "99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P25A",
+          "id": "why_no_identification",
+          "text": "Why does [NAME] not have any official identification document?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "In process looking for it"
+            },
+            {
+              "code": "2",
+              "label": "The request got rejected"
+            },
+            {
+              "code": "3",
+              "label": "Under required age"
+            },
+            {
+              "code": "4",
+              "label": "Personal reasons"
+            },
+            {
+              "code": "5",
+              "label": "Other reason(specify)"
+            },
+            {
+              "code": "9",
+              "label": "Do not know"
+            }
+          ]
+        },
+        {
+          "number": "P26",
+          "id": "parents_nationality",
+          "text": "What is the Nationality of [NAME]'s Parents?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Both are Rwandan"
+            },
+            {
+              "code": "2",
+              "label": "One is Rwandan"
+            },
+            {
+              "code": "3",
+              "label": "Both are non-Rwandan"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P27",
+          "id": "parents_still_alive",
+          "text": "Are [NAME]'s Parents still alive?",
+          "universe": "For resident aged 18 years old or more",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes Both"
+            },
+            {
+              "code": "2",
+              "label": "Yes, one of them"
+            },
+            {
+              "code": "3",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P28",
+          "id": "parents_legal_residence_rwanda",
+          "text": "Do parents of [NAME] have or had legal residence in Rwanda?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes, both"
+            },
+            {
+              "code": "2",
+              "label": "Yes, one of them"
+            },
+            {
+              "code": "3",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P29",
+          "id": "attended_or_attending_school",
+          "text": "Has [NAME] previously attended or is currently attending school/ECD?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Has previously attended"
+            },
+            {
+              "code": "2",
+              "label": "Is currently attending"
+            },
+            {
+              "code": "3",
+              "label": "Has never attended"
+            }
+          ]
+        },
+        {
+          "number": "P30A",
+          "id": "highest_level_of_education_attended",
+          "text": "What is the highest level of education did [NAME] attend or is currently attending?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "ECD"
+            },
+            {
+              "code": "2",
+              "label": "Nursery"
+            },
+            {
+              "code": "3",
+              "label": "Primary"
+            },
+            {
+              "code": "4",
+              "label": "INGOBOKA / Vocational training"
+            },
+            {
+              "code": "5",
+              "label": "Lower secondary"
+            },
+            {
+              "code": "6",
+              "label": "Upper secondary"
+            },
+            {
+              "code": "7",
+              "label": "Tertiary"
+            }
+          ]
+        },
+        {
+          "number": "P30B",
+          "id": "completed_years_at_level",
+          "text": "How many years of school did [NAME] complete successfully at that level?",
+          "instructions": "WRITE 99 IF THE NUMBER OF COMPLETED YEAR IS UNKNOWN",
+          "type": "numeric"
+        },
+        {
+          "number": "P31",
+          "id": "highest_certificate_degree_obtained",
+          "text": "What is the highest certificate/degree [NAME] obtained?",
+          "instructions": "This question is asked if P30A is 3,4,5,6,7",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Primary school certificate"
+            },
+            {
+              "code": "2",
+              "label": "Post primary certificate (CE/FM/TVET I/TVET II)"
+            },
+            {
+              "code": "3",
+              "label": "EMA/ENTA"
+            },
+            {
+              "code": "4",
+              "label": "O' level Certificate"
+            },
+            {
+              "code": "5",
+              "label": "A3/D4/D5"
+            },
+            {
+              "code": "6",
+              "label": "A2/D6/D7"
+            },
+            {
+              "code": "7",
+              "label": "TVET certificate III"
+            },
+            {
+              "code": "8",
+              "label": "TVET certificate IV"
+            },
+            {
+              "code": "9",
+              "label": "TVET certificate V"
+            },
+            {
+              "code": "10",
+              "label": "TVET advanced diploma (A1)"
+            },
+            {
+              "code": "11",
+              "label": "Diploma (A1): D6+2-3yrs"
+            },
+            {
+              "code": "12",
+              "label": "Bachelor (A0): D6+3-6yrs"
+            },
+            {
+              "code": "13",
+              "label": "Post Graduate Diploma"
+            },
+            {
+              "code": "14",
+              "label": "Masters: Bachelor+1-2yrs"
+            },
+            {
+              "code": "15",
+              "label": "Doctorate (PhD)"
+            },
+            {
+              "code": "16",
+              "label": "None"
+            },
+            {
+              "code": "99",
+              "label": "Do not know"
+            }
+          ]
+        },
+        {
+          "number": "P32",
+          "id": "languages_read_write_understand",
+          "text": "Can [NAME] read, write and understand the following languages? (More than one language is allowed. Read modalities starting by Kinyarwanda.)",
+          "universe": "Persons aged 10 years old and above",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Kinyarwanda"
+            },
+            {
+              "code": "2",
+              "label": "English"
+            },
+            {
+              "code": "4",
+              "label": "French"
+            },
+            {
+              "code": "8",
+              "label": "Swahili"
+            },
+            {
+              "code": "16",
+              "label": "Other"
+            },
+            {
+              "code": "0",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "number": "P33",
+          "id": "ever_attended_informal_adult_literacy",
+          "text": "Has [NAME] ever attended or currently attending informal adult literacy program?",
+          "instructions": "Reserved for those who answered P29=3 or P30A<4 and P30B<4",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes, still attending"
+            },
+            {
+              "code": "2",
+              "label": "Yes, completed"
+            },
+            {
+              "code": "3",
+              "label": "Never attended"
+            }
+          ]
+        },
+        {
+          "number": "P34",
+          "id": "used_internet_last_12_months",
+          "text": "Did [NAME] use internet in the last 12 months?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P35",
+          "id": "where_internet_accessed",
+          "text": "Where does [NAME] often access Internet?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "From Home"
+            },
+            {
+              "code": "2",
+              "label": "From work place"
+            },
+            {
+              "code": "3",
+              "label": "From School/Place of Education"
+            },
+            {
+              "code": "4",
+              "label": "From Another Person's home"
+            },
+            {
+              "code": "5",
+              "label": "From Community Internet access facility"
+            },
+            {
+              "code": "6",
+              "label": "From cyber café/From Commercial Internet Access facility"
+            },
+            {
+              "code": "7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "P36A",
+          "id": "member_owns_mobile_phone",
+          "text": "Does any member of this household own the mobile phone?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P36B",
+          "id": "who_owns_mobile_phone",
+          "text": "Who own the mobile phone among members of the household?",
+          "instructions": "CHOOSE FROM THE LIST OF HOUSEHOLD MEMBERS",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "number": "P36C",
+          "id": "type_of_mobile_phone",
+          "text": "What type of mobile phone does [NAME] have?",
+          "instructions": "If one has both type, choose Smart Phone",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Smart phone"
+            },
+            {
+              "code": "2",
+              "label": "Ordinary phone with radio"
+            },
+            {
+              "code": "3",
+              "label": "Ordinary phone without radio"
+            }
+          ]
+        },
+        {
+          "number": "P37",
+          "id": "work_last_7_days",
+          "text": "During the last 7 days, did [NAME] do at least one of the following even if only for one hour?\n- Work for wage or salary, commission or tips\n- Work for pay in kind\n- Work in own business\n- Helped unpaid in a family business or a job of a family member\n- Farming for pay in cash or in kind\n- Self-employed in farming/fishing/forestry mainly for market\n- As paid internees",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P38",
+          "id": "had_paid_job_or_business_absent_last_7_days",
+          "text": "During the last 7 days, did [NAME] have a paid job or a business from which he/she was temporarily absent and for which he/she expects to return?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P39",
+          "id": "reason_absent_work_last_7_days",
+          "text": "What was the main reason for which [NAME] was absent from work during the last 7 days?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Sick leave due to own illness or injury"
+            },
+            {
+              "code": "2",
+              "label": "Annual leave/maternity leave"
+            },
+            {
+              "code": "3",
+              "label": "Seasonal worker"
+            },
+            {
+              "code": "4",
+              "label": "Business closed due to COVID-19"
+            },
+            {
+              "code": "5",
+              "label": "Self or family in Quarantine"
+            },
+            {
+              "code": "6",
+              "label": "Laid off because of COVID-19 while business continued"
+            },
+            {
+              "code": "7",
+              "label": "Not able to go to work due to COVID-19 movement restrictions"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "P40",
+          "id": "continue_income_during_absence",
+          "text": "Does [NAME] continue receiving an income from his/her job during absence?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P41",
+          "id": "planning_short_term_work",
+          "text": "Was [NAME] planning to go to work for a period less than 3 months?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "P42",
+          "id": "own_farming_last_4_weeks",
+          "text": "During the last four weeks did [NAME] work in farming, fishing or hunting mainly for own consumption?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P43",
+          "id": "looked_for_paid_job_last_4_weeks",
+          "text": "During the last four weeks did [NAME] look for a paid job or tried to start a profit job?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P44",
+          "id": "found_job_or_planning_start_own_business",
+          "text": "In the last 4 weeks, did [NAME] find a profit job or was planning to start his/her own business?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P45",
+          "id": "able_to_start_job_next_7_days",
+          "text": "If a paid job or business opportunity become available, could [NAME] have started work during the last 7 days or within the next two weeks?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P46",
+          "id": "institutional_sector_of_employment",
+          "text": "What is [NAME]'s institutional sector of employment?",
+          "instructions": "READ ANSWERS FOR RESPONDENT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Public institution/enterprise"
+            },
+            {
+              "code": "2",
+              "label": "Mixed public and private enterprise"
+            },
+            {
+              "code": "3",
+              "label": "Private in non-agriculture activities"
+            },
+            {
+              "code": "4",
+              "label": "Private in agriculture activities"
+            },
+            {
+              "code": "5",
+              "label": "VUP"
+            },
+            {
+              "code": "6",
+              "label": "International NGO/International organization"
+            },
+            {
+              "code": "7",
+              "label": "Local NGO/Religious organization"
+            },
+            {
+              "code": "8",
+              "label": "Cooperative"
+            },
+            {
+              "code": "9",
+              "label": "Household(Domestic workers)"
+            }
+          ]
+        },
+        {
+          "number": "P47",
+          "id": "main_product_service_or_activity_at_workplace",
+          "text": "What is the main product, service or activity of [NAME]'s place of work? (Explain):",
+          "type": "text"
+        },
+        {
+          "number": "P48",
+          "id": "main_occupation_last_7_days",
+          "text": "What was [NAME]'s main occupation (main duty) during the last 7 days?\nMain occupation:",
+          "instructions": "Example: Teacher in primary school, Vegetable seller, House help, Taxi Driver",
+          "type": "text"
+        },
+        {
+          "number": "P49",
+          "id": "job_status_in_employment",
+          "text": "In this job, is [NAME] working as…?\n(What is [NAME]'s status in employment?)",
+          "instructions": "READ ANSWERS FOR RESPONDENT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Employee"
+            },
+            {
+              "code": "2",
+              "label": "Paid apprentice/Internee"
+            },
+            {
+              "code": "3",
+              "label": "Employer (with regular employees)"
+            },
+            {
+              "code": "4",
+              "label": "Own account worker (without regular employees)"
+            },
+            {
+              "code": "5",
+              "label": "Member of cooperative"
+            },
+            {
+              "code": "6",
+              "label": "Contributing family worker"
+            },
+            {
+              "code": "7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "P50A",
+          "id": "ever_given_live_birth",
+          "text": "Has [NAME] ever given a live birth?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P50B_Boys",
+          "id": "number_of_live_boys_ever_born",
+          "text": "How many live boys has [NAME] ever had?",
+          "type": "numeric"
+        },
+        {
+          "number": "P50B_Girls",
+          "id": "number_of_live_girls_ever_born",
+          "text": "How many live girls has [NAME] ever had?",
+          "type": "numeric"
+        },
+        {
+          "number": "P50C_Boys",
+          "id": "number_of_live_boys_still_alive",
+          "text": "Among those boys how many are still alive?",
+          "instructions": "TO BE ASKED IF P50B_BOYS>0",
+          "type": "numeric"
+        },
+        {
+          "number": "P50C_Girls",
+          "id": "number_of_live_girls_still_alive",
+          "text": "Among those girls how many are still alive?",
+          "instructions": "TO BE ASKED IF P50B_GIRLS>0",
+          "type": "numeric"
+        },
+        {
+          "number": "P51A",
+          "id": "live_birth_last_12_months",
+          "text": "During the 12 months prior to the census night (From 16/08/2021-15/08/2022) did [NAME] give a live birth?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "P51B_Boys",
+          "id": "number_of_boys_born_last_12_months",
+          "text": "How many live boys did [NAME] have during the 12 months prior to the census night (From 16/08/2021-15/08/2022)?",
+          "type": "numeric"
+        },
+        {
+          "number": "P51B_Girls",
+          "id": "number_of_girls_born_last_12_months",
+          "text": "How many live girls did [NAME] have during the 12 months prior to the census night (From 16/08/2021-15/08/2022)?",
+          "type": "numeric"
+        },
+        {
+          "number": "P51C_Boys",
+          "id": "boys_still_alive_born_last_12_months",
+          "text": "Among those boys how many are still alive?",
+          "instructions": "TO BE ASKED IF P51B_BOYS>0",
+          "type": "numeric"
+        },
+        {
+          "number": "P51C_Girls",
+          "id": "girls_still_alive_born_last_12_months",
+          "text": "Among those girls how many are still alive?",
+          "instructions": "TO BE ASKED IF P51B_GIRLS>0",
+          "type": "numeric"
+        }
+      ],
+      "occurrences": 20
+    },
+    {
+      "id": "housing_characteristics",
+      "number": "H",
+      "title": "Housing Characteristics",
+      "questions": [
+        {
+          "number": "H01",
+          "id": "type_of_habitat",
+          "text": "What is the type of Habitat?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Planned rural settlement"
+            },
+            {
+              "code": "2",
+              "label": "Integrated Model Village"
+            },
+            {
+              "code": "3",
+              "label": "Old settlement"
+            },
+            {
+              "code": "4",
+              "label": "Unplanned clustered rural housing (Dispersed/Isolated housing)"
+            },
+            {
+              "code": "5",
+              "label": "Modern planned urban area"
+            },
+            {
+              "code": "6",
+              "label": "Spontaneous/Squatter housing"
+            },
+            {
+              "code": "7",
+              "label": "Spontaneous/Squatter housing in Rural area"
+            },
+            {
+              "code": "8",
+              "label": "Other type of housing"
+            }
+          ]
+        },
+        {
+          "number": "H02",
+          "id": "type_of_building",
+          "text": "What is the Type of Building?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "House occupied by one household"
+            },
+            {
+              "code": "2",
+              "label": "House occupied by several households"
+            },
+            {
+              "code": "3",
+              "label": "Storey building occupied by one household"
+            },
+            {
+              "code": "4",
+              "label": "Storey building occupied by many households"
+            },
+            {
+              "code": "5",
+              "label": "Several buildings in a compound occupied by one household"
+            },
+            {
+              "code": "6",
+              "label": "Several buildings in a compound occupied by several households"
+            },
+            {
+              "code": "7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H03",
+          "id": "tenure_status",
+          "text": "What is the tenure status of the housing Unit?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Owner (Even when he/she is still paying the bank loan)"
+            },
+            {
+              "code": "2",
+              "label": "Tenant"
+            },
+            {
+              "code": "3",
+              "label": "Hire purchase (Having payment contract with the owner)"
+            },
+            {
+              "code": "4",
+              "label": "Free lodging"
+            },
+            {
+              "code": "5",
+              "label": "Staff housing"
+            },
+            {
+              "code": "6",
+              "label": "Temporary camp or settlement"
+            },
+            {
+              "code": "7",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H04",
+          "id": "has_own_housing_unit",
+          "text": "Is this Household has its own housing unit in this village or elsewhere?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H05",
+          "id": "main_material_of_roof",
+          "text": "What is the main material used for the roof? (In case of a store building, consider the roof of the last floor)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Iron Sheets"
+            },
+            {
+              "code": "2",
+              "label": "Local tiles"
+            },
+            {
+              "code": "3",
+              "label": "Industrial tiles"
+            },
+            {
+              "code": "4",
+              "label": "Asbestos"
+            },
+            {
+              "code": "5",
+              "label": "Concrete"
+            },
+            {
+              "code": "6",
+              "label": "Cartoons/Sheeting/ all non-durable roofing materials"
+            },
+            {
+              "code": "7",
+              "label": "Grass"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H06",
+          "id": "main_material_of_walls",
+          "text": "What is the main material used for the exterior walls?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Wood with mud and cement"
+            },
+            {
+              "code": "2",
+              "label": "Wood with mud without cement"
+            },
+            {
+              "code": "3",
+              "label": "Sun dried bricks with cement"
+            },
+            {
+              "code": "4",
+              "label": "Sun dried bricks without cement"
+            },
+            {
+              "code": "5",
+              "label": "All non-durable wall materials (Cartoons/Sheathing)"
+            },
+            {
+              "code": "6",
+              "label": "Cement blocks"
+            },
+            {
+              "code": "7",
+              "label": "Concrete"
+            },
+            {
+              "code": "8",
+              "label": "Stones with cement"
+            },
+            {
+              "code": "9",
+              "label": "Stones without cement"
+            },
+            {
+              "code": "10",
+              "label": "Timber"
+            },
+            {
+              "code": "11",
+              "label": "Burnt bricks with cement"
+            },
+            {
+              "code": "12",
+              "label": "Burnt bricks without cement"
+            },
+            {
+              "code": "13",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H07",
+          "id": "main_material_of_floor",
+          "text": "What is the main material used for the floor?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Earth"
+            },
+            {
+              "code": "2",
+              "label": "Dung hardened"
+            },
+            {
+              "code": "3",
+              "label": "Concrete"
+            },
+            {
+              "code": "4",
+              "label": "Stones"
+            },
+            {
+              "code": "5",
+              "label": "Burnt bricks"
+            },
+            {
+              "code": "6",
+              "label": "Wooden floor"
+            },
+            {
+              "code": "7",
+              "label": "Ceramic/clays/Granite tiles"
+            },
+            {
+              "code": "8",
+              "label": "Cement"
+            },
+            {
+              "code": "9",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H08",
+          "id": "number_of_rooms",
+          "text": "How many rooms do the housing units have, including bathrooms, toilets, kitchen, store rooms?",
+          "type": "numeric"
+        },
+        {
+          "number": "H09",
+          "id": "number_of_rooms_for_sleeping",
+          "text": "How many rooms are used for sleeping?",
+          "type": "numeric"
+        },
+        {
+          "number": "H10",
+          "id": "sleeping_rooms_boys_separated",
+          "text": "Are Sleeping rooms for Boys separated from those for Girls?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "3",
+              "label": "NA"
+            }
+          ]
+        },
+        {
+          "number": "H11",
+          "id": "main_source_of_water",
+          "text": "What is the main source of water used by your household for general purposes such as cooking and handwashing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Internal pipe-born water"
+            },
+            {
+              "code": "2",
+              "label": "Pipe-born water in the compound"
+            },
+            {
+              "code": "3",
+              "label": "Pipe-born water from the neighbor HH"
+            },
+            {
+              "code": "4",
+              "label": "Public tap out of the compound"
+            },
+            {
+              "code": "5",
+              "label": "Tube Well/Borehole"
+            },
+            {
+              "code": "6",
+              "label": "Protected Spring/Well"
+            },
+            {
+              "code": "7",
+              "label": "Unprotected Spring/Well"
+            },
+            {
+              "code": "8",
+              "label": "Rain water"
+            },
+            {
+              "code": "9",
+              "label": "Tanker Truck"
+            },
+            {
+              "code": "10",
+              "label": "River/Lake/Pond/Stream/Irrigation Channel"
+            },
+            {
+              "code": "11",
+              "label": "Lake/Stream/Pond/Surface water"
+            },
+            {
+              "code": "12",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H12",
+          "id": "main_source_drinking_water",
+          "text": "What is the main source of drinking water for members of your household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Internal pipe-born water"
+            },
+            {
+              "code": "2",
+              "label": "Pipe-born water in the compound"
+            },
+            {
+              "code": "3",
+              "label": "Pipe-born water from the neighbor HH"
+            },
+            {
+              "code": "4",
+              "label": "Public tap out of the compound"
+            },
+            {
+              "code": "5",
+              "label": "Tube Well/Borehole"
+            },
+            {
+              "code": "6",
+              "label": "Protected Spring/Well"
+            },
+            {
+              "code": "7",
+              "label": "Unprotected Spring/Well"
+            },
+            {
+              "code": "8",
+              "label": "Rain water"
+            },
+            {
+              "code": "9",
+              "label": "Tanker Truck"
+            },
+            {
+              "code": "10",
+              "label": "River/Lake/Pond/Stream/Irrigation Channel"
+            },
+            {
+              "code": "11",
+              "label": "Lake/Stream/Pond/Surface water"
+            },
+            {
+              "code": "12",
+              "label": "Mineral water"
+            },
+            {
+              "code": "13",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H13",
+          "id": "main_type_of_toilet_facility",
+          "text": "What is the main type of toilet facility used by the members of the household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Flush toilet used by one Household"
+            },
+            {
+              "code": "2",
+              "label": "Flush toilet used by several Households"
+            },
+            {
+              "code": "3",
+              "label": "Pit Latrine with constructed floor slab used by one HH"
+            },
+            {
+              "code": "4",
+              "label": "Pit Latrine with constructed floor slab used by several HH"
+            },
+            {
+              "code": "5",
+              "label": "Pit Latrine without constructed floor slab used by one HH"
+            },
+            {
+              "code": "6",
+              "label": "Pit Latrine without constructed floor slab used by several HH"
+            },
+            {
+              "code": "7",
+              "label": "Bush"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H14",
+          "id": "connected_to_reg_or_other_grid",
+          "text": "Is this household connected to the REG grid line or to other electric lines?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H15",
+          "id": "main_source_of_energy_for_lighting",
+          "text": "What is the main source of energy that the household uses for lighting?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Electricity from REG"
+            },
+            {
+              "code": "02",
+              "label": "Private Hydro Mini grid"
+            },
+            {
+              "code": "03",
+              "label": "Standalone solar system"
+            },
+            {
+              "code": "04",
+              "label": "Private Solar Mini Grid"
+            },
+            {
+              "code": "05",
+              "label": "Generator"
+            },
+            {
+              "code": "06",
+              "label": "Kerosene/Paraffin lamp"
+            },
+            {
+              "code": "07",
+              "label": "Biogas"
+            },
+            {
+              "code": "08",
+              "label": "Candles"
+            },
+            {
+              "code": "09",
+              "label": "Firewood"
+            },
+            {
+              "code": "10",
+              "label": "Batteries"
+            },
+            {
+              "code": "11",
+              "label": "Flashlight /phone flashlight"
+            },
+            {
+              "code": "12",
+              "label": "Rechargeable battery"
+            },
+            {
+              "code": "13",
+              "label": "Lantern"
+            },
+            {
+              "code": "14",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H16",
+          "id": "main_source_of_energy_for_cooking",
+          "text": "What is the main source of energy the household uses for cooking?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Firewood"
+            },
+            {
+              "code": "02",
+              "label": "Charcoal"
+            },
+            {
+              "code": "03",
+              "label": "Gas"
+            },
+            {
+              "code": "04",
+              "label": "Electricity"
+            },
+            {
+              "code": "05",
+              "label": "Kerosene/Parafine"
+            },
+            {
+              "code": "06",
+              "label": "Biogas"
+            },
+            {
+              "code": "07",
+              "label": "Solar power"
+            },
+            {
+              "code": "08",
+              "label": "Crop waste"
+            },
+            {
+              "code": "09",
+              "label": "Animal dung"
+            },
+            {
+              "code": "10",
+              "label": "Briquette"
+            },
+            {
+              "code": "11",
+              "label": "Peat"
+            },
+            {
+              "code": "12",
+              "label": "Sawdust"
+            },
+            {
+              "code": "13",
+              "label": "Straw/shrub/grass"
+            },
+            {
+              "code": "14",
+              "label": "Other(specify)"
+            },
+            {
+              "code": "15",
+              "label": "Do not cook"
+            }
+          ]
+        },
+        {
+          "number": "H17",
+          "id": "additional_source_of_energy_for_cooking",
+          "text": "Is there any additional source of energy the household uses for cooking? If Yes; which?",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Firewood"
+            },
+            {
+              "code": "02",
+              "label": "Charcoal"
+            },
+            {
+              "code": "03",
+              "label": "Gas"
+            },
+            {
+              "code": "04",
+              "label": "Electricity"
+            },
+            {
+              "code": "05",
+              "label": "Kerosene/Parafine"
+            },
+            {
+              "code": "06",
+              "label": "Biogas"
+            },
+            {
+              "code": "07",
+              "label": "Solar power"
+            },
+            {
+              "code": "08",
+              "label": "Crop waste"
+            },
+            {
+              "code": "09",
+              "label": "Animal dung"
+            },
+            {
+              "code": "10",
+              "label": "Briquette"
+            },
+            {
+              "code": "11",
+              "label": "Peat"
+            },
+            {
+              "code": "12",
+              "label": "Sawdust"
+            },
+            {
+              "code": "13",
+              "label": "Straw/shrub/grass"
+            },
+            {
+              "code": "14",
+              "label": "Other(specify)"
+            },
+            {
+              "code": "15",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "number": "H18",
+          "id": "use_energy_saving_stove",
+          "text": "Does your household use a cooking energy saving stove? (Do not ask if H16 and H17 responded 3, 4, 5, 6, 7)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H19",
+          "id": "main_mode_household_waste_disposal",
+          "text": "What is the main mode of household waste disposal used?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Public Compost dumping"
+            },
+            {
+              "code": "2",
+              "label": "Household compost dumping"
+            },
+            {
+              "code": "3",
+              "label": "Waste collection companies"
+            },
+            {
+              "code": "4",
+              "label": "Thrown in the household's fields or bushes"
+            },
+            {
+              "code": "5",
+              "label": "Burnt"
+            },
+            {
+              "code": "6",
+              "label": "In a River/Stream/Drain/Gutter/lakes"
+            },
+            {
+              "code": "7",
+              "label": "Other"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H20",
+          "id": "main_mode_sewage_disposal",
+          "text": "What is the main mode of sewage disposal used by the household?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Sump"
+            },
+            {
+              "code": "2",
+              "label": "In the courtyard"
+            },
+            {
+              "code": "3",
+              "label": "Rivulet/Trench/Channels"
+            },
+            {
+              "code": "4",
+              "label": "In the street"
+            },
+            {
+              "code": "5",
+              "label": "Main sewer"
+            },
+            {
+              "code": "6",
+              "label": "Cesspool"
+            },
+            {
+              "code": "7",
+              "label": "Bush"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "H21",
+          "id": "household_functioning_assets",
+          "text": "Does your household have the following assets in functioning condition?",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Radio"
+            },
+            {
+              "code": "2",
+              "label": "Television"
+            },
+            {
+              "code": "3",
+              "label": "Refrigerator/Freezer for HH use only"
+            },
+            {
+              "code": "4",
+              "label": "Gas/Electrical Cooker"
+            },
+            {
+              "code": "5",
+              "label": "Washing machine"
+            },
+            {
+              "code": "6",
+              "label": "Microwave"
+            },
+            {
+              "code": "7",
+              "label": "Mattress"
+            },
+            {
+              "code": "8",
+              "label": "Bench/Chair"
+            },
+            {
+              "code": "9",
+              "label": "Bed"
+            },
+            {
+              "code": "10",
+              "label": "Tables"
+            },
+            {
+              "code": "11",
+              "label": "Sofa"
+            },
+            {
+              "code": "12",
+              "label": "Computers"
+            },
+            {
+              "code": "13",
+              "label": "Vehicles for household use only"
+            },
+            {
+              "code": "14",
+              "label": "Motorcycles for household use only"
+            },
+            {
+              "code": "15",
+              "label": "Bicycles for household use only"
+            },
+            {
+              "code": "16",
+              "label": "Electrical/Charcoal Iron"
+            }
+          ]
+        },
+        {
+          "number": "H22",
+          "id": "household_has_livestock_beehive_or_dog",
+          "text": "Does your household have any big/small livestock, beehive or dog?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H22A",
+          "id": "type_of_livestock_owned",
+          "text": "What type of livestock do you have?",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Local breed cows"
+            },
+            {
+              "code": "02",
+              "label": "Exotic breed cows"
+            },
+            {
+              "code": "03",
+              "label": "Cross breed cows"
+            },
+            {
+              "code": "04",
+              "label": "Local goats"
+            },
+            {
+              "code": "05",
+              "label": "Exotic goats"
+            },
+            {
+              "code": "06",
+              "label": "Cross goats"
+            },
+            {
+              "code": "07",
+              "label": "Local sheep"
+            },
+            {
+              "code": "08",
+              "label": "Exotic sheep"
+            },
+            {
+              "code": "09",
+              "label": "Local pigs"
+            },
+            {
+              "code": "10",
+              "label": "Exotic pig"
+            },
+            {
+              "code": "11",
+              "label": "Cross pig"
+            },
+            {
+              "code": "12",
+              "label": "Rabbits"
+            },
+            {
+              "code": "13",
+              "label": "Broiler chicken"
+            },
+            {
+              "code": "14",
+              "label": "Layers chicken"
+            },
+            {
+              "code": "15",
+              "label": "Dual purpose chicken"
+            },
+            {
+              "code": "16",
+              "label": "Local chicken"
+            },
+            {
+              "code": "17",
+              "label": "Duck"
+            },
+            {
+              "code": "18",
+              "label": "Turkey"
+            },
+            {
+              "code": "19",
+              "label": "Other poultry"
+            },
+            {
+              "code": "20",
+              "label": "Camel"
+            },
+            {
+              "code": "21",
+              "label": "Bees hive"
+            },
+            {
+              "code": "22",
+              "label": "Dogs"
+            },
+            {
+              "code": "23",
+              "label": "Others"
+            }
+          ]
+        },
+        {
+          "number": "H22B",
+          "id": "livestock_by_type_number_and_location",
+          "text": "How many (Type of livestock) do you have now and in which district are they located?",
+          "instructions": "Record the number and the district/location for each livestock type listed.",
+          "type": "text"
+        },
+        {
+          "number": "H23",
+          "id": "any_crop_grown_last_12_months",
+          "text": "During the last 12 months did any member of this household grow crop? (Do not include agricultural activities done in kitchen garden)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H23A",
+          "id": "location_agricultural_activities",
+          "text": "Where were agricultural activities done?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "In household owned land"
+            },
+            {
+              "code": "2",
+              "label": "In rented land (in cash or in kind payment or for free)"
+            },
+            {
+              "code": "3",
+              "label": "In both households owned land and in rented land"
+            }
+          ]
+        },
+        {
+          "number": "H24",
+          "id": "crops_grown_last_12_months",
+          "text": "What types of crops did your household grow in last 12 months?",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Maize"
+            },
+            {
+              "code": "02",
+              "label": "Rice"
+            },
+            {
+              "code": "03",
+              "label": "Sorghum"
+            },
+            {
+              "code": "04",
+              "label": "Wheat"
+            },
+            {
+              "code": "05",
+              "label": "Bean"
+            },
+            {
+              "code": "06",
+              "label": "Pea"
+            },
+            {
+              "code": "07",
+              "label": "Groundnut"
+            },
+            {
+              "code": "08",
+              "label": "Soybean"
+            },
+            {
+              "code": "09",
+              "label": "Cassava"
+            },
+            {
+              "code": "10",
+              "label": "Sweet potato"
+            },
+            {
+              "code": "11",
+              "label": "Irish potato"
+            },
+            {
+              "code": "12",
+              "label": "Yams & Taro"
+            },
+            {
+              "code": "13",
+              "label": "Cooking Banana"
+            },
+            {
+              "code": "14",
+              "label": "Dessert Banana"
+            },
+            {
+              "code": "15",
+              "label": "Banana for Beer"
+            },
+            {
+              "code": "16",
+              "label": "Vegetables"
+            },
+            {
+              "code": "17",
+              "label": "Tea"
+            },
+            {
+              "code": "18",
+              "label": "Coffee"
+            },
+            {
+              "code": "19",
+              "label": "Sugarcane"
+            },
+            {
+              "code": "20",
+              "label": "Pyrethrum"
+            },
+            {
+              "code": "21",
+              "label": "Flowers"
+            },
+            {
+              "code": "22",
+              "label": "Others, specify"
+            }
+          ]
+        },        
+        {
+          "number": "H25",
+          "id": "type_of_vegetables_grown_last_12_months",
+          "text": "What type of vegetables did the household grow in the last 12 months? Ask this question if in question H24 vegetables is in selected crops.",
+          "instructions": "Ask this question if H24=16.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "01",
+              "label": "Amaranths"
+            },
+            {
+              "code": "02",
+              "label": "Tomato"
+            },
+            {
+              "code": "03",
+              "label": "Cabbage"
+            },
+            {
+              "code": "04",
+              "label": "Onion"
+            },
+            {
+              "code": "05",
+              "label": "Carrot"
+            },
+            {
+              "code": "06",
+              "label": "Eggplant"
+            },
+            {
+              "code": "07",
+              "label": "Black eggplant"
+            },
+            {
+              "code": "08",
+              "label": "Sweet pepper"
+            },
+            {
+              "code": "09",
+              "label": "Pepper"
+            },
+            {
+              "code": "10",
+              "label": "Cauliflower"
+            },
+            {
+              "code": "11",
+              "label": "French beans"
+            },
+            {
+              "code": "12",
+              "label": "Beetroot"
+            },
+            {
+              "code": "13",
+              "label": "Garlic"
+            },
+            {
+              "code": "14",
+              "label": "Lettuce"
+            },
+            {
+              "code": "15",
+              "label": "Broccoli"
+            },
+            {
+              "code": "16",
+              "label": "Spinach"
+            },
+            {
+              "code": "17",
+              "label": "Celery"
+            },
+            {
+              "code": "18",
+              "label": "Leeks"
+            },
+            {
+              "code": "19",
+              "label": "Pumpkin"
+            },
+            {
+              "code": "20",
+              "label": "Cucumber"
+            },
+            {
+              "code": "21",
+              "label": "Mushroom"
+            },
+            {
+              "code": "22",
+              "label": "Chayote"
+            },
+            {
+              "code": "23",
+              "label": "Cassava leaves"
+            },
+            {
+              "code": "24",
+              "label": "Other vegetables"
+            }
+          ]
+        },
+        {
+          "number": "H26",
+          "id": "number_of_tea_trees",
+          "text": "How many tea trees does your household have?",
+          "instructions": "Ask this question if in question H24 tea tree is in selected crops.",
+          "type": "numeric"
+        },
+        {
+          "number": "H27",
+          "id": "number_of_coffee_trees",
+          "text": "How many coffee trees does your household have?",
+          "instructions": "Ask this question if in question H24 coffee tree is in selected crops.",
+          "type": "numeric"
+        },
+        {
+          "number": "H28A",
+          "id": "household_has_fruit_tree",
+          "text": "Does your household have any fruit tree?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "H28B",
+          "id": "fruit_trees_grown_number",
+          "text": "What type and how many fruit trees does your household grow?",
+          "instructions": "For each type of fruit tree listed, record the number the household has.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Avocado"
+            },
+            {
+              "code": "2",
+              "label": "Orange"
+            },
+            {
+              "code": "3",
+              "label": "Papaya"
+            },
+            {
+              "code": "4",
+              "label": "Guava"
+            },
+            {
+              "code": "5",
+              "label": "Lemon"
+            },
+            {
+              "code": "6",
+              "label": "Mango"
+            },
+            {
+              "code": "7",
+              "label": "Mandarin"
+            },
+            {
+              "code": "8",
+              "label": "Jack fruits"
+            },
+            {
+              "code": "9",
+              "label": "Beefheart"
+            },
+            {
+              "code": "10",
+              "label": "Passion fruits"
+            },
+            {
+              "code": "11",
+              "label": "Pineapple"
+            },
+            {
+              "code": "12",
+              "label": "Tree tomato"
+            },
+            {
+              "code": "13",
+              "label": "Watermelon"
+            },
+            {
+              "code": "14",
+              "label": "Strawberry"
+            },
+            {
+              "code": "15",
+              "label": "Other fruit"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "mortality",
+      "number": "M",
+      "title": "Mortality",
+      "description": "If there was a death in the household during the 12 months prior to the census night, write their names and ask the following questions.",
+      "universe": "All household members who died 12 months prior to the census night",
+      "questions": [
+        {
+          "number": "M1",
+          "id": "any_household_member_died_last_12_months",
+          "text": "Is there any member of the household who died 12 months prior to the census night (16/08/2021-15/08/2022)?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "M2",
+          "id": "name_of_deceased",
+          "text": "Write the names of those who died during the last 12 months",
+          "type": "text"
+        },
+        {
+          "number": "M3",
+          "id": "sex_of_deceased",
+          "text": "Sex of the deceased",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Male"
+            },
+            {
+              "code": "2",
+              "label": "Female"
+            }
+          ]
+        },
+        {
+          "number": "M4",
+          "id": "age_at_death",
+          "text": "How old was [NAME] when (he/she) died?",
+          "instructions": "If the age is 1 year or above, record completed years (000 if less than 1 year).",
+          "type": "numeric"
+        },
+        {
+          "number": "M4A",
+          "id": "age_at_death_infants",
+          "text": "How many months or days [NAME] had before dying? (for infants)",
+          "instructions": "Record answer in months if age was from 1 to 11 months. Record answer in days if age was from 0 to 29 days.",
+          "type": "numeric"
+        },
+        {
+          "number": "M5",
+          "id": "place_of_death",
+          "text": "Where did the death for the [NAME] take place?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "At community"
+            },
+            {
+              "code": "2",
+              "label": "At health facilities"
+            }
+          ]
+        },
+        {
+          "number": "M6",
+          "id": "manner_of_death",
+          "text": "What is the manner of death of [NAME]?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Natural cause/disease"
+            },
+            {
+              "code": "2",
+              "label": "Accident"
+            },
+            {
+              "code": "3",
+              "label": "Suicide"
+            },
+            {
+              "code": "4",
+              "label": "Homicide"
+            },
+            {
+              "code": "9",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "M7",
+          "id": "death_while_pregnant",
+          "text": "Did the [NAME] die death while Pregnant?",
+          "universe": "If the deceased person was a female aged 10-49 years",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "M8",
+          "id": "death_during_childbirth",
+          "text": "Did the death occur during the childbirth?",
+          "universe": "If the deceased person was a female aged 10-49 years",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "M9",
+          "id": "death_within_6_weeks_of_termination",
+          "text": "Did the death occur during the 6 weeks' period following the termination of pregnancy?",
+          "universe": "If the deceased person was a female aged 10-49 years",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        }
+      ],
+      "occurrences": 3
+    }
+  ]
+}

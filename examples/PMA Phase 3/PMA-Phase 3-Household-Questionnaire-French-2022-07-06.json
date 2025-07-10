@@ -1,0 +1,1484 @@
+{
+  "title": "Questionnaire Ménage",
+  "description": "Date : 6 juillet 2022 Version : 10",
+  "id_fields": [
+    "nom_enquêtrice",
+    "information_geographique_1",
+    "information_geographique_2",
+    "information_geographique_3",
+    "information_geographique_4",
+    "zone_denombr"
+  ],
+  "sections": [
+    {
+      "id": "identification",
+      "number": "A",
+      "title": "Identification",
+      "description": "Veuillez saisir les informations suivantes avant de commencer l’entretien",
+      "universe": "Toujours",
+      "questions": [
+        {
+          "number": "001a",
+          "id": "nom_enquêtrice_select",
+          "text": "Votre nom [ODK affichera une liste des noms des enquêtrices]",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "001b",
+          "id": "nom_enquêtrice",
+          "text": "Saisissez votre nom ci-dessous.",
+          "instructions": "Merci de saisir votre nom",
+          "type": "text",
+          "max_length": 50
+        },
+        {
+          "number": "002a",
+          "id": "datetime_correct",
+          "text": "La date et l’heure sont-elles correctes ? [ODK l’affichera sur l’écran]",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "002b",
+          "id": "datetime_entry",
+          "text": "Veuillez saisir la date et l’heure",
+          "type": "date"
+        },
+        {
+          "number": "003a",
+          "id": "information_geographique_1",
+          "text": "INFORMATION GEOGRAPHIQUE 1",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "INFORMATION GEOGRAPHIQUE 1a"
+            },
+            {
+              "code": "2",
+              "label": "INFORMATION GEOGRAPHIQUE 1b"
+            },
+            {
+              "code": "3",
+              "label": "INFORMATION GEOGRAPHIQUE 1c"
+            },
+            {
+              "code": "4",
+              "label": "INFORMATION GEOGRAPHIQUE 1d"
+            },
+            {
+              "code": "5",
+              "label": "INFORMATION GEOGRAPHIQUE 1e"
+            },
+            {
+              "code": "6",
+              "label": "INFORMATION GEOGRAPHIQUE 1f"
+            },
+            {
+              "code": "7",
+              "label": "INFORMATION GEOGRAPHIQUE 1g"
+            }
+          ]
+        },
+        {
+          "number": "003b",
+          "id": "information_geographique_2",
+          "text": "INFORMATION GEOGRAPHIQUE 2 (ODK affichera une liste de INFORMATION GEOGRAPHIQUE 2 en fonction de INFORMATION GEOGRAPHIQUE 1 sélectionnée)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Option 1"
+            },
+            {
+              "code": "2",
+              "label": "Option 2"
+            },
+            {
+              "code": "3",
+              "label": "Option 3"
+            }
+          ]
+        },
+        {
+          "number": "003c",
+          "id": "information_geographique_3",
+          "text": "INFORMATION GEOGRAPHIQUE 3 (ODK affichera une liste de INFORMATION GEOGRAPHIQUE 3 en fonction de INFORMATION GEOGRAPHIQUE 2 sélectionnée)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Option 1"
+            },
+            {
+              "code": "2",
+              "label": "Option 2"
+            },
+            {
+              "code": "3",
+              "label": "Option 3"
+            }
+          ]
+        },
+        {
+          "number": "003d",
+          "id": "information_geographique_4",
+          "text": "INFORMATION GEOGRAPHIQUE 4 (ODK affichera une liste de INFORMATION GEOGRAPHIQUE 4 en fonction de INFORMATION GEOGRAPHIQUE 3 sélectionnée)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Option 1"
+            },
+            {
+              "code": "2",
+              "label": "Option 2"
+            },
+            {
+              "code": "3",
+              "label": "Option 3"
+            }
+          ]
+        },
+        {
+          "number": "004",
+          "id": "zone_denombr",
+          "text": "Zone de dénombrement (ODK affichera une liste de zones de recensement en fonction de INFORMATION GEOGRAPHIQUE 4 sélectionnée)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Option 1"
+            },
+            {
+              "code": "2",
+              "label": "Option 2"
+            },
+            {
+              "code": "3",
+              "label": "Option 3"
+            }
+          ]
+        },
+        {
+          "number": "004a",
+          "id": "liste_menages_annee_precedente",
+          "text": "Liste des ménages de l’enquête annuelle précédente. ODK affichera une liste de tous les ménages interrogés pendant la dernière enquête annuelle.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Nom du chef de ménage – Âge du chef de ménage"
+            },
+            {
+              "code": "96",
+              "label": "Ménage de remplacement nouvellement sélectionné"
+            }
+          ]
+        },
+        {
+          "number": "005",
+          "id": "numero_structure",
+          "text": "Veuillez saisir le numéro de la structure indiqué sur la liste des ménages.",
+          "instructions": "Numéro de la structure",
+          "type": "numeric"
+        },
+        {
+          "number": "006",
+          "id": "numero_menage",
+          "text": "Veuillez saisir le numéro du ménage indiqué sur la liste des ménages.",
+          "instructions": "Numéro du ménage",
+          "type": "numeric"
+        },
+        {
+          "number": "007a",
+          "id": "emplacement_egale_annee_precedente",
+          "text": "Êtes-vous au même emplacement de l’unité de résidence de la dernière enquête annuelle ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "007b",
+          "id": "personnes_vivent_unite_residence",
+          "text": "Des personnes vivent-elles dans cette unité de résidence ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "007c",
+          "id": "membre_vit_toujours_unite_residence",
+          "text": "Est-ce qu’au moins un membre du ménage de la dernière enquête annuelle vit toujours dans l’unité de résidence ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "007d",
+          "id": "raison_aucun_membre_residence",
+          "text": "Pourquoi personne ne vit dans cette unité de résidence ?",
+          "instructions": "ALLEZ À 099, SAISISSEZ LE RESULTAT DU QUESTIONNAIRE ET SOUMETTEZ LE FORMULAIRE",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "2",
+              "label": "Unité de résidence vacante"
+            },
+            {
+              "code": "3",
+              "label": "Adresse pas une unité de résidence"
+            },
+            {
+              "code": "4",
+              "label": "Unité de résidence détruite"
+            },
+            {
+              "code": "5",
+              "label": "Unité de résidence introuvable"
+            }
+          ]
+        },
+        {
+          "number": "007e",
+          "id": "statut_menage_initial",
+          "text": "Quel est le statut du ménage initial de la dernière enquête annuelle ? Confirmez avec les voisins pour connaître le statut.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Le ménage a déménagé hors de la zone de l'étude"
+            },
+            {
+              "code": "2",
+              "label": "Le ménage a déménagé au sein de la zone de l'étude"
+            },
+            {
+              "code": "3",
+              "label": "Le ménage s'est séparé de certains membres vivant dans la zone de l'étude et d'autres en dehors de la zone de l'étude"
+            },
+            {
+              "code": "4",
+              "label": "Pas d'information"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "menage_calculez",
+      "number": "B",
+      "title": "Calculs de suivi pour l'unité de résidence",
+      "description": "Instructions pour générer les formulaires de suivi ou de base selon la situation du ménage et de l'unité de résidence.",
+      "questions": [
+        {
+          "number": "CALC1",
+          "id": "calculez_menage_meme_unite",
+          "text": "Le ménage de la dernière enquête annuelle continue à habiter dans la même unité de résidence de la Phase 1 :\n• Générer des formulaires de suivi pour toutes les femmes de 15 à 48 ans de la dernière enquête annuelle qui ont consenti au suivi et qui sont toujours résidentes\n• NE PAS générer de formulaires de suivi pour les femmes 49 à la dernière enquête annuelle ou qui ont refusé le consentement au suivi\n• Générer des formulaires de base pour toutes les autres femmes éligibles de 15 à 49 ans",
+          "type": "text"
+        },
+        {
+          "number": "CALC2",
+          "id": "calculez_nouvelle_unite",
+          "text": "Nouvelle unité de résidence vivant dans l’unité de résidence de la dernière enquête annuelle\n• Générer des formulaires de base pour toutes les femmes éligibles de 15 à 49 ans",
+          "type": "text"
+        },
+        {
+          "number": "CALC3",
+          "id": "calculez_femme_derniere_enquete_nouvelle_unite",
+          "text": "Femme de la dernière enquête annuelle vivant dans une nouvelle unité de résidence\n• Générer des formulaires de suivi uniquement pour les femmes de la dernière enquête annuelle qui vivent dans cette unité de résidence (sélectionnée à 008).\n• NE PAS générer de formulaires de base",
+          "type": "text"
+        },
+        {
+          "number": "CALC4",
+          "id": "calculez_unite_residence_selectionnee",
+          "text": "Unité de résidence nouvellement sélectionnée:\n• Générer des formulaires de base pour toutes les femmes éligibles de 15 à 49 ans",
+          "type": "text"
+        },
+        {
+          "number": "008",
+          "id": "femme_suivi_derniere_enquete",
+          "text": "Avec quelle femme de la dernière enquête annuelle faites-vous un suivi ?",
+          "instructions": "ODK affichera une liste de toutes les femmes interrogées dans ce ménage lors de la dernière enquête annuelle",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Nom de la femme de la dernière enquête annuelle - âge"
+            }
+          ]
+        },
+        {
+          "number": "009",
+          "id": "controle_questionnaire_envoye",
+          "text": "CONTROLE : Avez-vous déjà envoyé un questionnaire pour cette structure et ce ménage lors de cette Phase ?",
+          "instructions": "Ne dupliquez aucun questionnaire sauf si vous corrigez une erreur dans un formulaire précédent.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "controle",
+      "number": "A",
+      "title": "Contrôle du questionnaire",
+      "description": "Questions de contrôle lors de la soumission ou renvoi du questionnaire.",
+      "universe": "Enquêteur",
+      "questions": [
+        {
+          "number": "010",
+          "id": "raison_renvoi_questionnaire",
+          "text": "Pourquoi renvoyez-vous ce questionnaire ? Sélectionnez toutes les réponses pertinentes.",
+          "instructions": "Sélectionnez toutes les réponses pertinentes.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "De nouveaux membres du ménage apparaissent sur ce questionnaire"
+            },
+            {
+              "code": "2",
+              "label": "Je corrige une erreur réalisée sur le questionnaire précédent"
+            },
+            {
+              "code": "3",
+              "label": "Le questionnaire précédent a disparu de mon téléphone avant d’être envoyé"
+            },
+            {
+              "code": "4",
+              "label": "J’ai envoyé le questionnaire précédent mais mon superviseur ne l’a pas reçu"
+            },
+            {
+              "code": "5",
+              "label": "Autre(s) raison(s)"
+            }
+          ]
+        },
+        {
+          "number": "011",
+          "id": "membre_competent_present",
+          "text": "Un membre compétent du ménage est-il présent et disponible pour être interviewé aujourd’hui ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "consentement_eclaire",
+      "number": "A",
+      "title": "Consentement Éclairé",
+      "description": "Veuillez identifier un membre compétent du ménage. Lisez le message de l’écran suivant.",
+      "universe": "Membre compétent du ménage sélectionné pour interview",
+      "questions": [
+        {
+          "number": "011a",
+          "id": "consent_obtained",
+          "text": "Veuillez remettre un exemplaire papier du Formulaire de Consentement à la personne interrogée et le lui expliquer. Ensuite, demandez : Puis-je commencer l’entretien à présent ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "011b",
+          "id": "interviewee_signature",
+          "text": "Signature de l’enquêté(e)",
+          "instructions": "Recueillir la signature. Case à cocher.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Signature recueillie"
+            }
+          ]
+        },
+        {
+          "number": "012",
+          "id": "interviewer_name",
+          "text": "Veuillez saisir votre prénom en tant que témoin du consentement. Vous avez auparavant saisi : « [Prénom de 001b]. »",
+          "type": "text"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "update_household_roster",
+      "number": "1a",
+      "title": "Mettre à jour le tableau du ménage",
+      "description": "ODK affichera le résumé de tous les membres du ménage recensés dans le tableau du ménage lors de la dernière enquête annuelle. Vous allez ensuite mettre à jour leurs informations pour indiquer tout changement, y compris les naissances et les décès.",
+      "universe": "Tous les ménages sélectionnés pour l'enquête",
+      "questions": [
+        {
+          "number": "PL_101",
+          "id": "previous_household_members_names",
+          "text": "Ce ménage avait [##] membres de la dernière enquête annuelle qui s’appelaient : [Membre du ménage no. 1 de la dernière enquête annuelle, Membre du ménage no. 2 de la dernière enquête annuelle, Membre du ménage no. 3 de la dernière enquête annuelle, Membre du ménage no. 4 de la dernière enquête annuelle]",
+          "type": "text"
+        },
+        {
+          "number": "PL_102",
+          "id": "member1_details_last_survey",
+          "text": "Membre 1 du ménage dans la dernière enquête annuelle. Ci-dessous figurent les détails sur le membre 1 dans la dernière enquête annuelle : Prénom : ____ , Lien avec le chef du ménage : ____ , Âge : ____ , Statut marital : ____",
+          "type": "text"
+        },
+        {
+          "number": "PL_103",
+          "id": "current_status_member1",
+          "text": "Quel est le statut de ce membre dans ce ménage ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Résident"
+            },
+            {
+              "code": "2",
+              "label": "Résident, temporairement absent du domicile"
+            },
+            {
+              "code": "3",
+              "label": "A déménagé au sein de la zone de l’étude"
+            },
+            {
+              "code": "4",
+              "label": "A déménagé hors de la zone de l’étude"
+            },
+            {
+              "code": "5",
+              "label": "Décédé(e)"
+            },
+            {
+              "code": "6",
+              "label": "Ne sait pas"
+            }
+          ]
+        },
+        {
+          "number": "PL_103a",
+          "id": "panel_woman_tracked_move",
+          "text": "Savez-vous où la femme du panel [NOM] a déménagé pour qu'elle puisse être suivie dans son nouveau ménage ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "PL_103b",
+          "id": "where_panel_woman_moved",
+          "text": "Où [NOM] a-t-elle déménagé ?",
+          "type": "text"
+        },
+        {
+          "number": "PL_104",
+          "id": "update_panel_woman_info",
+          "text": "Souhaitez-vous mettre à jour ces informations ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "PL_106",
+          "id": "other_usual_members",
+          "text": "Y a-t-il d’autres membres habituels de votre ménage ou d’autres personnes ayant passé la nuit dernière ici que je n’ai pas énuméré ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "household_roster",
+      "number": "1b",
+      "title": "Tableau du Ménage",
+      "description": "Je vais maintenant vous poser une série de questions sur chaque membre habituel de votre ménage ainsi que toutes personnes ayant dormi chez vous la nuit dernière. Pour les unités de résidence qui contiennent des ménages entièrement nouveaux (004 = 96), le tableau du ménage doit être complété à nouveau.",
+      "universe": "Tous les membres habituels du ménage et visiteurs ayant dormi dans le ménage la nuit dernière",
+      "questions": [
+        {
+          "number": "101",
+          "id": "member_name",
+          "text": "Nom du membre / visiteur du ménage. Commençons par le chef du ménage.",
+          "instructions": "Commençons par le chef du ménage.",
+          "type": "text"
+        },
+        {
+          "number": "101a",
+          "id": "is_respondent",
+          "text": "Cette personne est-elle le répondant ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "102",
+          "id": "relationship_to_head",
+          "text": "Quelle est la relation entre [NOM] et le chef du ménage ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Chef du ménage"
+            },
+            {
+              "code": "2",
+              "label": "Épouse/Époux"
+            },
+            {
+              "code": "3",
+              "label": "Fils/fille"
+            },
+            {
+              "code": "4",
+              "label": "Gendre/belle-fille"
+            },
+            {
+              "code": "5",
+              "label": "Petit-fils / Petite-fille"
+            },
+            {
+              "code": "6",
+              "label": "Parent"
+            },
+            {
+              "code": "7",
+              "label": "Beaux-parents"
+            },
+            {
+              "code": "8",
+              "label": "Frère/sœur"
+            },
+            {
+              "code": "9",
+              "label": "Aide au ménage"
+            },
+            {
+              "code": "10",
+              "label": "Autre"
+            },
+            {
+              "code": "-88",
+              "label": "Ne sait pas (NSP)"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "103",
+          "id": "gender",
+          "text": "[NOM] est-il/elle un homme ou une femme ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Homme"
+            },
+            {
+              "code": "2",
+              "label": "Femme"
+            }
+          ]
+        },
+        {
+          "number": "104",
+          "id": "age",
+          "text": "Quel âge avait [NOM] lors de son dernier anniversaire ? Si moins d'un an, saisissez 0.",
+          "type": "numeric"
+        },
+        {
+          "number": "105",
+          "id": "marital_status",
+          "text": "Quel est le statut marital de [NOM] ?",
+          "instructions": "Si la personne n'est pas mariée, relancez pour savoir si elle est divorcée, veuf/veuve, ou n’a jamais été mariée.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Marié(e)"
+            },
+            {
+              "code": "2",
+              "label": "Vit avec un partenaire"
+            },
+            {
+              "code": "3",
+              "label": "Divorcé(e)/séparé(e)"
+            },
+            {
+              "code": "4",
+              "label": "Veuf/veuve"
+            },
+            {
+              "code": "5",
+              "label": "Jamais marié(e)"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "106",
+          "id": "resides_here",
+          "text": "Est-ce que [NOM] habite ici ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "107",
+          "id": "slept_here_last_night",
+          "text": "Est-ce que [NOM] a passé la nuit dernière ici ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        }
+      ],
+      "occurrences": 20
+    },
+    {
+      "id": "household_members_additional_check",
+      "number": "C",
+      "title": "Vérification des Membres du Ménage",
+      "questions": [
+        {
+          "number": "108",
+          "id": "additional_usual_members",
+          "text": "Y a-t-il d’autres membres habituels du ménage ou d’autres personnes ayant dormi dans la maison la nuit dernière et que je n'ai pas mentionnés ici ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        },
+        {
+          "number": "109",
+          "id": "roster_completeness_check",
+          "text": "Il y a [nombre de membre du ménage saisis] membres dans votre ménage, dont les prénoms sont [prénoms de membres saisis]. Est-ce une liste complète des membres du ménage ?",
+          "instructions": "Lire ce contrôle à voix haute. N’oubliez pas d’inclure tous les enfants dans la liste des membres du ménage.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "menage_caracteristiques",
+      "number": "2",
+      "title": "Caractéristiques du Ménage",
+      "description": "J’aimerais maintenant vous poser quelques questions sur votre ménage.",
+      "universe": "Tous les ménages",
+      "questions": [
+        {
+          "number": "201a",
+          "id": "maison_construite_12_mois",
+          "text": "Cette structure/maison a-t-elle été construite dans les 12 derniers mois ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "201b",
+          "id": "elements_possedes_menage",
+          "text": "Pouvez-vous m’indiquer quels éléments possède votre ménage. Votre ménage a-t-il :\nLisez tous les éléments à voix haute et sélectionnez tous les choix pertinents. Faites dérouler la liste jusqu'en bas pour voir tous les éléments.\nSi un objet est cassé mais n’est inutilisable que temporairement, sélectionnez cet élément. Sinon, ne le sélectionnez pas.",
+          "instructions": "Lisez tous les éléments à voix haute et sélectionnez tous les choix pertinents. Si un objet est cassé mais n’est inutilisable que temporairement, sélectionnez cet élément.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "BIEN 1"
+            },
+            {
+              "code": "2",
+              "label": "BIEN 2"
+            },
+            {
+              "code": "3",
+              "label": "BIEN 3"
+            },
+            {
+              "code": "4",
+              "label": "BIEN 4"
+            },
+            {
+              "code": "5",
+              "label": "BIEN 5"
+            },
+            {
+              "code": "6",
+              "label": "BIEN 6"
+            },
+            {
+              "code": "7",
+              "label": "BIEN 7"
+            },
+            {
+              "code": "8",
+              "label": "BIEN 8"
+            },
+            {
+              "code": "9",
+              "label": "BIEN 9"
+            },
+            {
+              "code": "10",
+              "label": "BIEN 10"
+            },
+            {
+              "code": "11",
+              "label": "BIEN 11"
+            },
+            {
+              "code": "12",
+              "label": "BIEN 12"
+            },
+            {
+              "code": "13",
+              "label": "BIEN 13"
+            },
+            {
+              "code": "14",
+              "label": "BIEN 14"
+            },
+            {
+              "code": "15",
+              "label": "BIEN 15"
+            },
+            {
+              "code": "16",
+              "label": "BIEN 16"
+            },
+            {
+              "code": "77",
+              "label": "Aucun des éléments ci-dessus"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "202",
+          "id": "possede_animaux_ferme",
+          "text": "Votre ménage possède-t-il du bétail, un troupeau, des volailles ou d’autres animaux de ferme ?",
+          "instructions": "Ces animaux peuvent être gardés n'importe où, pas uniquement sur la parcelle de l'enquêté(e).",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "0",
+              "label": "Non"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "203",
+          "id": "nombre_animaux_possedes",
+          "text": "Combien d’animaux suivants votre ménage possède-t-il ?\nZéro est une réponse possible. Saisir -88 si ne sait pas. Saisir -99 si pas de réponse.",
+          "instructions": "Le ménage peut garder le bétail n’importe où mais doit posséder les animaux rapportés ici.",
+          "type": "numeric"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "observation_maison",
+      "number": "3",
+      "title": "Observation de la Maison",
+      "description": "Veuillez observer le sol, le toit et les murs extérieurs de la maison.",
+      "universe": "Observer le sol, le toit et les murs extérieurs de la maison (pour tous les ménages où 011a = 1)",
+      "questions": [
+        {
+          "number": "301",
+          "id": "materiau_principal_sol",
+          "text": "Matériau principal du sol. Observez.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "11",
+              "label": "TYPE 1a"
+            },
+            {
+              "code": "12",
+              "label": "TYPE 1b"
+            },
+            {
+              "code": "21",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "22",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "96",
+              "label": "Autre"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "302",
+          "id": "materiau_principal_toit",
+          "text": "Matériau principal du toit. Observez.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "11",
+              "label": "TYPE 1a"
+            },
+            {
+              "code": "12",
+              "label": "TYPE 1b"
+            },
+            {
+              "code": "21",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "22",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "96",
+              "label": "Autre"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "303",
+          "id": "materiau_principal_murs_exterieurs",
+          "text": "Matériau principal des murs extérieurs. Observez.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "11",
+              "label": "TYPE 1a"
+            },
+            {
+              "code": "12",
+              "label": "TYPE 1b"
+            },
+            {
+              "code": "21",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "22",
+              "label": "TYPE 2a"
+            },
+            {
+              "code": "96",
+              "label": "Autre"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "eau_assainissement_hygiene",
+      "number": "4",
+      "title": "Eau, Assainissement et Hygiène",
+      "description": "Je vais maintenant vous poser des questions sur l’eau, l’assainissement et l’hygiène.",
+      "universe": "Tous les ménages",
+      "questions": [
+        {
+          "number": "401",
+          "id": "endroit_lavage_mains",
+          "text": "Nous aimerions connaître les endroits que les ménages utilisent pour se laver les mains. Pourriez-vous me montrer où les membres de votre ménage se lavent le plus souvent les mains ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Dispositif fixe observé (évier/robinet) dans l’habitation"
+            },
+            {
+              "code": "2",
+              "label": "Dispositif fixe observé dans le jardin/sur la parcelle"
+            },
+            {
+              "code": "3",
+              "label": "Récipient mobile (sceau/jarre/bouilloire) observé"
+            },
+            {
+              "code": "4",
+              "label": "Pas observé, dispositif dans habitation/jardin/parcelle mais pas d’autorisation de le voir"
+            },
+            {
+              "code": "5",
+              "label": "Pas observé, pas dans l’habitation/jardin/parcelle"
+            },
+            {
+              "code": "6",
+              "label": "Pas observé, autre raison"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "402",
+          "id": "disponibilite_eau_lavage_mains",
+          "text": "À l’endroit où le ménage se lave les mains, observez et déterminez la disponibilité de l’eau.",
+          "instructions": "Observer le point de lavage des mains indiqué à la question précédente.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Eau disponible"
+            },
+            {
+              "code": "2",
+              "label": "Pas d’eau disponible"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "403",
+          "id": "disponibilite_savon_lavage_mains",
+          "text": "À l’endroit où le ménage se lave les mains, observez et déterminez la disponibilité de savon (liquide ou en barre) :",
+          "instructions": "Observer le savon au point de lavage des mains.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Savon disponible"
+            },
+            {
+              "code": "2",
+              "label": "Pas de savon disponible"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "404",
+          "id": "source_eau_principale_menage",
+          "text": "Quelle est la source d’eau principale que vous utilisez dans votre ménage pour boire ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Eau du Robinet : Robinet dans le logement/à l’intérieur"
+            },
+            {
+              "code": "2",
+              "label": "Eau du Robinet : Robinet sur la parcelle/à l’extérieur"
+            },
+            {
+              "code": "3",
+              "label": "Eau du Robinet : Fontaine publique"
+            },
+            {
+              "code": "4",
+              "label": "Puits à pompe ou forage"
+            },
+            {
+              "code": "5",
+              "label": "Puits creusé : Puits protégé"
+            },
+            {
+              "code": "6",
+              "label": "Puits creusé : Puits non protégé"
+            },
+            {
+              "code": "7",
+              "label": "Eau de source : Source protégée"
+            },
+            {
+              "code": "8",
+              "label": "Eau de source : Source non protégée"
+            },
+            {
+              "code": "9",
+              "label": "Eau de pluie"
+            },
+            {
+              "code": "10",
+              "label": "Camion-citerne"
+            },
+            {
+              "code": "11",
+              "label": "Charrette avec petite citerne"
+            },
+            {
+              "code": "12",
+              "label": "Eau de surface (rivière / barrage/ lac / bassin / cours d’eau / canal / canaux d’irrigation)"
+            },
+            {
+              "code": "13",
+              "label": "Eau en bouteille"
+            },
+            {
+              "code": "14",
+              "label": "Eau en sachet"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "household_sanitation",
+      "number": "405",
+      "title": "Household Toilet Facilities",
+      "description": "Questions about the main type of toilet used by members of the household.",
+      "universe": "Households where 011a = 1",
+      "questions": [
+        {
+          "number": "405",
+          "id": "main_type_of_toilet_used",
+          "text": "Quel est le type principal de toilettes utilisées par les membres de votre ménage ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Des toilettes à chasse d’eau connectées à: Un système d’égouts"
+            },
+            {
+              "code": "2",
+              "label": "Des toilettes à chasse d’eau connectées à: Fosse septique"
+            },
+            {
+              "code": "3",
+              "label": "Des toilettes à chasse d’eau connectées à: Latrines à fosse"
+            },
+            {
+              "code": "4",
+              "label": "Des toilettes à chasse d’eau connectées à: Ailleurs"
+            },
+            {
+              "code": "5",
+              "label": "Des toilettes à chasse d’eau connectées à: Inconnu / Pas sûr(e) / NSP"
+            },
+            {
+              "code": "6",
+              "label": "Des latrines ventilées améliorées"
+            },
+            {
+              "code": "7",
+              "label": "Des latrines à fosse avec dalle"
+            },
+            {
+              "code": "8",
+              "label": "Des latrines à fosse sans dalle"
+            },
+            {
+              "code": "9",
+              "label": "Des toilettes à compostage"
+            },
+            {
+              "code": "10",
+              "label": "Un seau"
+            },
+            {
+              "code": "11",
+              "label": "Des toilettes ou des latrines suspendues"
+            },
+            {
+              "code": "12",
+              "label": "Pas de toilettes / buissons / nature"
+            },
+            {
+              "code": "96",
+              "label": "Autres"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "follow_up_consent",
+      "number": "C",
+      "title": "Follow-up Consent",
+      "description": "Obtaining permission and contact details to follow up for future research studies.",
+      "universe": "All households who completed the interview",
+      "questions": [
+        {
+          "number": "501",
+          "id": "followup_phone_permission",
+          "text": "Merci pour le temps que vous nous avez accordé. Accepteriez-vous de nous donner un numéro de téléphone pour ce ménage afin de vous recontacter plus tard pour de futures études de recherche ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Oui"
+            },
+            {
+              "code": "2",
+              "label": "Non"
+            },
+            {
+              "code": "-99",
+              "label": "Pas de réponse"
+            }
+          ]
+        },
+        {
+          "number": "502",
+          "id": "household_phone_number",
+          "text": "Quel est le numéro de téléphone ? Saisissez un numéro de téléphone à # chiffres sans l’indicatif du pays. N’incluez pas d’espace ni trait d’union. Saisissez 0 pour « pas de réponse ».",
+          "instructions": "[ACTUALISER EN FONCTION DU SYSTEME TELEPHONIQUE DU PAYS]\nSaisir 0 pour « pas de réponse ».",
+          "type": "numeric"
+        },
+        {
+          "number": "503",
+          "id": "repeat_phone_number",
+          "text": "Pouvez-vous répéter le numéro ? Saisissez un numéro de téléphone à # chiffres sans l’indicatif du pays. N’incluez pas d’espace ni trait d’union. Saisissez 0 pour « pas de réponse ».\nLe numéro doit correspondre à celui saisi précédemment.",
+          "instructions": "[ACTUALISER EN FONCTION DU SYSTEME TELEPHONIQUE DU PAYS]\nSaisir 0 pour « pas de réponse ».",
+          "type": "numeric"
+        },
+        {
+          "number": "504",
+          "id": "phone_respondent_name",
+          "text": "Quel est le nom de la personne qui répond à ce téléphone normalement ?",
+          "type": "text"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "geo_referencement_et_resultat_du_questionnaire",
+      "number": "G",
+      "title": "GEO REFERENCEMENT ET RESULTAT DU QUESTIONNAIRE",
+      "description": "Remerciez la personne interrogée pour le temps qu’elle a bien voulu vous accorder. L’enquête a terminé, mais il vous reste d’autres questions à compléter en dehors de la maison.",
+      "universe": "Tous les ménages enquêtés",
+      "questions": [
+        {
+          "number": "096",
+          "id": "geo_coordonnees",
+          "text": "Veuillez prendre des coordonnées GPS près de l’entrée de la maison. Saisir les coordonnées quand leur exactitude est inférieure à 6m.",
+          "instructions": "Saisir les coordonnées GPS",
+          "type": "location"
+        },
+        {
+          "number": "096a",
+          "id": "gps_enregistrement_lieu",
+          "text": "Où étiez-vous lorsque vous avez enregistré les coordonnées GPS ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Devant la structure sélectionnée"
+            },
+            {
+              "code": "2",
+              "label": "À l’écart de la structure mais toujours dans la zone d’étude"
+            },
+            {
+              "code": "3",
+              "label": "En dehors de la zone de l’étude"
+            }
+          ]
+        },
+        {
+          "number": "097",
+          "id": "nb_visites_menage",
+          "text": "Combien de fois avez-vous rendu visite à ce ménage ?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "1ère fois"
+            },
+            {
+              "code": "2",
+              "label": "2ème fois"
+            },
+            {
+              "code": "3",
+              "label": "3ème fois"
+            }
+          ]
+        },
+        {
+          "number": "098",
+          "id": "langue_enquete",
+          "text": "En quelle langue avez-vous effectué cette enquête ?",
+          "instructions": "011a = 1",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Anglais"
+            },
+            {
+              "code": "2",
+              "label": "Français"
+            },
+            {
+              "code": "3",
+              "label": "La langue 3"
+            },
+            {
+              "code": "4",
+              "label": "La langue 4"
+            },
+            {
+              "code": "5",
+              "label": "La langue 5"
+            },
+            {
+              "code": "6",
+              "label": "La langue 6"
+            },
+            {
+              "code": "96",
+              "label": "Autre"
+            }
+          ]
+        },
+        {
+          "number": "099",
+          "id": "resultat_questionnaire",
+          "text": "Sélectionner le résultat du Questionnaire ménages",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Completé"
+            },
+            {
+              "code": "2",
+              "label": "Pas de membre du ménage présent ou pas de membre compétent présent lors de la visite"
+            },
+            {
+              "code": "3",
+              "label": "Différé"
+            },
+            {
+              "code": "4",
+              "label": "Refusé"
+            },
+            {
+              "code": "5",
+              "label": "Completé en partie"
+            },
+            {
+              "code": "6",
+              "label": "Unité de résidence vacante"
+            },
+            {
+              "code": "7",
+              "label": "Adresse pas une unité de résidence"
+            },
+            {
+              "code": "8",
+              "label": "Unité de résidence détruite"
+            },
+            {
+              "code": "9",
+              "label": "Unité de résidence introuvable"
+            },
+            {
+              "code": "10",
+              "label": "Le ménage entier est absent pour une période prolongée"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    }
+  ],
+  "trailing_sections": [
+    {
+      "id": "identification",
+      "question_ids": [
+        "zone_denombr"
+      ]
+    }
+  ]
+}

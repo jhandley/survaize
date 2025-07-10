@@ -3,6 +3,7 @@
 import base64
 import json
 import logging
+import time
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from io import BytesIO
@@ -57,7 +58,7 @@ class LLMUsage:
 class AIQuestionnaireInterpreter:
     """Interprets questionnaire documents using LLM vision models."""
 
-    def __init__(self, llm_config: LLMConfig, max_retries: int = 10):
+    def __init__(self, llm_config: LLMConfig, max_retries: int = 10, sleep_between_pages_seconds: int = 0):
         """Initialize the interpreter.
 
         Args:
@@ -66,6 +67,7 @@ class AIQuestionnaireInterpreter:
         self.llm_config: LLMConfig = llm_config
         self.client: AzureOpenAI | OpenAI | RecordingClient = create_openai_client(llm_config)
         self.max_retries: int = max_retries
+        self.sleep_between_pages_seconds: int = sleep_between_pages_seconds
 
     @logfire.instrument(extract_args=False)
     def interpret(
@@ -108,6 +110,10 @@ class AIQuestionnaireInterpreter:
                 context = self._build_context(partial.trailing_sections, partial.sections)
                 current_state = merge_questionnaires(current_state, partial)
             total_usage.add(usage.prompt_tokens, usage.completion_tokens)
+            if i < total_pages:
+                # Sleep between pages to avoid hitting rate limits or overwhelming the model
+                logger.info(f"Waiting for {self.sleep_between_pages_seconds} seconds before next page")
+                time.sleep(self.sleep_between_pages_seconds)
 
         if current_state is None:
             raise ValueError("No valid questionnaire found in the document")
