@@ -1,0 +1,994 @@
+{
+  "title": "National Survey of Family Income, Consumption and Wealth — Household Questionnaire",
+  "description": "This is a fundamental statistics survey implemented by the government based on the Statistics Act. All possible measures are taken to protect secrecy, please answer truthfully.",
+  "id_fields": [
+    "prefecture_municipality_number",
+    "unit_area_number",
+    "serial_household_number",
+    "questionnaire_number"
+  ],
+  "sections": [
+    {
+      "id": "geographic_codes",
+      "number": "GC",
+      "title": "",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "GC1",
+          "id": "prefecture",
+          "text": "Prefecture/municipality number",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        },
+        {
+          "number": "GC2",
+          "id": "surveyed_unit_area",
+          "text": "Code of surveyed unit area",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 999
+        },
+        {
+          "number": "GC3",
+          "id": "household_number",
+          "text": "Serial household number",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 999
+        },
+        {
+          "number": "GC4",
+          "id": "selected_category",
+          "text": "Selected category",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 999
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "number_of_household_members",
+      "number": "I",
+      "title": "Number of Household Members",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "I",
+          "id": "number_of_persons",
+          "text": "How many people including yourself are usually living together and sharing a livelihood (household members)?",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 99
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "household_members",
+      "number": "II",
+      "title": "Household Members",
+      "description": "Regarding household members who are living together, fill in the columns (1) to (9).",
+      "universe": "All household members who are living together",
+      "questions": [
+        {
+          "number": "1a",
+          "id": "gender",
+          "text": "Gender",
+          "instructions": "If the family member has been absent for more than three months, proceed to section III. Mark the relation to the household head and gender.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Male"
+            },
+            {
+              "code": "2",
+              "label": "Female"
+            }
+          ]
+        },
+        {
+          "number": "1b",
+          "id": "relation_to_head",
+          "text": "Relation to the household head",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Household head"
+            },
+            {
+              "code": "2",
+              "label": "Spouse of the household head"
+            },
+            {
+              "code": "3",
+              "label": "Son/daughter"
+            },
+            {
+              "code": "4",
+              "label": "Spouse of son/daughter"
+            },
+            {
+              "code": "5",
+              "label": "Parent of the household head"
+            },
+            {
+              "code": "6",
+              "label": "Parent of spouse of the household head"
+            },
+            {
+              "code": "7",
+              "label": "Grandson/granddaughter"
+            },
+            {
+              "code": "8",
+              "label": "Grandparent"
+            },
+            {
+              "code": "9",
+              "label": "Sibling"
+            },
+            {
+              "code": "10",
+              "label": "Other relative"
+            },
+            {
+              "code": "11",
+              "label": "Live-in employee"
+            },
+            {
+              "code": "12",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "id": "age",
+          "text": "Age",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 120
+        },
+        {
+          "number": "3",
+          "id": "marital_status",
+          "text": "Marital status",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Married"
+            },
+            {
+              "code": "2",
+              "label": "Single"
+            }
+          ]
+        },
+        {
+          "number": "4a",
+          "id": "employment_status",
+          "text": "Employment status",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Employed"
+            },
+            {
+              "code": "2",
+              "label": "Non worker"
+            }
+          ]
+        },
+        {
+          "number": "4b",
+          "id": "employment_type",
+          "text": "Type of employment (if employed)",
+          "instructions": "Mark only if employed. For dispatched workers, specify if from Temporary Labour Agency.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Regular staff/employee"
+            },
+            {
+              "code": "2",
+              "label": "Company officer"
+            },
+            {
+              "code": "3",
+              "label": "Part-time worker"
+            },
+            {
+              "code": "4",
+              "label": "Self-employed"
+            },
+            {
+              "code": "5",
+              "label": "Dispatched worker from Temporary Labour Agency"
+            },
+            {
+              "code": "6",
+              "label": "Family worker"
+            },
+            {
+              "code": "7",
+              "label": "Home industry worker"
+            },
+            {
+              "code": "8",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "4c",
+          "id": "looking_for_job",
+          "text": "Looking for a job",
+          "instructions": "Answer if non worker.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Looking for a job"
+            },
+            {
+              "code": "2",
+              "label": "Not looking for a job"
+            }
+          ]
+        },
+        {
+          "number": "5",
+          "id": "usual_working_hours_per_week",
+          "text": "Usual working hours per week",
+          "instructions": "If you are regularly working overtime or have a side job, please include those hours.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Under 15 hours"
+            },
+            {
+              "code": "2",
+              "label": "15 to 29 hours"
+            },
+            {
+              "code": "3",
+              "label": "30 to 34 hours"
+            },
+            {
+              "code": "4",
+              "label": "35 to 39 hours"
+            },
+            {
+              "code": "5",
+              "label": "40 to 48 hours"
+            },
+            {
+              "code": "6",
+              "label": "49 to 59 hours"
+            },
+            {
+              "code": "7",
+              "label": "60 hours or longer"
+            },
+            {
+              "code": "8",
+              "label": "Not determined"
+            },
+            {
+              "code": "9",
+              "label": "Not at Work"
+            }
+          ]
+        },
+        {
+          "number": "6a",
+          "id": "school_attendance",
+          "text": "School attendance",
+          "instructions": "If the person is attending school, please answer about the school. If the person has graduated, please answer about the last school from which he/she has graduated. (If the person left school without completing the course, answer about the school from which he/she graduated.). For people in a or graduated from a special training college or vocational school, please refer to \"How to fill Household Questionnaire\".",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Attending school"
+            },
+            {
+              "code": "2",
+              "label": "Graduated school"
+            },
+            {
+              "code": "3",
+              "label": "Preschool/other"
+            }
+          ]
+        },
+        {
+          "number": "6b",
+          "id": "school_level",
+          "text": "Type of school",
+          "instructions": "Only for those attending or graduated from school (1 or 2 in 6a).",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Elementary/junior-high school"
+            },
+            {
+              "code": "2",
+              "label": "Senior high school or junior-high under the old system"
+            },
+            {
+              "code": "3",
+              "label": "Technical school"
+            },
+            {
+              "code": "4",
+              "label": "Junior-college, higher professional school, or high school under the old system"
+            },
+            {
+              "code": "5",
+              "label": "University"
+            },
+            {
+              "code": "6",
+              "label": "Graduate school"
+            }
+          ]
+        },
+        {
+          "number": "6c",
+          "id": "length_of_course",
+          "text": "Length of the course of study",
+          "instructions": "Only for those attending or graduated from technical school.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "From one year to under two years"
+            },
+            {
+              "code": "2",
+              "label": "From to years to under four years"
+            },
+            {
+              "code": "3",
+              "label": "Four years or longer"
+            }
+          ]
+        },
+        {
+          "number": "6d",
+          "id": "preschool_other_level",
+          "text": "Preschool/other",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Nursery school"
+            },
+            {
+              "code": "2",
+              "label": "Kindergarten"
+            },
+            {
+              "code": "3",
+              "label": "Other (e.g. enfant)"
+            }
+          ]
+        }
+      ],
+      "occurrences": 4
+    },
+    {
+      "id": "job_of_household_head",
+      "number": "IIb",
+      "title": "Job of Household Head",
+      "description": "Please give answer regarding the job of the household head in (7) and (8). If the household head is not working, proceed to Column (9).",
+      "universe": "Household head",
+      "questions": [
+        {
+          "number": "7",
+          "id": "type_of_job",
+          "text": "Please write the details of the main job which the household head is actually engaged in, with reference to \"How to fill Household Questionnaire\".",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 99
+        },
+        {
+          "number": "8a",
+          "id": "company_category",
+          "text": "Company category",
+          "instructions": "For a dispatched worker from a temporary labour agency, please enter the situation of the place of employment to which he/she is dispatched.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Private"
+            },
+            {
+              "code": "2",
+              "label": "Independent"
+            },
+            {
+              "code": "3",
+              "label": "Public"
+            }
+          ]
+        },
+        {
+          "number": "8b",
+          "id": "number_of_employees",
+          "text": "Number of employees",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Less than 4"
+            },
+            {
+              "code": "2",
+              "label": "5 to 9"
+            },
+            {
+              "code": "3",
+              "label": "10 to 29"
+            },
+            {
+              "code": "4",
+              "label": "30 to 99"
+            },
+            {
+              "code": "5",
+              "label": "100 to 299"
+            },
+            {
+              "code": "6",
+              "label": "300 to 499"
+            },
+            {
+              "code": "7",
+              "label": "500 to 999"
+            },
+            {
+              "code": "8",
+              "label": "More than 1,000"
+            }
+          ]
+        },
+        {
+          "number": "9a",
+          "id": "nursing_care_support_certification",
+          "text": "Nursing care or support needs",
+          "instructions": "Please answer whether household members given in (1) include any people with official certification for Nursing Care or Support Needs. If the members include both people with official certification for Nursing Care Needs and people with official certification for Support Needs, answer both the questions.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "No person of such certification"
+            },
+            {
+              "code": "2",
+              "label": "Include people with official certification for Support Needs"
+            },
+            {
+              "code": "3",
+              "label": "Include people with official certification for Nursing Care Needs"
+            }
+          ]
+        },
+        {
+          "number": "9b",
+          "id": "nursing_care_in_home_service",
+          "text": "In-home service, day service and short-term admission (short stay)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Using"
+            },
+            {
+              "code": "2",
+              "label": "Not using"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "family_member_absent",
+      "number": "III",
+      "title": "Family Member Absent for More than Three Months",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "10a",
+          "id": "main_earner_absent_reason",
+          "text": "Earner of the majority of the income of the household",
+          "instructions": "Please fill in this column if the person who earns the majority of the income of the household has been absent for more than three months.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Living away from home for business"
+            },
+            {
+              "code": "2",
+              "label": "Seasonal work"
+            },
+            {
+              "code": "3",
+              "label": "Hospitalization"
+            },
+            {
+              "code": "4",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "number": "10b",
+          "id": "main_earner_relationship",
+          "text": "Relationship to the household head",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Spouse of the household head"
+            },
+            {
+              "code": "2",
+              "label": "Son/daughter"
+            },
+            {
+              "code": "3",
+              "label": "Spouse of son/daughter"
+            },
+            {
+              "code": "4",
+              "label": "Parent of the household head"
+            },
+            {
+              "code": "5",
+              "label": "Parent of spouse of the household head"
+            },
+            {
+              "code": "6",
+              "label": "Grandson/granddaughter"
+            },
+            {
+              "code": "7",
+              "label": "Grandparent"
+            },
+            {
+              "code": "8",
+              "label": "Sibling"
+            },
+            {
+              "code": "9",
+              "label": "Other relative"
+            }          
+          ]
+        },
+        {
+          "number": "11",
+          "id": "other_members_absent_reason",
+          "text": "Other members",
+          "instructions": "Please fill in this column if any household members other than (10) above who are dependent partially or wholly on the household income have been absent for more than three months.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Hospitalization"
+            },
+            {
+              "code": "2",
+              "label": "In a facility covered by Long-Term Care Insurance"
+            },
+            {
+              "code": "3",
+              "label": "In other nursing facility"
+            },
+            {
+              "code": "4",
+              "label": "For study"
+            },
+            {
+              "code": "5",
+              "label": "Other"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "one_person_household",
+      "number": "IV",
+      "title": "One-Person Household",
+      "description": "This section is to be filled in only if yours is a one-person household.",
+      "universe": "One-person households only",
+      "questions": [
+        {
+          "number": "12",
+          "id": "form_of_one_person_household",
+          "text": "Form of one-person household",
+          "instructions": "Fill this column only if yours is a one-person household.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Living away from home for business or seasonal work"
+            },
+            {
+              "code": "2",
+              "label": "Other"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "present_dwelling",
+      "number": "V",
+      "title": "Present Dwelling",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "13",
+          "id": "construction_material_dwelling",
+          "text": "Construction material of the dwelling",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Wooden (excluding with fireproof wood)"
+            },
+            {
+              "code": "2",
+              "label": "Fireproof wood"
+            },
+            {
+              "code": "3",
+              "label": "Ferroconcrete"
+            },
+            {
+              "code": "4",
+              "label": "Other (block, brick, etc.)"
+            }
+          ]
+        },
+        {
+          "number": "14a",
+          "id": "total_floor_area",
+          "text": "Total floor area of the residence (m²)",
+          "instructions": "To convert the area from tsubo to m², multiply the figure by 3.3.",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        },
+        {
+          "number": "14b",
+          "id": "floor_area_business",
+          "text": "Of the above, area for business (m²)",
+          "instructions": "To convert the area from tsubo to m², multiply the figure by 3.3.",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        },
+        {
+          "number": "15",
+          "id": "construction_type_dwelling",
+          "text": "Construction type of dwelling",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Detached house"
+            },
+            {
+              "code": "2",
+              "label": "Apartment, condominium, etc."
+            },
+            {
+              "code": "3",
+              "label": "Other (including row house and terrace house)"
+            }
+          ]
+        },
+        {
+          "number": "16",
+          "id": "dwelling_ownership_status",
+          "text": "Ownership of the house",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Owned house"
+            },
+            {
+              "code": "2",
+              "label": "Private rental house (including rental room)"
+            },
+            {
+              "code": "3",
+              "label": "Rental house operated by the prefecture/municipality"
+            },
+            {
+              "code": "4",
+              "label": "Rental house of the Urban Renaissance Agency, public corporation, etc."
+            },
+            {
+              "code": "5",
+              "label": "Company house, public officers' housing (including rented company houses)"
+            },
+            {
+              "code": "6",
+              "label": "Student house, dormitory"
+            }
+          ]
+        },
+        {
+          "number": "17",
+          "id": "land_rent",
+          "text": "Land rent",
+          "instructions": "Please answer whether you are paying the rent for the land of the present dwelling.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Not paying"
+            },
+            {
+              "code": "2",
+              "label": "Paying"
+            }
+          ]
+        },
+        {
+          "number": "18",
+          "id": "site_area",
+          "text": "Site area (m²)",
+          "instructions": "Please make an entry here also when the land is leased. To convert the area from tsubo to m², multiply the figure by 3.3. If you are living in an apartment house or row house, write not the area of the entire site, but the portion equivalent to the residence you live in (the area of sectional ownership).",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        },
+        {
+          "number": "19",
+          "id": "year_of_construction",
+          "text": "Year of construction of the house",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "1970 or earlier"
+            },
+            {
+              "code": "2",
+              "label": "Showa"
+            },
+            {
+              "code": "3",
+              "label": "Heisei"
+            },
+            {
+              "code": "4",
+              "label": "A.D."
+            },
+            {
+              "code": "5",
+              "label": "2019"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "house_land_other_than_present_dwelling",
+      "number": "VI",
+      "title": "House and Land Other than the Present Dwelling",
+      "description": "Please fill in columns (20) and (21) regarding house or land other than the present dwelling.",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "20",
+          "id": "own_house_other_than_present",
+          "text": "Do you or your family members own a house other than the present dwelling (excluding ownership by a corporation)?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "21",
+          "id": "own_land_other_than_present",
+          "text": "Do you or your family members own land (for residence) other than the present dwelling (excluding ownership by a corporation)?",
+          "instructions": "If you have woodland, farmland, etc. for the purpose of building a residence, please fill in this section.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "house_land_other_than_present_dwelling_details",
+      "number": "VIb",
+      "title": "Details of House and Land Other than the Present Dwelling",
+      "questions": [
+        {
+          "number": "20a",
+          "id": "other_house_year_construction",
+          "text": "Year of the construction",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "1970 or earlier"
+            },
+            {
+              "code": "2",
+              "label": "Showa"
+            },
+            {
+              "code": "3",
+              "label": "Heisei"
+            },
+            {
+              "code": "4",
+              "label": "A.D."
+            },
+            {
+              "code": "5",
+              "label": "2019"
+            }
+          ]
+        },
+        {
+          "number": "20b",
+          "id": "other_house_total_floor_area",
+          "text": "Total floor area of the residence (m²)",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        },
+        {
+          "number": "20c",
+          "id": "other_house_structure",
+          "text": "Structure of the residence",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Wooden (excluding with fireproof wood)"
+            },
+            {
+              "code": "2",
+              "label": "Fireproof wood"
+            },
+            {
+              "code": "3",
+              "label": "Ferroconcrete"
+            },
+            {
+              "code": "4",
+              "label": "Other (block, brick, etc.)"
+            }
+          ]
+        },
+        {
+          "number": "21a",
+          "id": "own_land_prefecture",
+          "text": "Prefecture",
+          "type": "text",
+          "max_length": 4
+        },
+        {
+          "number": "21b",
+          "id": "own_land_city",
+          "text": "City, county, etc,",
+          "type": "text",
+          "max_length": 7
+        },
+        {
+          "number": "21c",
+          "id": "own_land_ward",
+          "text": "Ward/town/village",
+          "type": "text",
+          "max_length": 6
+        },
+        {
+          "number": "21d",
+          "id": "own_land_area",
+          "text": "Site area (m²)",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 9999
+        }
+      ],
+      "occurrences": 3
+    },
+    {
+      "id": "monthly_rent_loan",
+      "number": "VII",
+      "title": "Monthly Amount of House Rent Paid and Housing Loan Amount Repaid",
+      "description": "Please write the monthly amount of house rent paid and housing loan amount repaid separately.",
+      "universe": "All households",
+      "questions": [
+        {
+          "number": "22.1",
+          "id": "house_rent_payment",
+          "text": "House rent payment (excluding common-area charge and administrative fee)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Paying"
+            },
+            {
+              "code": "2",
+              "label": "Not paying"
+            }
+          ]
+        },
+        {
+          "number": "22.1amt",
+          "id": "monthly_house_rent_amount",
+          "text": "Monthly house rent amount (in thousands of yen per month)",
+          "instructions": "If the amount is under 200,000 yen, enter the figure. If the amount is 200,000 yen or more, select '200,000 yen or more per month.'",
+          "type": "numeric"
+        },
+        {
+          "number": "22.2",
+          "id": "repayment_of_housing_loan",
+          "text": "Repayment of housing loan",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Paying"
+            },
+            {
+              "code": "2",
+              "label": "Not paying"
+            }
+          ]
+        },
+        {
+          "number": "22.2amt",
+          "id": "monthly_housing_loan_repayment",
+          "text": "Monthly repayment of housing loan (in thousands of yen per month)",
+          "instructions": "If the amount is under 200,000 yen, enter the figure. If the amount is 200,000 yen or more, select '200,000 yen or more per month.'",
+          "type": "numeric"
+        }
+      ],
+      "occurrences": 1
+    }
+  ]
+}

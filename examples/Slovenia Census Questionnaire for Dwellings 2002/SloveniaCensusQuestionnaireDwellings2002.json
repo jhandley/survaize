@@ -1,0 +1,704 @@
+{
+  "title": "Census Questionnaire for Dwellings",
+  "description": "Census of Population, Households and Housing in the Republic of Slovenia in 2002. Compulsory official instrument to collect information on dwellings, as part of the national census.",
+  "id_fields": [
+    "municipality",
+    "locality",
+    "idhi",
+    "idst",
+    "idstun",
+    "hn_add_to_hn"
+  ],
+  "sections": [
+    {
+      "id": "identification_and_basic_information",
+      "number": "A",
+      "title": "Identification and Basic Information",
+      "description": "Enumerator fills in identification details and basic information about the questionnaire and dwelling.",
+      "universe": "All dwellings",
+      "questions": [
+        {
+          "number": "A1",
+          "id": "type_of_questionnaire",
+          "text": "Type of questionnaire",
+          "type": "single_select",
+          "options": [
+
+            {
+              "code": "2",
+              "label": "2"
+            }
+          ]
+        },
+        {
+          "number": "A2",
+          "id": "municipality",
+          "text": "Municipality",
+          "type": "text"
+        },
+        {
+          "number": "A3",
+          "id": "locality",
+          "text": "Locality",
+          "type": "text"
+        },
+        {
+          "number": "A4",
+          "id": "po",
+          "text": "PO",
+          "type": "text"
+        },
+        {
+          "number": "A5",
+          "id": "idhi",
+          "text": "IDHI",
+          "type": "numeric"
+        },
+        {
+          "number": "A6",
+          "id": "idst",
+          "text": "IDST",
+          "type": "numeric"
+        },
+        {
+          "number": "A7",
+          "id": "destroyed_questionnaire",
+          "text": "Destroyed questionnaire",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "A8",
+          "id": "locality_name",
+          "text": "Locality",
+          "type": "text"
+        },
+        {
+          "number": "A9",
+          "id": "street",
+          "text": "Street",
+          "type": "text"
+        },
+        {
+          "number": "A10",
+          "id": "hn_add_to_hn",
+          "text": "HN/add. to HN",
+          "type": "text"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "dwelling_information",
+      "number": "B",
+      "title": "Information about the Dwelling",
+      "description": "Questions regarding the status, type, and enumeration of the dwelling.",
+      "universe": "All dwellings to be enumerated",
+      "questions": [
+        {
+          "number": "1",
+          "id": "filling_method",
+          "text": "Filling in the questionnaire",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Self-enumeration"
+            },
+            {
+              "code": "2",
+              "label": "Enumerator"
+            },
+            {
+              "code": "3",
+              "label": "Assessment"
+            },
+            {
+              "code": "4",
+              "label": "Questionnaire IS NOT FILLED IN"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "id": "reason_not_enumerated",
+          "text": "Why was the dwelling not enumerated? According to the census methodology, it does not have to be enumerated:",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Collective living quarters"
+            },
+            {
+              "code": "2",
+              "label": "Other premises"
+            },
+            {
+              "code": "3",
+              "label": "Dwelling does not exist"
+            },
+            {
+              "code": "4",
+              "label": "It is not possible to gather information"
+            },
+            {
+              "code": "5",
+              "label": "There is no co-operation"
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "id": "number_in_building",
+          "text": "Number of the dwelling in the building",
+          "type": "numeric"
+        },
+        {
+          "number": "4",
+          "id": "housing_unit_type",
+          "text": "The housing unit is:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "one dwelling house"
+            },
+            {
+              "code": "2",
+              "label": "apartment (in an individual house or a block of flats)"
+            },
+            {
+              "code": "3",
+              "label": "bedsit"
+            },
+            {
+              "code": "4",
+              "label": "separate room"
+            },
+            {
+              "code": "5",
+              "label": "occupied room in a hotel, home, hospital"
+            },
+            {
+              "code": "6",
+              "label": "occupied business premises"
+            },
+            {
+              "code": "7",
+              "label": "provisionally occupied premises"
+            }
+          ]
+        },
+        {
+          "number": "5",
+          "id": "ownership",
+          "text": "Ownership of the dwelling",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "private property of natural persons"
+            },
+            {
+              "code": "2",
+              "label": "property of the state, municipalities, public funds"
+            },
+            {
+              "code": "3",
+              "label": "property of public companies, public institutes"
+            },
+            {
+              "code": "4",
+              "label": "property of private companies and other organisations (banks, insurance companies and other companies, chambers, co-operative societies, institutes)"
+            },
+            {
+              "code": "5",
+              "label": "property of religious institutions, societies, political parties, trade unions, charity organisations, etc."
+            },
+            {
+              "code": "6",
+              "label": "other (write in):"
+            }
+          ]
+        },
+        {
+          "number": "6",
+          "id": "number_persons",
+          "text": "Number of persons in the dwelling:",
+          "type": "numeric"
+        },
+        {
+          "number": "7",
+          "id": "number_households",
+          "text": "Number of households in the dwelling:",
+          "type": "numeric"
+        },
+        {
+          "number": "8",
+          "id": "position_in_building",
+          "text": "Position of the dwelling in the building",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "basement"
+            },
+            {
+              "code": "2",
+              "label": "semi-basement"
+            },
+            {
+              "code": "3",
+              "label": "ground floor"
+            },
+            {
+              "code": "4",
+              "label": "floor above the ground floor (enter the number of the floor):"
+            },
+            {
+              "code": "5",
+              "label": "two floors or more"
+            },
+            {
+              "code": "6",
+              "label": "attic"
+            }
+          ]
+        },
+        {
+          "number": "9",
+          "id": "use_of_dwelling",
+          "text": "Use of the dwelling:",
+          "instructions": "Only mark the sixth (6) answer if you are also filling in the questionnaire for another dwelling that the household uses at the same address. In this case also enter the IDGO.",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "only for residence"
+            },
+            {
+              "code": "2",
+              "label": "for residence and business purposes"
+            },
+            {
+              "code": "3",
+              "label": "only for business purposes"
+            },
+            {
+              "code": "4",
+              "label": "temporarily unoccupied dwelling"
+            },
+            {
+              "code": "5",
+              "label": "unoccupied (abandoned) dwelling"
+            },
+            {
+              "code": "6",
+              "label": "other dwelling that the household uses at the same address (6) IDGO"
+            },
+            {
+              "code": "7",
+              "label": "during seasonal works in agriculture"
+            },
+            {
+              "code": "8",
+              "label": "for leisure and recreation"
+            }
+          ]
+        },
+        {
+          "number": "9b",
+          "id": "idgo",
+          "text": "IDGO",
+          "type": "text",
+          "instructions": "If you marked the sixth (6) answer in question B9, enter the IDGO of the other dwelling that the household uses at the same address."
+        },
+        {
+          "number": "10",
+          "id": "dwelling_for_leisure_type",
+          "text": "The dwelling for leisure and recreation is in a",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "holiday house"
+            },
+            {
+              "code": "2",
+              "label": "family house"
+            },
+            {
+              "code": "3",
+              "label": "multi-dwelling building"
+            }
+          ]
+        },
+        {
+          "number": "11",
+          "id": "useful_floor_space",
+          "text": "Useful floor space of the dwelling in m²:",
+          "type": "numeric"
+        },
+        {
+          "number": "12",
+          "id": "number_of_rooms",
+          "text": "Number of rooms in the dwelling:",
+          "type": "numeric"
+        },
+        {
+          "number": "13",
+          "id": "number_of_rooms_for_business",
+          "text": "If the dwelling is used for business purposes, enter the number of rooms used only for business purposes:",
+          "type": "numeric"
+        },
+        {
+          "number": "14",
+          "id": "kitchen_in_dwelling",
+          "text": "Kitchen in the dwelling:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "15",
+          "id": "floor_space_kitchen",
+          "text": "Floor space of the kitchen in m²:",
+          "type": "numeric"
+        },
+        {
+          "number": "16",
+          "id": "bathroom_in_dwelling",
+          "text": "Bathroom in the dwelling:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "17",
+          "id": "toilet_in_dwelling",
+          "text": "Toilet in the dwelling:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "flush toilet"
+            },
+            {
+              "code": "2",
+              "label": "non-flush toilet"
+            },
+            {
+              "code": "3",
+              "label": "there is no toilet in the dwelling"
+            }
+          ]
+        },
+        {
+          "number": "18",
+          "id": "other_premises_within_dwelling",
+          "text": "Other premises within the dwelling:",
+          "instructions": "You can mark more than one answer.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "balcony"
+            },
+            {
+              "code": "2",
+              "label": "terrace"
+            },
+            {
+              "code": "3",
+              "label": "atrium"
+            },
+            {
+              "code": "4",
+              "label": "winter garden"
+            },
+            {
+              "code": "5",
+              "label": "pantry"
+            },
+            {
+              "code": "6",
+              "label": "cellar"
+            },
+            {
+              "code": "7",
+              "label": "the dwelling has none of the listed premises"
+            }
+          ]
+        },
+        {
+          "number": "19",
+          "id": "piped_water_supply",
+          "text": "Piped water supply:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "from the water supply network"
+            },
+            {
+              "code": "2",
+              "label": "from individual rainwater tank"
+            },
+            {
+              "code": "3",
+              "label": "from individual water accumulation facility"
+            },
+            {
+              "code": "4",
+              "label": "no piped water supply"
+            }
+          ]
+        },
+        {
+          "number": "20",
+          "id": "sewage_system",
+          "text": "Sewage system:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "sewage network"
+            },
+            {
+              "code": "2",
+              "label": "non-drainable septic tank"
+            },
+            {
+              "code": "3",
+              "label": "drainable septic tank"
+            },
+            {
+              "code": "4",
+              "label": "untreated discharge into the environment"
+            },
+            {
+              "code": "5",
+              "label": "no sewage system"
+            }
+          ]
+        },
+        {
+          "number": "21",
+          "id": "electricity_supply",
+          "text": "Electricity supply:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "22",
+          "id": "piped_gas_supply",
+          "text": "Piped gas supply:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "natural gas supply network"
+            },
+            {
+              "code": "2",
+              "label": "liquefied petroleum gas supply network"
+            },
+            {
+              "code": "3",
+              "label": "dwelling’s own tank or tank for few neighbouring buildings"
+            },
+            {
+              "code": "4",
+              "label": "no piped gas supply"
+            }
+          ]
+        },
+        {
+          "number": "23",
+          "id": "telephone_connection",
+          "text": "Connection to telephone network:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "24",
+          "id": "cable_tv_connection",
+          "text": "Connection to cable TV network:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "25",
+          "id": "central_heating",
+          "text": "Central heating:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "26",
+          "id": "type_of_heating_last_season",
+          "text": "Type of heating in the last heating season:",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "district heating (heating plant or large district boiler house)"
+            },
+            {
+              "code": "2",
+              "label": "boiler house supplying neighbouring buildings"
+            },
+            {
+              "code": "3",
+              "label": "central heating device only for your building (in a house, block of flats)"
+            },
+            {
+              "code": "4",
+              "label": "storey central heating (only for the apartment)"
+            },
+            {
+              "code": "5",
+              "label": "the dwelling has no central heating (it is heated by various stoves, fireplaces)"
+            },
+            {
+              "code": "6",
+              "label": "the dwelling is not heated"
+            }
+          ]
+        },
+        {
+          "number": "27",
+          "id": "source_of_heating_last_season",
+          "text": "Source of heating in the last heating season:",
+          "instructions": "You can mark more than one answer.",
+          "type": "multi_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "coal, coal briquettes"
+            },
+            {
+              "code": "2",
+              "label": "wood and wood waste"
+            },
+            {
+              "code": "3",
+              "label": "fuel oil"
+            },
+            {
+              "code": "4",
+              "label": "electricity"
+            },
+            {
+              "code": "5",
+              "label": "natural gas"
+            },
+            {
+              "code": "6",
+              "label": "liquefied petroleum gas (propane-butane)"
+            },
+            {
+              "code": "7",
+              "label": "solar energy"
+            },
+            {
+              "code": "8",
+              "label": "other (write in)"
+            }
+          ]
+        },
+        {
+          "number": "28",
+          "id": "main_source_of_heating",
+          "text": "If you marked more than one source under question 27, enter the number of the main source of heating:",
+          "type": "numeric"
+        },
+        {
+          "number": "29",
+          "id": "dwelling_renovated",
+          "text": "Has the dwelling ever been renovated?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes - Enter the year of the last renovation"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "29b",
+          "id": "year_of_last_renovation",
+          "text": "Year of last renovation",
+          "type": "numeric",
+          "instructions": "If you marked the first answer in question 29, enter the year of the last renovation."
+        }
+      ],
+      "occurrences": 1
+    }
+  ]
+}

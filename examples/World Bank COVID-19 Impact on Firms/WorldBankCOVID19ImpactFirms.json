@@ -1,0 +1,1468 @@
+{
+  "title": "COVID 19 Impact ES Follow-up Survey. The World Bank. June 13 2020.",
+  "id_fields": [
+    "idstd",
+    "idCOV",
+    "a1",
+    "a1a"
+  ],
+  "sections": [
+    {
+      "id": "control_information_introduction",
+      "number": "A",
+      "title": "Control Information & Introduction",
+      "description": "To be filled out from the existing information.",
+      "questions": [
+        {
+          "number": "A1",
+          "id": "idstd",
+          "text": "Unique ID (not known to respondent)",
+          "type": "text",
+          "max_length": 20
+        },
+        {
+          "number": "A2",
+          "id": "idCOV",
+          "text": "Follow-up Survey ID",
+          "type": "text",
+          "max_length": 20
+        },
+        {
+          "number": "A3",
+          "id": "a1",
+          "text": "Country Code",
+          "type": "text",
+          "max_length": 3
+        },
+        {
+          "number": "A4",
+          "id": "countryx",
+          "text": "Country Name",
+          "type": "text"
+        },
+        {
+          "number": "A5",
+          "id": "a1a",
+          "text": "Language of the interview",
+          "type": "text",
+          "max_length": 30
+        },
+        {
+          "number": "A6",
+          "id": "mode",
+          "text": "Mode of Interview",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Phone (CATI)"
+            },
+            {
+              "code": "2",
+              "label": "Online"
+            }
+          ]
+        },
+        {
+          "number": "A7",
+          "id": "a0",
+          "text": "Questionnaire",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Manufacturing"
+            },
+            {
+              "code": "2",
+              "label": "Retail"
+            },
+            {
+              "code": "3",
+              "label": "Other Services"
+            }
+          ]
+        },
+        {
+          "number": "A8",
+          "id": "COVa20",
+          "text": "Date of the interview",
+          "type": "date"
+        },
+        {
+          "number": "A9",
+          "id": "COVa20m_1",
+          "text": "Last completed month",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "January"
+            },
+            {
+              "code": "2",
+              "label": "February"
+            },
+            {
+              "code": "3",
+              "label": "March"
+            },
+            {
+              "code": "4",
+              "label": "April"
+            },
+            {
+              "code": "5",
+              "label": "May"
+            },
+            {
+              "code": "6",
+              "label": "June"
+            },
+            {
+              "code": "7",
+              "label": "July"
+            },
+            {
+              "code": "8",
+              "label": "August"
+            },
+            {
+              "code": "9",
+              "label": "September"
+            },
+            {
+              "code": "10",
+              "label": "October"
+            },
+            {
+              "code": "11",
+              "label": "November"
+            },
+            {
+              "code": "12",
+              "label": "December"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "sales",
+      "number": "B",
+      "title": "Sales",
+      "universe": "All establishments",
+      "questions": [
+        {
+          "number": "B.0",
+          "id": "COVb0",
+          "text": "Currently is this establishment open, temporarily closed (suspended services or production), or permanently closed?",
+          "instructions": "If 'Permanently closed', GO TO SECTION H; If 'Temporarily closed', GO TO B.1b; If 'Open', GO TO B.2; If DON'T KNOW, GO TO B.2",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Permanently closed"
+            },
+            {
+              "code": "2",
+              "label": "Temporarily closed"
+            },
+            {
+              "code": "3",
+              "label": "Open"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "B.1a",
+          "id": "COVb1a",
+          "text": "Did this establishment close temporarily (suspended services or production) due to the COVID-19 outbreak?",
+          "instructions": "If 'No', GO TO B.2; If DON'T KNOW, GO TO B.2",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "B.1b",
+          "id": "COVb1b",
+          "text": "For how many weeks has this establishment been closed (or was closed) due to the COVID-19 outbreak?",
+          "type": "numeric"
+        },
+        {
+          "number": "B.2",
+          "id": "COVb2a",
+          "text": "Comparing this establishment's sales for [insert last completed month] with the same month in 2019, did sales increase, remain the same, or decrease?",
+          "instructions": "If 'Remain the same' or 'DON'T KNOW', GO TO QUESTION B.3",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increase"
+            },
+            {
+              "code": "2",
+              "label": "Remain the same"
+            },
+            {
+              "code": "3",
+              "label": "Decrease"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "B.2b",
+          "id": "COVb2b",
+          "text": "By what percentage did the sales increase?",
+          "instructions": "Enter percent. If unknown, select -9 (DON'T KNOW SPONTANEOUS)",
+          "type": "numeric"
+        },
+        {
+          "number": "B.2c",
+          "id": "COVb2c",
+          "text": "By what percentage did the sales decrease?",
+          "instructions": "Enter percent. If unknown, select -9 (DON'T KNOW SPONTANEOUS)",
+          "type": "numeric"
+        },
+        {
+          "number": "B.3a",
+          "id": "COVb3a",
+          "text": "In the last completed month, that is in [insert last completed month], what percentage of this establishment's sales were national sales?",
+          "instructions": "Enter percent. Total for B.3a, B.3b, and B.3c must sum to 100%.",
+          "type": "numeric"
+        },
+        {
+          "number": "B.3b",
+          "id": "COVb3b",
+          "text": "In the last completed month, that is in [insert last completed month], what percentage of this establishment's sales were indirect exports (sold domestically to third party that exports products)?",
+          "type": "numeric"
+        },
+        {
+          "number": "B.3c",
+          "id": "COVb3c",
+          "text": "In the last completed month, that is in [insert last completed month], what percentage of this establishment's sales were direct exports?",
+          "type": "numeric"
+        },
+        {
+          "number": "B.4",
+          "id": "COVb4",
+          "text": "Comparing the percentage of direct and indirect exports in the last completed month, that is in [insert last completed month], with the same month in 2019, did the percentage increase, remain the same, or decrease?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increase"
+            },
+            {
+              "code": "2",
+              "label": "Remain the same"
+            },
+            {
+              "code": "3",
+              "label": "Decrease"
+            },
+            {
+              "code": "-7",
+              "label": "DOES NOT APPLY (SPONTANEOUS)"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "production",
+      "number": "C",
+      "title": "Production",
+      "questions": [
+        {
+          "number": "C.3",
+          "id": "COVc3",
+          "text": "Has this establishment adjusted or converted, partially or fully, its production or the services it offers in response to the COVID-19 outbreak?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.1",
+          "id": "COVc1",
+          "text": "In the last completed month, that is in [insert last completed month], what was this establishment's output produced as a percentage of the maximum output possible if using all the physical capital available (capacity utilization)?",
+          "instructions": "ASK ONLY IF A0 = 1 (MANUFACTURING)",
+          "type": "numeric"
+        },
+        {
+          "number": "C.2a",
+          "id": "COVc2a",
+          "text": "Comparing this establishment's total hours worked per week for [insert last completed month] with the same month in 2019, did they increase, remain the same, or decrease?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increase"
+            },
+            {
+              "code": "2",
+              "label": "Remain the same"
+            },
+            {
+              "code": "3",
+              "label": "Decrease"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.2b",
+          "id": "COVc2b",
+          "text": "Comparing the demand for this establishment's products and services for [insert last completed month] with the same month in 2019, did it increase, remain the same, or decrease?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increase"
+            },
+            {
+              "code": "2",
+              "label": "Remain the same"
+            },
+            {
+              "code": "3",
+              "label": "Decrease"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.2c",
+          "id": "COVc2c",
+          "text": "Comparing this establishment's supply of inputs, raw materials, or finished goods and materials purchased to resell for [insert last completed month] with the same month in 2019, did it increase, remain the same, or decrease?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increase"
+            },
+            {
+              "code": "2",
+              "label": "Remain the same"
+            },
+            {
+              "code": "3",
+              "label": "Decrease"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.4a",
+          "id": "COVc4a",
+          "text": "Did this establishment start or increase business activity online in response to the COVID-19 outbreak?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.4b",
+          "id": "COVc4b",
+          "text": "Did this establishment start or increase delivery or carry-out of goods or services in response to the COVID-19 outbreak?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C.4c",
+          "id": "COVc4c",
+          "text": "Did this establishment start or increase remote work arrangement for its workforce in response to the COVID-19 outbreak?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "C5",
+          "id": "COVc5",
+          "text": "Currently what is the share of this establishment's online sales out of total sales?",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 100
+        },
+        {
+          "number": "C6",
+          "id": "COVc6",
+          "text": "Currently what is the share of this establishment's workforce working remotely?",
+          "type": "numeric",
+          "min_value": 0,
+          "max_value": 100
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "labor",
+      "number": "D",
+      "title": "LABOR",
+      "description": "Questions about this establishment workforce.",
+      "questions": [
+        {
+          "number": "D.0a",
+          "id": "COVd0a",
+          "text": "At the end of December 2019, how many permanent, full-time employees did this establishment employ? Please include all employees and managers.",
+          "instructions": "INTERVIEWER: INCLUDE RESPONDENT IF APPLICABLE. Permanent, full-time workers are defined as all workers that work for a term of one or more fiscal years and/or have a guaranteed renewal of their employment and that work a full shift.",
+          "type": "numeric"
+        },
+        {
+          "number": "D.0b",
+          "id": "COVd0b",
+          "text": "At the end of December 2019, in this establishment how many permanent, full-time workers were female?",
+          "type": "numeric"
+        },
+        {
+          "number": "D.1",
+          "id": "COVd1",
+          "text": "At the end of the last completed month, that is in [insert last completed month], how many permanent, full-time employees did this establishment employ? Please include all employees and managers.",
+          "type": "numeric"
+        },
+        {
+          "number": "D.2",
+          "id": "COVd2",
+          "text": "At the end of the last completed month, that is the end of [insert last completed month], in this establishment how many permanent, full-time workers were female?",
+          "type": "numeric"
+        },
+        {
+          "number": "D.3",
+          "id": "COVd3b",
+          "text": "Since the outbreak of COVID-19, has the total number of this establishment's temporary workers increased, remained the same, or decreased?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increased"
+            },
+            {
+              "code": "2",
+              "label": "Remained the same"
+            },
+            {
+              "code": "3",
+              "label": "Decreased"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "D.4",
+          "id": "COVd4",
+          "text": "Since the outbreak of COVID-19, how many workers have taken leave for more than 5 days or quit due to illness, childcare interruption, or mobility restrictions linked to the COVID-19 outbreak?",
+          "instructions": "ASK ONLY IF COVD1 < COVD0A OR COVD3B = 3",
+          "type": "numeric"
+        },
+        {
+          "number": "D.5",
+          "id": "COVd5",
+          "text": "How many of these were female?",
+          "instructions": "ASK ONLY IF D4 IS GREATER THAN 0, OR DON'T KNOW",
+          "type": "numeric"
+        },
+        {
+          "number": "D.6",
+          "id": "COVd6",
+          "text": "Since the outbreak of COVID-19, how many workers have been laid off due to the COVID-19 outbreak?",
+          "instructions": "ASK ONLY IF COVD1 < COVD0A3 OR COVD3B = 3",
+          "type": "numeric"
+        },
+        {
+          "number": "D.7",
+          "id": "COVd7",
+          "text": "How many of these were female?",
+          "instructions": "ASK ONLY IF D6 IS GREATER THAN 0, OR DON'T KNOW",
+          "type": "numeric"
+        },
+        {
+          "number": "D.8",
+          "id": "COVd8",
+          "text": "Since the outbreak of COVID-19, how many workers have been furloughed? [insert equivalent local term for furlough]",
+          "instructions": "IF 1 OR MORE GO TO D.9, OTHERWISE GO TO E.1",
+          "type": "numeric"
+        },
+        {
+          "number": "D.9",
+          "id": "COVd9",
+          "text": "How many of these were female?",
+          "type": "numeric"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "finance",
+      "number": "E",
+      "title": "Finance",
+      "description": "Questions about the effect of the COVID-19 outbreak on this establishment's access to finance.",
+      "universe": "All establishments",
+      "questions": [
+        {
+          "number": "E.1a",
+          "id": "COVe1a",
+          "text": "Since the outbreak of COVID-19, has this establishment's liquidity or cash flow increased, remained the same, or decreased?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increased"
+            },
+            {
+              "code": "2",
+              "label": "Remained the same"
+            },
+            {
+              "code": "3",
+              "label": "Decreased"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.1b",
+          "id": "COVe1b",
+          "text": "Since the outbreak of COVID-19, has this establishment's sales on credit increased, remained the same, or decreased?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increased"
+            },
+            {
+              "code": "2",
+              "label": "Remained the same"
+            },
+            {
+              "code": "3",
+              "label": "Decreased"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.1c",
+          "id": "COVe1c",
+          "text": "Since the outbreak of COVID-19, has this establishment's purchases on credit increased, remained the same, or decreased?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Increased"
+            },
+            {
+              "code": "2",
+              "label": "Remained the same"
+            },
+            {
+              "code": "3",
+              "label": "Decreased"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.2",
+          "id": "COVe2",
+          "text": "Since the outbreak of COVID-19, what has been the main source this establishment has used to deal with cash flow shortages?",
+          "instructions": "ASK ONLY IF E.1a = 3",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Loans from commercial banks"
+            },
+            {
+              "code": "2",
+              "label": "Loans from non-banking financial institutions (microfinance institutions, credit cooperatives, credit unions, or finance companies)"
+            },
+            {
+              "code": "3",
+              "label": "Equity finance (increase contributions or capital from existing owners/shareholders or issuing new shares)"
+            },
+            {
+              "code": "4",
+              "label": "Delaying payments to suppliers or workers"
+            },
+            {
+              "code": "5",
+              "label": "Government grants"
+            },
+            {
+              "code": "6",
+              "label": "None of the above"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.3a",
+          "id": "COVe3a",
+          "text": "Since the outbreak of COVID-19, has this establishment delayed payments due to the COVID-19 outbreak for more than one week (excluding payments postponed following current regulation) to its suppliers?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.3b",
+          "id": "COVe3b",
+          "text": "Since the outbreak of COVID-19, has this establishment delayed payments due to the COVID-19 outbreak for more than one week (excluding payments postponed following current regulation) to its landlords?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E.3c",
+          "id": "COVe3c",
+          "text": "Since the outbreak of COVID-19, has this establishment delayed payments due to the COVID-19 outbreak for more than one week (excluding payments postponed following current regulation) to the tax authorities?",
+          "instructions": "INTERVIEWER: READ OUT",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON.)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E4",
+          "id": "COVe4",
+          "text": "Since the outbreak of COVID-19, has this establishment been overdue on its obligations to any financial institution?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-7",
+              "label": "DOES NOT APPLY (SPONTANEOUS)"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-77",
+              "label": "Does not apply"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "E5",
+          "id": "COVe5",
+          "text": "Since the outbreak of COVID-19, has this establishment filed for insolvency or bankruptcy?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "policies",
+      "number": "F",
+      "title": "POLICIES",
+      "universe": "All establishments",
+      "questions": [
+        {
+          "number": "F.1",
+          "id": "COVf1",
+          "text": "Since the outbreak of COVID-19, has this establishment received any national or local government support in response to the crisis?",
+          "instructions": "If response is 3, -9 or -99 GO TO G.1",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No, but expect to receive it in the next 3 months"
+            },
+            {
+              "code": "3",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2a",
+          "id": "COVf2a",
+          "text": "Did any of these measures involve cash transfers for businesses?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2b",
+          "id": "COVf2b",
+          "text": "Did any of these measures involve deferral of credit payments, rent or mortgage, suspension of interest payments, or rollover of debt?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2c",
+          "id": "COVf2c",
+          "text": "Did any of these measures involve access to new credit?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2d",
+          "id": "COVf2d",
+          "text": "Did any of these measures involve fiscal exemptions or reductions?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2e",
+          "id": "COVf2e",
+          "text": "Did any of these measures involve wage subsidies?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "F.2f",
+          "id": "COVf2f",
+          "text": "Did any of these measures involve other (specify)?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "expectations",
+      "number": "G",
+      "title": "EXPECTATIONS",
+      "universe": "All establishments",
+      "questions": [
+        {
+          "number": "G.1",
+          "id": "COVg1",
+          "text": "Is it expected that this establishment will fall in arrears in any of its outstanding liabilities in the next 6 months?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "G.2",
+          "id": "COVg2",
+          "text": "Keeping the cost structure as it is now, how many weeks would this establishment be able to remain open if its sales stopped as of today?",
+          "type": "numeric"
+        },
+        {
+          "number": "G.3",
+          "id": "COVg3",
+          "text": "In how many months is it expected that this establishment's sales will get back to normal?",
+          "type": "numeric"
+        },
+        {
+          "number": "G.4",
+          "id": "COVg4",
+          "text": "In how many months is it expected that the size of this establishment's workforce will get back to normal?",
+          "instructions": "",
+          "type": "numeric"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "info_on_permanently_closed_establishments",
+      "number": "H",
+      "title": "Information on Permanently Closed Establishments",
+      "universe": "Permanently closed establishments",
+      "questions": [
+        {
+          "number": "H.1a1",
+          "id": "COVh1y",
+          "text": "In what year did this establishment close?",
+          "type": "numeric"
+        },
+        {
+          "number": "H.1a2",
+          "id": "COVh1m",
+          "text": "In what month did this establishment close? (1=Jan, 12=Dec)",
+          "type": "numeric",
+          "min_value": 1,
+          "max_value": 12
+        },
+        {
+          "number": "H.2a",
+          "id": "COVh2a",
+          "text": "Did this establishment lay off some of the workforce before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.2b",
+          "id": "COVh2b",
+          "text": "Did this establishment reduce salary for some or all the workforce before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.2c",
+          "id": "COVh2c",
+          "text": "Did this establishment sell some of its assets before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.2d",
+          "id": "COVh2d",
+          "text": "Did this establishment increase the level of debt (more credit from banks or other institutions) before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.2e",
+          "id": "COVh2e",
+          "text": "Did this establishment convert the production line or services offered before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.2f",
+          "id": "COVh2f",
+          "text": "Did this establishment receive government (national or local) support before permanently closing?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPON)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        },
+        {
+          "number": "H.3",
+          "id": "COVh3",
+          "text": "Is it expected that this establishment will re-open in the future?",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            },
+            {
+              "code": "-9",
+              "label": "DON'T KNOW (SPONTANEOUS)"
+            },
+            {
+              "code": "-99",
+              "label": "Don't know"
+            }
+          ]
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "interviewer_comments",
+      "number": "A17x",
+      "title": "Interviewer Comments",
+      "universe": "ASK ONLY IF MODE = 1 (PHONE - CATI)",
+      "questions": [
+        {
+          "number": "A17x",
+          "id": "a17x",
+          "text": "INTERVIEWER COMMENTS: Problems occurred or extraordinary circumstances which could influence results",
+          "instructions": "ASK ONLY IF MODE = 1 (PHONE - CATI)",
+          "type": "text"
+        }
+      ],
+      "occurrences": 1
+    },
+    {
+      "id": "interview_protocol",
+      "number": "A",
+      "title": "INTERVIEW PROTOCOL",
+      "description": "",
+      "universe": "All interviews",
+      "questions": [
+        {
+          "number": "A20",
+          "id": "a20x",
+          "text": "Name of the main respondent",
+          "type": "text"
+        },
+        {
+          "number": "A21",
+          "id": "a21x",
+          "text": "Position of the respondent",
+          "type": "text"
+        },
+        {
+          "number": "A22",
+          "id": "a22",
+          "text": "Interviewee was the same person as in baseline survey?",
+          "instructions": "Ask only if Mode = 1 (Phone - CATI)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "A22Online",
+          "id": "a22online",
+          "text": "Were you the same respondent as in the recent Enterprise Survey conducted by the World Bank?",
+          "instructions": "Ask only if Mode = 2 (Online)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Yes"
+            },
+            {
+              "code": "2",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "number": "A23",
+          "id": "a23",
+          "text": "Gender of the respondent",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Male"
+            },
+            {
+              "code": "2",
+              "label": "Female"
+            },
+            {
+              "code": "-8",
+              "label": "Refusal (SPONTANEOUS)"
+            }
+          ]
+        },
+        {
+          "number": "A24",
+          "id": "a24",
+          "text": "Number of minutes the interview lasted",
+          "type": "numeric"
+        },
+        {
+          "number": "A25",
+          "id": "a25",
+          "text": "Respondent cooperation",
+          "instructions": "Ask only if Mode = 1 (Phone - CATI)",
+          "type": "single_select",
+          "options": [
+            {
+              "code": "1",
+              "label": "Excellent"
+            },
+            {
+              "code": "2",
+              "label": "Fair"
+            },
+            {
+              "code": "3",
+              "label": "Average"
+            },
+            {
+              "code": "4",
+              "label": "Bad"
+            }
+          ]
+        },
+        {
+          "number": "A26",
+          "id": "a26",
+          "text": "Interviewer number",
+          "type": "numeric"
+        },
+        {
+          "number": "A27a",
+          "id": "a27ax",
+          "text": "Full Firm Contact information - Full address",
+          "type": "text"
+        },
+        {
+          "number": "A27b",
+          "id": "a27b",
+          "text": "Full Firm Contact information - Phone number(s)",
+          "type": "text"
+        },
+        {
+          "number": "A27c",
+          "id": "a27dx",
+          "text": "Full Firm Contact information - Email",
+          "type": "text"
+        }
+      ],
+      "occurrences": 1
+    }
+  ]
+}
