@@ -78,7 +78,8 @@ class AIQuestionnaireInterpreter:
         """Interpret a questionnaire document into a structured format.
 
         Args:
-            scanned_document: QuestionnaireDocument containing page images and OCR text
+            scanned_document: QuestionnaireDocument containing page images. The
+                OCR text may be omitted.
 
         Returns:
             Structured Questionnaire object
@@ -91,8 +92,11 @@ class AIQuestionnaireInterpreter:
         total_usage = LLMUsage()
 
         context: list[SectionFragment] = []
+        texts = (
+            scanned_document.extracted_text if scanned_document.extracted_text else ["" for _ in scanned_document.pages]
+        )
         for i, (page, text) in enumerate(
-            zip(scanned_document.pages, scanned_document.extracted_text, strict=False),
+            zip(scanned_document.pages, texts, strict=True),
             1,
         ):
             if progress_callback:

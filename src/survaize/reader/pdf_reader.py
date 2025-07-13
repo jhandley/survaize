@@ -21,15 +21,21 @@ logger = logging.getLogger(__name__)
 
 
 class PDFReader:
-    """Reads PDF documents and extracts text and images."""
+    """Reads PDF documents and optionally performs OCR extraction."""
 
-    def __init__(self, interpreter: AIQuestionnaireInterpreter):
+    def __init__(
+        self,
+        interpreter: AIQuestionnaireInterpreter,
+        capture_ocr: bool = True,
+    ) -> None:
         """Initialize the PDFReader with an interpreter.
 
         Args:
             interpreter: An instance of AIQuestionnaireInterpreter
+            capture_ocr: Flag indicating whether OCR text should be captured.
         """
         self.interpreter: AIQuestionnaireInterpreter = interpreter
+        self.capture_ocr: bool = capture_ocr
 
     @logfire.instrument(extract_args=False)
     def read(
@@ -43,7 +49,8 @@ class PDFReader:
             file: File-like object containing the PDF
 
         Returns:
-            A Questionnaire containing the extracted content
+            A Questionnaire containing the extracted content. When
+            ``capture_ocr`` is ``False`` no OCR text is returned.
         """
 
         if progress_callback:
@@ -51,16 +58,18 @@ class PDFReader:
         pages = self._extract_pages(file)
         if progress_callback:
             progress_callback(1, f"Extracted {len(pages)} pages")
+
         texts: list[str] = []
-        for i, page in enumerate(pages, start=1):
-            if progress_callback:
-                percent = int(10 * (i - 1) / len(pages))
-                progress_callback(percent, f"Extracting image from page {i}/{len(pages)}")
-            texts.append(self._process_page(page))
+        if self.capture_ocr:
+            for i, page in enumerate(pages, start=1):
+                if progress_callback:
+                    percent = int(10 * (i - 1) / len(pages))
+                    progress_callback(percent, f"Extracting image from page {i}/{len(pages)}")
+                texts.append(self._process_page(page))
 
         scanned_questionnaire = ScannedQuestionnaire(
             pages=pages,
-            extracted_text=texts,
+            extracted_text=texts if self.capture_ocr else [],
             source_path=Path("<in-memory>"),
         )
 
