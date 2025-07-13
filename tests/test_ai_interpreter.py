@@ -185,3 +185,27 @@ def test_interpret_logs_usage(
         interpreter.interpret(mock_document)
 
         assert any("Token usage - prompt: 3" in r.getMessage() and "total: 7" in r.getMessage() for r in caplog.records)
+
+
+def test_interpret_without_ocr_text(mock_document: ScannedQuestionnaire, mock_llm_config: LLMConfig) -> None:
+    """Verify interpret works when OCR text is not provided."""
+    with patch("survaize.interpreter.ai_interpreter.create_openai_client") as mock_factory:
+        mock_client = MagicMock()
+        mock_factory.return_value = mock_client
+
+        completion = MagicMock()
+        completion.choices[0].message.content = json.dumps(
+            {"title": "Test Survey", "id_fields": ["id"], "sections": [], "trailing_sections": []}
+        )
+        mock_client.chat.completions.create.return_value = completion
+
+        interpreter = AIQuestionnaireInterpreter(mock_llm_config)
+        doc = ScannedQuestionnaire(
+            pages=mock_document.pages,
+            extracted_text=[],
+            source_path=mock_document.source_path,
+        )
+
+        result = interpreter.interpret(doc)
+
+        assert isinstance(result, Questionnaire)
