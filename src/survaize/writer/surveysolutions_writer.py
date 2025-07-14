@@ -86,7 +86,7 @@ class SurveySolutionsWriter(Writer):
         ss_questionnaire = SurveySolutionsQuestionnaire(
             Title=questionnaire.title,
             Description=questionnaire.description,
-            VariableName=self._generate_variable_name(questionnaire.title),
+            VariableName=self.generate_variable_name(questionnaire.title),
             Children=groups,
             Metadata=metadata,
         )
@@ -108,7 +108,7 @@ class SurveySolutionsWriter(Writer):
             ss_question = self._convert_question(question)
             children.append(ss_question)
 
-        group = Group(VariableName=self._generate_variable_name(section.id), Title=section.title, Children=children)
+        group = Group(VariableName=self.generate_variable_name(section.id), Title=section.title, Children=children)
 
         return group
 
@@ -121,7 +121,7 @@ class SurveySolutionsWriter(Writer):
         Returns:
             Survey Solutions question object
         """
-        variable_name = self._generate_variable_name(question.id)
+        variable_name = self.generate_variable_name(question.id)
 
         if isinstance(question, TextQuestion):
             return SSTextQuestion(
@@ -188,7 +188,7 @@ class SurveySolutionsWriter(Writer):
                 VariableName=variable_name, QuestionText=question.text, Instructions=question.instructions
             )
 
-    def _generate_variable_name(self, name: str) -> str:
+    def generate_variable_name(self, name: str) -> str:
         """Generate a valid Survey Solutions variable name from a string.
 
         Survey Solutions variable names must:

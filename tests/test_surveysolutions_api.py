@@ -1,12 +1,12 @@
 """Test Survey Solutions export via web API."""
 
-
 import pytest
 from fastapi.testclient import TestClient
 
 from survaize.model.questionnaire import (
     NumericQuestion,
     Option,
+    Question,
     Questionnaire,
     QuestionType,
     Section,
@@ -26,14 +26,34 @@ def client() -> TestClient:
 @pytest.fixture()
 def sample_questionnaire() -> Questionnaire:
     """Create a sample questionnaire for testing."""
-    questions = [
-        TextQuestion(number="1", id="name", text="What is your name?", type=QuestionType.TEXT),
-        NumericQuestion(number="2", id="age", text="What is your age?", type=QuestionType.NUMERIC),
+    questions: list[Question] = [
+        TextQuestion(
+            number="1",
+            id="name",
+            text="What is your name?",
+            type=QuestionType.TEXT,
+            instructions=None,
+            universe=None,
+            max_length=None,
+        ),
+        NumericQuestion(
+            number="2",
+            id="age",
+            text="What is your age?",
+            type=QuestionType.NUMERIC,
+            instructions=None,
+            universe=None,
+            min_value=None,
+            max_value=None,
+            decimal_places=None,
+        ),
         SingleChoiceQuestion(
             number="3",
             id="gender",
             text="What is your gender?",
             type=QuestionType.SINGLE_SELECT,
+            instructions=None,
+            universe=None,
             options=[
                 Option(code="1", label="Male"),
                 Option(code="2", label="Female"),
@@ -41,7 +61,15 @@ def sample_questionnaire() -> Questionnaire:
         ),
     ]
 
-    section = Section(id="demographics", number="A", title="Demographics", questions=questions, occurrences=1)
+    section = Section(
+        id="demographics",
+        number="A",
+        title="Demographics",
+        description=None,
+        universe=None,
+        questions=questions,
+        occurrences=1,
+    )
 
     return Questionnaire(title="Test Survey", description="A test survey", id_fields=["name"], sections=[section])
 

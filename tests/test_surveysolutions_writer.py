@@ -8,6 +8,7 @@ from pathlib import Path
 from survaize.model.questionnaire import (
     NumericQuestion,
     Option,
+    Question,
     Questionnaire,
     QuestionType,
     Section,
@@ -20,16 +21,26 @@ from survaize.writer.surveysolutions_writer import SurveySolutionsWriter
 def test_surveysolutions_writer_basic_questionnaire() -> None:
     """Test that the Survey Solutions writer can convert a basic questionnaire."""
     # Create a simple questionnaire
-    questions = [
+    questions: list[Question] = [
         TextQuestion(
             number="1",
             id="name",
             text="What is your name?",
             type=QuestionType.TEXT,
             instructions="Enter your full name",
+            universe=None,
+            max_length=None,
         ),
         NumericQuestion(
-            number="2", id="age", text="What is your age?", type=QuestionType.NUMERIC, min_value=0, max_value=120
+            number="2",
+            id="age",
+            text="What is your age?",
+            type=QuestionType.NUMERIC,
+            min_value=0,
+            max_value=120,
+            instructions=None,
+            universe=None,
+            decimal_places=None,
         ),
         SingleChoiceQuestion(
             number="3",
@@ -41,6 +52,8 @@ def test_surveysolutions_writer_basic_questionnaire() -> None:
                 Option(code="2", label="Female"),
                 Option(code="3", label="Other"),
             ],
+            instructions=None,
+            universe=None,
         ),
     ]
 
@@ -51,6 +64,7 @@ def test_surveysolutions_writer_basic_questionnaire() -> None:
         description="Basic demographic information",
         questions=questions,
         occurrences=1,
+        universe=None,
     )
 
     questionnaire = Questionnaire(
@@ -115,20 +129,18 @@ def test_surveysolutions_writer_basic_questionnaire() -> None:
 
 def test_variable_name_generation() -> None:
     """Test variable name generation for Survey Solutions compliance."""
-    writer = SurveySolutionsWriter()
-
-    # Test basic cases
-    assert writer._generate_variable_name("simple") == "simple"
-    assert writer._generate_variable_name("with spaces") == "with_spaces"
-    assert writer._generate_variable_name("with-dashes") == "with_dashes"
-    assert writer._generate_variable_name("with.dots") == "with_dots"
+    writer = SurveySolutionsWriter()  # Test basic cases
+    assert writer.generate_variable_name("simple") == "simple"
+    assert writer.generate_variable_name("with spaces") == "with_spaces"
+    assert writer.generate_variable_name("with-dashes") == "with_dashes"
+    assert writer.generate_variable_name("with.dots") == "with_dots"
 
     # Test starting with number
-    assert writer._generate_variable_name("1name").startswith("V")
+    assert writer.generate_variable_name("1name").startswith("V")
 
     # Test empty string
-    assert writer._generate_variable_name("") == "Variable"
+    assert writer.generate_variable_name("") == "Variable"
 
     # Test long name (should be truncated to 32 chars)
     long_name = "a" * 40
-    assert len(writer._generate_variable_name(long_name)) == 32
+    assert len(writer.generate_variable_name(long_name)) == 32
