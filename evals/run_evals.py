@@ -13,14 +13,14 @@ load_dotenv()
 config = create_llm_config_from_env()
 
 logfire.configure(
-    send_to_logfire='if-token-present',  
-    environment='development',  
-    service_name='evals',  
+    send_to_logfire="if-token-present",
+    environment="development",
+    service_name="evals",
 )
 logfire.instrument_openai()
 
-async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
 
+async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
     interpreter = AIQuestionnaireInterpreter(llm_config=config, sleep_between_pages_seconds=10)
     pdf_reader = PDFReader(interpreter)
     with open(pdf_path, "rb") as f:
@@ -29,7 +29,6 @@ async def convert_questionnaire(pdf_path: Path) -> Questionnaire:
 
 
 def run_evals():
-
     dataset = load_dataset()
 
     report = dataset.evaluate_sync(task=convert_questionnaire, max_concurrency=1)
