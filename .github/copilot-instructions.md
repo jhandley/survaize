@@ -30,6 +30,7 @@ The src/survaize directory contains the main application code, organized as foll
 - writers: Writing questionnaires to different formats (CSPro, JSON).
 - models: Models for questionnaires.
 - cspro: Models and serializers for CSPro files (dictionary, forms, question text).
+- surveysolutions: Models and serializers for Survey Solutions files.
 - config: Configuration management including API keys and model settings.
 - web/backend: FastAPI backend for serving the application.
 - web/frontend: React frontend for the application.
@@ -84,7 +85,7 @@ uv add package_name
 
 4. **Document Writers**
    - `Writer` protocol, takes a `Questionnaire` and writes it to disk
-   - Writers for each output format (`CSProWriter`, `JSONWriter`)
+   - Writers for each output format (`CSProWriter`, `JSONWriter`, `SurveySolutionsWriter`)
 
 5. **Converter**
    - Orchestrates conversion: input file → reader → writer

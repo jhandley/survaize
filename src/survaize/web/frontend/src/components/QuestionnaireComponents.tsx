@@ -168,7 +168,7 @@ export const SaveQuestionnaire: React.FC = () => {
 
   const apiService = useApiService();
 
-  const handleSave = async (format: "json" | "cspro") => {
+  const handleSave = async (format: "json" | "cspro" | "surveysolutions") => {
     if (!questionnaire) {
       setError("No questionnaire to save. Please open a questionnaire first.");
       return;
@@ -212,6 +212,13 @@ export const SaveQuestionnaire: React.FC = () => {
         className="action-button"
       >
         {isLoading ? "Saving..." : "Save as CSPro"}
+      </button>
+      <button
+        onClick={() => handleSave("surveysolutions")}
+        disabled={isLoading || !questionnaire}
+        className="action-button"
+      >
+        {isLoading ? "Saving..." : "Save as Survey Solutions"}
       </button>
       <a ref={downloadRef} style={{ display: "none" }} />
       {error && <div className="error-message">{error}</div>}

@@ -1,5 +1,6 @@
 from survaize.writer.cspro_writer import CSProWriter
 from survaize.writer.json_writer import JSONWriter
+from survaize.writer.surveysolutions_writer import SurveySolutionsWriter
 from survaize.writer.writer import Writer
 
 
@@ -10,6 +11,7 @@ class WriterFactory:
         self._writers: dict[str, Writer] = {
             "cspro": CSProWriter(),
             "json": JSONWriter(),
+            "surveysolutions": SurveySolutionsWriter(),
         }
 
     def get(self, output_format: str) -> Writer:

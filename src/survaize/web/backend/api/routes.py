@@ -152,7 +152,7 @@ async def questionnaire_progress(job_id: str, websocket: WebSocket) -> None:
 
 @router.post("/questionnaire/save/{format}")
 async def save_questionnaire(
-    format: Literal["json", "cspro"],
+    format: Literal["json", "cspro", "surveysolutions"],
     questionnaire: Questionnaire,
     writer_factory: Annotated[WriterFactory, Depends(get_writer_factory)],
 ) -> FileResponse:
@@ -160,7 +160,7 @@ async def save_questionnaire(
     Save a questionnaire to a file in the specified format.
 
     Args:
-        format: The format to save the questionnaire in (json or cspro)
+        format: The format to save the questionnaire in (json, cspro, or surveysolutions)
         questionnaire: The questionnaire to save
 
     Returns:
@@ -183,6 +183,15 @@ async def save_questionnaire(
             # Set appropriate filename for download
             download_filename = f"{file_name}.json"
             media_type = "application/json"
+
+        elif format == "surveysolutions":
+            output_path = temp_dir_path / f"{file_name}.zip"
+            # For Survey Solutions we create a zip file with document.json inside
+            writer.write(questionnaire, output_path)
+
+            # Set appropriate filename for download
+            download_filename = f"{file_name}.zip"
+            media_type = "application/zip"
 
         elif format == "cspro":
             # TODO: Better handling of CSPro files, move zipping logic to writer
