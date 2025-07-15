@@ -159,6 +159,11 @@ enableTypeIgnoreComments = true
 reportUnusedCallResult = false
 reportAny = false
 
+# Disable private usage reporting for test files
+[[tool.basedpyright.executionEnvironments]]
+root = "tests"
+reportPrivateUsage = false
+
 [tool.codespell]
 # Add here as needed:
 ignore-words-list = "popstan"
