@@ -43,6 +43,10 @@ logger = logging.getLogger(__name__)
 class SurveySolutionsWriter(Writer):
     """Writer that converts Survaize questionnaires to Survey Solutions JSON format."""
 
+    def __init__(self) -> None:
+        """Initialize the writer with a set to track used variable names."""
+        self._used_variable_names: set[str] = set()
+
     @override
     def write(self, questionnaire: Questionnaire, output_path: Path) -> None:
         """Write a questionnaire to Survey Solutions backup format (zip file).
@@ -52,6 +56,9 @@ class SurveySolutionsWriter(Writer):
             output_path: The path where the Survey Solutions backup zip will be written
         """
         logger.info(f"Converting questionnaire '{questionnaire.title}' to Survey Solutions format")
+
+        # Reset used variable names for this conversion
+        self._used_variable_names.clear()
 
         # Convert Survaize questionnaire to Survey Solutions format
         ss_questionnaire = self._convert_questionnaire(questionnaire)
@@ -189,18 +196,19 @@ class SurveySolutionsWriter(Writer):
             )
 
     def generate_variable_name(self, name: str) -> str:
-        """Generate a valid Survey Solutions variable name from a string.
+        """Generate a valid and unique Survey Solutions variable name from a string.
 
         Survey Solutions variable names must:
         - Start with a letter
         - Contain only letters, numbers, and underscores
         - Be no longer than 32 characters
+        - Be unique within the questionnaire
 
         Args:
             name: The source name
 
         Returns:
-            A valid variable name
+            A valid and unique variable name
         """
         # Remove special characters and replace spaces with underscores
         variable_name = re.sub(r"[^a-zA-Z0-9_]", "_", name)
@@ -213,11 +221,27 @@ class SurveySolutionsWriter(Writer):
         if not variable_name:
             variable_name = "Variable"
 
-        # Truncate to 32 characters
+        # Truncate to 32 characters initially
         if len(variable_name) > 32:
             variable_name = variable_name[:32]
 
         # Remove trailing underscores
         variable_name = variable_name.rstrip("_")
+
+        # Ensure uniqueness by adding a suffix if needed
+        original_name = variable_name
+        counter = 1
+        while variable_name in self._used_variable_names:
+            # Calculate how much space we need for the suffix
+            suffix = f"_{counter}"
+            max_base_length = 32 - len(suffix)
+
+            # Truncate the base name if needed to make room for suffix
+            base_name = original_name[:max_base_length].rstrip("_")
+            variable_name = base_name + suffix
+            counter += 1
+
+        # Add to used names set
+        self._used_variable_names.add(variable_name)
 
         return variable_name

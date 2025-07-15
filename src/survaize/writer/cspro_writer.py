@@ -131,7 +131,10 @@ class CSProWriter:
                     id_items.append(id_item)
 
         # Create records for each section (excluding empty sections)
+        # Record types are assigned sequentially (A, B, C, ..., Z, AA, AB, AC, ...)
+        # to ensure uniqueness regardless of section numbering scheme
         records: list[DictionaryRecord] = []
+        record_type_counter = 0  # Counter for generating unique record types
         for section in questionnaire.sections:
             # Create a record for this section with non-ID questions
             record_items: list[DictionaryItem] = []
@@ -153,10 +156,14 @@ class CSProWriter:
 
             # Only create record if it has items
             if record_items:
+                # Generate unique record type: A, B, C, ..., Z, then AA, AB, etc.
+                record_type = self._generate_record_type(record_type_counter)
+                record_type_counter += 1
+
                 record = DictionaryRecord(
                     name=self._to_dictionary_name(f"{section.id}_REC"),
                     labels=[DictionaryLabel(text=self._to_dictionary_label(section.number, section.id))],
-                    recordType=section.number[0],  # Use first letter of section number as record type
+                    recordType=record_type,
                     items=record_items,
                     occurrences=DictionaryRecordOccurrences(required=False, maximum=section.occurrences),
                 )
@@ -808,3 +815,39 @@ class CSProWriter:
         if string.endswith(old_suffix):
             return string[: -len(old_suffix)] + new_suffix
         return string
+
+    def _generate_record_type(self, index: int) -> str:
+        """Generate a unique record type for the given index.
+
+        This method generates record types in the following pattern:
+        A, B, C, ..., Z (26 records)
+        AA, AB, AC, ..., AZ (26 records)
+        BA, BB, BC, ..., BZ (26 records)
+        And so on...
+
+        This provides virtually unlimited unique record types while keeping them
+        as short as possible.
+
+        Args:
+            index: Zero-based index for the record
+
+        Returns:
+            Record type string (1-2 characters)
+        """
+        if index < 26:
+            # Use single letters A-Z for first 26 records
+            return chr(ord("A") + index)
+        else:
+            # For index >= 26, use multi-character format
+            # Convert to base-26 representation using letters
+            adjusted_index = index - 26
+
+            # Calculate the number of characters needed
+            # First 26 positions (0-25) use 2 characters: AA-AZ, BA-BZ, etc.
+            first_char_index = adjusted_index // 26
+            second_char_index = adjusted_index % 26
+
+            first_char = chr(ord("A") + first_char_index)
+            second_char = chr(ord("A") + second_char_index)
+
+            return first_char + second_char
