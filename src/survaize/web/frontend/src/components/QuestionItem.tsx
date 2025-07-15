@@ -108,7 +108,12 @@ const QuestionItem: React.FC<QuestionItemProps> = ({
   }
 
   return (
-    <div className="question-item" key={question.id}>
+    <div
+      className="question-item"
+      key={question.id}
+      id={`question-${question.id}`}
+      data-question-id={question.id}
+    >
       <div className="question-header">
         <span className="question-number">{question.number}</span>
         <span className="question-id">[{question.id}]</span>

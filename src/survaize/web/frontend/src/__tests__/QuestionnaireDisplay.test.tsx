@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import React from "react";
 import { vi } from "vitest";
 import { QuestionnaireDisplay } from "../components/QuestionnaireDisplay";
 import { QuestionnaireContext } from "../components/QuestionnaireComponents";
@@ -23,10 +24,13 @@ const contextValue: React.ContextType<typeof QuestionnaireContext> = {
 };
 
 test("shows editor when showRaw is true", () => {
+  const ref = React.createRef<HTMLDivElement>();
   render(
-    <QuestionnaireContext.Provider value={contextValue}>
-      <QuestionnaireDisplay showRaw={true} />
-    </QuestionnaireContext.Provider>,
+    <div ref={ref}>
+      <QuestionnaireContext.Provider value={contextValue}>
+        <QuestionnaireDisplay showRaw={true} containerRef={ref} />
+      </QuestionnaireContext.Provider>
+    </div>,
   );
   expect(document.querySelector(".cm-editor")).toBeInTheDocument();
   expect(
