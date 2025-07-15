@@ -146,7 +146,7 @@ export class SurvaizeApiService {
   // Save a questionnaire in specified format
   async saveQuestionnaire(
     questionnaire: Questionnaire,
-    format: "json" | "cspro" | "surveysolutions",
+    format: "json" | "cspro" | "surveysolutions" | "xlsform",
   ): Promise<Blob> {
     log(`Saving questionnaire in ${format} format`);
 

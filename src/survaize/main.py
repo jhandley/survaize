@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 # For console UI
 console = Console()
-OutputFormat = Literal["json", "cspro", "surveysolutions"]
+OutputFormat = Literal["json", "cspro", "surveysolutions", "xlsform"]
 
 
 def configure_logfire():
@@ -47,7 +47,7 @@ def cli() -> None:
 @click.option(
     "--format",
     "output_format",
-    type=click.Choice(["cspro", "json", "surveysolutions"]),
+    type=click.Choice(["cspro", "json", "surveysolutions", "xlsform"]),
     default="json",
     help="Output format for the questionnaire",
 )
