@@ -228,7 +228,7 @@ export const SaveQuestionnaire: React.FC = () => {
         disabled={isLoading || !questionnaire}
         className="action-button"
       >
-        {isLoading ? "Saving..." : "Export to ODK"}
+        {isLoading ? "Saving..." : "Save as ODK"}
       </button>
       <a ref={downloadRef} style={{ display: "none" }} />
       {error && <div className="error-message">{error}</div>}
