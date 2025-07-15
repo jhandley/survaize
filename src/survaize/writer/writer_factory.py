@@ -1,5 +1,6 @@
 from survaize.writer.cspro_writer import CSProWriter
 from survaize.writer.json_writer import JSONWriter
+from survaize.writer.odk_writer import ODKWriter
 from survaize.writer.surveysolutions_writer import SurveySolutionsWriter
 from survaize.writer.writer import Writer
 
@@ -12,6 +13,7 @@ class WriterFactory:
             "cspro": CSProWriter(),
             "json": JSONWriter(),
             "surveysolutions": SurveySolutionsWriter(),
+            "xlsform": ODKWriter(),
         }
 
     def get(self, output_format: str) -> Writer:

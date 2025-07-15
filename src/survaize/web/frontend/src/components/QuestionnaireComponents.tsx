@@ -168,7 +168,9 @@ export const SaveQuestionnaire: React.FC = () => {
 
   const apiService = useApiService();
 
-  const handleSave = async (format: "json" | "cspro" | "surveysolutions") => {
+  const handleSave = async (
+    format: "json" | "cspro" | "surveysolutions" | "xlsform",
+  ) => {
     if (!questionnaire) {
       setError("No questionnaire to save. Please open a questionnaire first.");
       return;
@@ -182,7 +184,8 @@ export const SaveQuestionnaire: React.FC = () => {
 
       const url = URL.createObjectURL(blob);
       if (downloadRef.current) {
-        const fileExtension = format === "json" ? "json" : "zip";
+        const fileExtension =
+          format === "json" ? "json" : format === "xlsform" ? "xlsx" : "zip";
         downloadRef.current.href = url;
         downloadRef.current.download = `${questionnaire.title.replace(/\s+/g, "_")}.${fileExtension}`;
         downloadRef.current.click();
@@ -219,6 +222,13 @@ export const SaveQuestionnaire: React.FC = () => {
         className="action-button"
       >
         {isLoading ? "Saving..." : "Save as Survey Solutions"}
+      </button>
+      <button
+        onClick={() => handleSave("xlsform")}
+        disabled={isLoading || !questionnaire}
+        className="action-button"
+      >
+        {isLoading ? "Saving..." : "Save as ODK"}
       </button>
       <a ref={downloadRef} style={{ display: "none" }} />
       {error && <div className="error-message">{error}</div>}

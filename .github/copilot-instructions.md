@@ -27,7 +27,7 @@ Code outside of these directories will not execute correctly.
 The src/survaize directory contains the main application code, organized as follows:
 - interpreter: Main logic for interpreting questionnaires using AI models.
 - readers: Reading different file formats (PDF, JSON).
-- writers: Writing questionnaires to different formats (CSPro, JSON).
+- writers: Writing questionnaires to different formats (CSPro, Survey Solutions, ODK, JSON).
 - models: Models for questionnaires.
 - cspro: Models and serializers for CSPro files (dictionary, forms, question text).
 - surveysolutions: Models and serializers for Survey Solutions files.
@@ -53,14 +53,9 @@ To run an arbitrary Python script in the virtual env:
 uv run python path/to/script.py
 ```
 
-For linting:
+Linting & typechecking:
 ```bash
-uv run ruff check
-```
-
-Typechecking:
-```bash
-uv run basedpyright
+uv run python devtools/lint.py
 ```
 
 To add a new dependency:
@@ -85,7 +80,7 @@ uv add package_name
 
 4. **Document Writers**
    - `Writer` protocol, takes a `Questionnaire` and writes it to disk
-   - Writers for each output format (`CSProWriter`, `JSONWriter`, `SurveySolutionsWriter`)
+   - Writers for each output format (`CSProWriter`, `JSONWriter`, `ODKWriter`, `SurveySolutionsWriter`)
 
 5. **Converter**
    - Orchestrates conversion: input file → reader → writer

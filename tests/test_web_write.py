@@ -85,3 +85,12 @@ def test_save_questionnaire_surveysolutions_format(client: TestClient, sample_qu
     # For the test, we'll just check that it's a valid zip file
     # In a real scenario, you'd extract and validate the document.json content
     assert len(response.content) > 0
+
+
+def test_save_questionnaire_odk_format(client: TestClient, sample_questionnaire: Questionnaire) -> None:
+    """Test saving questionnaire in ODK XLSForm format via API."""
+    response = client.post("/api/questionnaire/save/xlsform", json=sample_questionnaire.model_dump())
+
+    assert response.status_code == 200
+    assert response.headers["content-type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    assert len(response.content) > 0
