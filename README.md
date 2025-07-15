@@ -94,12 +94,12 @@ For instructions on publishing to PyPI, see [publishing.md](publishing.md).
 MIT 
 
 ## TODO
+- Evals (in progress)
 - Correctly handle location question type (produce two fields in CSPro)
 - Fills in CAPI question text
-- Evals (in progress)
 - Questionnaire edits in the UI
-- Combo box questions (single select with DK options)
+- Combo box questions (numeric/text/date/location with DK options)
 - Other (specify) and other write-ins on single/multi-select
 - Matrix/table questions
-- Don't know on date/location questions
 - Partial date questions (e.g. month/year)
+- Multiple language support
