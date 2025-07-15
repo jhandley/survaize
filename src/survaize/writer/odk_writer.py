@@ -42,10 +42,19 @@ class ODKWriter(Writer):
         choices_ws.append(["list_name", "name", "label"])
 
         for section in questionnaire.sections:
-            survey_ws.append(["begin group", self._to_variable(section.id), section.title])
+            name = self._to_variable(section.id)
+            if section.occurrences > 1:
+                survey_ws.append(["begin repeat", name, section.title])
+            else:
+                survey_ws.append(["begin group", name, section.title])
+
             for question in section.questions:
                 self._add_question(question, survey_ws, choices_ws)
-            survey_ws.append(["end group", "", ""])
+
+            if section.occurrences > 1:
+                survey_ws.append(["end repeat", name, ""])
+            else:
+                survey_ws.append(["end group", "", ""])
 
         workbook.save(output_path)
 
